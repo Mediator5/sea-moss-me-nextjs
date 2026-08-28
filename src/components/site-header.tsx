@@ -60,7 +60,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-2.5">
             <Link
               href="/products"
-              className="hidden rounded-full bg-flame-500 px-5 py-2.5 text-sm font-semibold text-abyss-950 transition hover:bg-flame-400 sm:inline-flex"
+              className="hidden rounded-full bg-flame-550 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-flame-600 sm:inline-flex"
             >
               Shop now
             </Link>

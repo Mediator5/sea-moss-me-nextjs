@@ -152,10 +152,16 @@ Sampled pixel-for-pixel from your brand board, in `src/app/globals.css`:
 | Warm Sand | `#ddc5ac` | `sand-300` | Borders and rules; lighter steps are the page paper |
 
 Each brand colour sits at the `-500` step. Darker steps (`-600`, `-700`) exist so
-button fills and link text clear WCAG AA contrast: Sunrise Coral at full strength is
-only 2.84:1 on paper, so anything carrying text uses `flame-600` (`#c44328`, 5.0:1 on
-paper and 5.3:1 with white on top). Caribbean Teal is legible at full strength — 5.85:1
-on paper — so links and icons use it as-is.
+button fills and link text clear WCAG AA contrast. Sunrise Coral at full strength is
+only 2.84:1 on paper, so it's used where nothing sits on top of it — the hero's *true
+wealth*, dots, small marks. Anything with a label on it steps down:
+
+- `flame-550` (`#d1462b`) — button fills. The brightest coral that still carries
+  **white** text at AA (4.54:1). Go brighter and the label starts to grey out.
+- `flame-600` (`#c44328`) — small coral text on cream: eyebrows, the cart badge.
+
+Caribbean Teal is legible at full strength — 5.85:1 on paper — so links and icons use
+`reef-500` as-is.
 
 **The roles, in one line each:**
 

@@ -50,6 +50,8 @@
   /* Sunrise Coral — taken from the bird in the logo. Accents, badges, highlights. */
   --color-flame-700: #a93b23;
   --color-flame-600: #c44328;
+  /* Button fill: the brightest coral that still carries white text at AA (4.54:1). */
+  --color-flame-550: #d1462b;
   --color-flame-500: #f26b4f;
   --color-flame-400: #f79076;
   --color-flame-100: #fde7e0;
@@ -179,18 +181,19 @@
      To lead with teal on the buttons instead, swap .btn-primary's two
      colours for --color-reef-500 and --color-reef-600.
      ------------------------------------------------------------------ */
-  /* The true Sunrise Coral from the logo, with a deep-teal label — the same
-     trick .btn-gold uses. Coral this bright can't carry white text (2.8:1),
-     but against #03333a it clears AA at 4.54:1. */
+  /* Coral with white text. flame-550 is as bright as the coral can go while
+     white still clears AA (4.54:1) — brighter than that and the label starts
+     to grey out. The full-strength #f26b4f lives in display type instead,
+     where it has no text sitting on top of it. */
   .btn-primary {
-    background-color: var(--color-flame-500);
-    color: var(--color-abyss-950);
-    box-shadow: 0 14px 30px -14px rgba(242, 107, 79, 0.9);
+    background-color: var(--color-flame-550);
+    color: #fff;
+    box-shadow: 0 14px 30px -14px rgba(209, 70, 43, 0.9);
   }
 
   .btn-primary:hover {
-    background-color: var(--color-flame-400);
-    box-shadow: 0 20px 38px -14px rgba(242, 107, 79, 0.95);
+    background-color: var(--color-flame-600);
+    box-shadow: 0 20px 38px -14px rgba(196, 67, 40, 0.95);
   }
 
   .btn-seaglass {
