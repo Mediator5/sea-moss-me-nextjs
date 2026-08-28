@@ -22,7 +22,7 @@ export default function BlogPage() {
     <>
       <section className="border-b border-sand-200 bg-sand-100/60 py-16 sm:py-20">
         <div className="container-page">
-          <p className="eyebrow text-reef-600">From the journal</p>
+          <p className="eyebrow text-flame-600">From the journal</p>
           <h1 className="mt-5 max-w-3xl text-5xl leading-[1.04] sm:text-6xl">
             Notes from the kitchen and the coast
           </h1>
@@ -51,7 +51,7 @@ export default function BlogPage() {
                 />
               </div>
               <div className="p-8 sm:p-12">
-                <p className="eyebrow text-reef-600">{featured.category}</p>
+                <p className="eyebrow text-flame-600">{featured.category}</p>
                 <h2 className="mt-4 text-3xl leading-snug">{featured.title}</h2>
                 <p className="mt-4 leading-relaxed text-abyss-800/70">{featured.excerpt}</p>
                 <p className="mt-7 text-xs text-abyss-800/45">
@@ -67,7 +67,7 @@ export default function BlogPage() {
           <div className="mt-8 grid gap-7 md:grid-cols-2">
             {rest.map((post, i) => (
               <Reveal key={post.slug} as="article" delay={i * 90} className="card group p-8">
-                <p className="eyebrow text-reef-600">{post.category}</p>
+                <p className="eyebrow text-flame-600">{post.category}</p>
                 <h2 className="mt-4 text-2xl leading-snug">
                   <Link href={`/blog/${post.slug}`} className="link-underline">
                     {post.title}

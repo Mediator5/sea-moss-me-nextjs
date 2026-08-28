@@ -171,28 +171,36 @@
     transform: none;
   }
 
-  /* The main call-to-action. Caribbean teal by default; to lead with Sunrise
-     Coral instead, swap the two colours below for --color-flame-600 and
-     --color-flame-500 (the .btn-coral rule underneath shows the exact values). */
+  /* ------------------------------------------------------------------
+     Colour roles across the site:
+       Sunrise Coral  — action. Primary buttons, active nav, badges.
+       Caribbean Teal — structure and trust. Links, icons, savings, borders.
+       Saffron Yellow — highlight on dark grounds.
+     To lead with teal on the buttons instead, swap .btn-primary's two
+     colours for --color-reef-500 and --color-reef-600.
+     ------------------------------------------------------------------ */
+  /* The true Sunrise Coral from the logo, with a deep-teal label — the same
+     trick .btn-gold uses. Coral this bright can't carry white text (2.8:1),
+     but against #03333a it clears AA at 4.54:1. */
   .btn-primary {
+    background-color: var(--color-flame-500);
+    color: var(--color-abyss-950);
+    box-shadow: 0 14px 30px -14px rgba(242, 107, 79, 0.9);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-flame-400);
+    box-shadow: 0 20px 38px -14px rgba(242, 107, 79, 0.95);
+  }
+
+  .btn-seaglass {
     background-color: var(--color-reef-500);
     color: var(--color-sand-50);
     box-shadow: 0 14px 30px -14px rgba(15, 107, 120, 0.85);
   }
 
-  .btn-primary:hover {
+  .btn-seaglass:hover {
     background-color: var(--color-reef-600);
-    box-shadow: 0 20px 38px -14px rgba(13, 92, 102, 0.95);
-  }
-
-  .btn-coral {
-    background-color: var(--color-flame-600);
-    color: var(--color-sand-50);
-    box-shadow: 0 14px 30px -14px rgba(196, 67, 40, 0.85);
-  }
-
-  .btn-coral:hover {
-    background-color: var(--color-flame-700);
   }
 
   .btn-teal {

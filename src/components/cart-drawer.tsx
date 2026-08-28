@@ -34,7 +34,7 @@ export function CartDrawer() {
       >
         <header className="flex items-center justify-between border-b border-sand-200 px-6 py-5">
           <div>
-            <p className="eyebrow text-reef-600">Your cart</p>
+            <p className="eyebrow text-flame-600">Your cart</p>
             <p className="font-display text-xl">
               {totals.jars} {totals.jars === 1 ? "jar" : "jars"}
             </p>

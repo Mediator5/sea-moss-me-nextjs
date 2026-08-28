@@ -110,7 +110,7 @@ export default function HomePage() {
                   },
                 ].map(({ icon: Icon, title, copy }) => (
                   <li key={title} className="flex gap-4">
-                    <span className="mt-0.5 grid size-11 shrink-0 place-items-center rounded-full bg-reef-100 text-reef-600">
+                    <span className="mt-0.5 grid size-11 shrink-0 place-items-center rounded-full bg-flame-100 text-flame-600">
                       <Icon className="size-5" />
                     </span>
                     <div>
@@ -180,7 +180,7 @@ export default function HomePage() {
                 delay={i * 90}
                 className="bg-abyss-950 p-8 transition-colors duration-500 hover:bg-abyss-900"
               >
-                <span className="font-display text-4xl text-gold-500/80">{step.step}</span>
+                <span className="font-display text-4xl text-flame-400">{step.step}</span>
                 <h3 className="mt-5 text-xl">{step.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-sand-100/60">{step.copy}</p>
               </Reveal>
@@ -455,7 +455,7 @@ export default function HomePage() {
           <div className="mt-12 grid gap-7 md:grid-cols-3">
             {posts.map((post, i) => (
               <Reveal key={post.slug} as="article" delay={i * 90} className="card group p-7">
-                <p className="eyebrow text-reef-600">{post.category}</p>
+                <p className="eyebrow text-flame-600">{post.category}</p>
                 <h3 className="mt-4 text-xl leading-snug">
                   <Link href={`/blog/${post.slug}`} className="link-underline">
                     {post.title}

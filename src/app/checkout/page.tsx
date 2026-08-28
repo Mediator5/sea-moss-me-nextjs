@@ -92,7 +92,7 @@ export default function CheckoutPage() {
     return (
       <section className="py-20 sm:py-28">
         <div className="container-page max-w-xl text-center">
-          <p className="eyebrow text-reef-600">Checkout</p>
+          <p className="eyebrow text-flame-600">Checkout</p>
           <h1 className="mt-5 text-4xl leading-tight sm:text-5xl">Your cart is empty</h1>
           <p className="mt-5 leading-relaxed text-abyss-800/70">
             Pick a jar or two and we&apos;ll bring you straight back here.
@@ -118,7 +118,7 @@ export default function CheckoutPage() {
           </Link>
           <span aria-hidden className="h-px flex-1 bg-sand-300" />
           <span className="flex items-center gap-2 font-semibold text-abyss-900">
-            <span className="grid size-6 place-items-center rounded-full bg-abyss-900 text-[11px] font-bold text-sand-50">
+            <span className="grid size-6 place-items-center rounded-full bg-flame-600 text-[11px] font-bold text-sand-50">
               2
             </span>
             Your details
@@ -135,7 +135,7 @@ export default function CheckoutPage() {
 
       <section className="py-12 sm:py-16">
         <div className="container-page">
-          <p className="eyebrow text-reef-600">Final step</p>
+          <p className="eyebrow text-flame-600">Final step</p>
           <h1 className="mt-4 max-w-2xl text-4xl leading-[1.06] sm:text-5xl">
             Where should we send it?
           </h1>

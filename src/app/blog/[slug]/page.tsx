@@ -63,7 +63,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             </Link>
           </nav>
 
-          <p className="eyebrow mt-8 text-reef-600">{post.category}</p>
+          <p className="eyebrow mt-8 text-flame-600">{post.category}</p>
           <h1 className="mt-4 text-4xl leading-[1.08] sm:text-5xl">{post.title}</h1>
           <p className="mt-5 text-sm text-abyss-800/50">
             {new Date(post.date).toLocaleDateString("en-US", {
@@ -122,7 +122,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <div className="mt-8 grid gap-7 md:grid-cols-2">
             {more.map((p) => (
               <article key={p.slug} className="card p-7">
-                <p className="eyebrow text-reef-600">{p.category}</p>
+                <p className="eyebrow text-flame-600">{p.category}</p>
                 <h3 className="mt-3 text-xl leading-snug">
                   <Link href={`/blog/${p.slug}`} className="link-underline">
                     {p.title}

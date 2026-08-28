@@ -118,7 +118,7 @@ build({
 # Reversed artwork — for deep teal / dark backgrounds
 build({
     1: "#FBA88F",   # bird body lifts to a light coral so it stays visible
-    2: "#F9F2E4",   # water reads as cream on dark
+    2: "#5FBCC9",   # water stays Caribbean Teal, lifted so it reads on dark
     3: "#F26B4F",
     4: "#E5AF52",   # gold brightened a touch for dark grounds
     5: "#F9F2E4",

@@ -146,18 +146,29 @@ Sampled pixel-for-pixel from your brand board, in `src/app/globals.css`:
 | Brand name | Hex | Token | Where it leads |
 | --- | --- | --- | --- |
 | Deep Petrol Teal | `#05454c` | `abyss-900` | Body text, dark sections, footer |
-| Caribbean Teal | `#28807a` | `reef-500` | Primary buttons, links, eyebrows, icons |
+| Caribbean Teal | `#0f6b78` | `reef-500` | Links, icons, savings figures, focus rings |
 | Saffron Yellow | `#f7bb3f` | `gold-500` | Buttons and eyebrows on dark sections |
-| Sunrise Coral | `#ea6951` | `flame-500` | Active nav, badges, cart count, highlights |
+| Sunrise Coral | `#f26b4f` | `flame-500` | **Action** — every primary button, section eyebrows, active nav, badges |
 | Warm Sand | `#ddc5ac` | `sand-300` | Borders and rules; lighter steps are the page paper |
 
 Each brand colour sits at the `-500` step. Darker steps (`-600`, `-700`) exist so
-button fills and link text clear WCAG AA contrast — Caribbean Teal itself is 4.45:1
-on paper, which is fine for large type but short for body text, so links use
-`reef-600` at 6.3:1.
+button fills and link text clear WCAG AA contrast: Sunrise Coral at full strength is
+only 2.84:1 on paper, so anything carrying text uses `flame-600` (`#c44328`, 5.0:1 on
+paper and 5.3:1 with white on top). Caribbean Teal is legible at full strength — 5.85:1
+on paper — so links and icons use it as-is.
 
-To lead with coral instead of teal on the main buttons, swap two colour values in
-the `.btn-primary` rule — there's a comment above it showing exactly what to change.
+**The roles, in one line each:**
+
+- **Coral is action.** Primary buttons, the header Shop-now pill, section eyebrows,
+  the active nav item, the cart count, the open FAQ toggle, the current checkout step.
+- **Teal is structure and trust.** Body ink, dark section grounds, inline links,
+  icon circles, "Free"/discount figures, focus rings.
+- **Saffron is highlight on dark.** Eyebrows and buttons on the deep teal sections,
+  where coral and teal both lose contrast.
+
+To lead with teal on the buttons instead, swap the two colour values in the
+`.btn-primary` rule — there's a comment above it showing exactly what to change, and
+`.btn-seaglass` is the ready-made teal button if you want both on one page.
 
 ### The logo artwork
 

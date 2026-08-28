@@ -33,7 +33,7 @@ export default function FaqPage() {
 
       <section className="border-b border-sand-200 bg-sand-100/60 py-16 sm:py-20">
         <div className="container-page">
-          <p className="eyebrow text-reef-600">Questions, answered</p>
+          <p className="eyebrow text-flame-600">Questions, answered</p>
           <h1 className="mt-5 max-w-3xl text-5xl leading-[1.04] sm:text-6xl">
             Everything people ask before their first jar
           </h1>

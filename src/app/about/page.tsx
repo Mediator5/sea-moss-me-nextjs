@@ -234,7 +234,7 @@ export default function AboutPage() {
           <ol className="mt-10 grid gap-px overflow-hidden rounded-xl bg-sand-100/10 md:grid-cols-2 lg:grid-cols-4">
             {process.map((step, i) => (
               <Reveal key={step.step} as="li" delay={i * 90} className="bg-abyss-950 p-8">
-                <span className="font-display text-4xl text-gold-500/80">{step.step}</span>
+                <span className="font-display text-4xl text-flame-400">{step.step}</span>
                 <h3 className="mt-5 text-xl">{step.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-sand-100/60">{step.copy}</p>
               </Reveal>
@@ -260,7 +260,11 @@ export default function AboutPage() {
           <ul className="mt-14 grid gap-6 sm:grid-cols-2">
             {values.map((v, i) => (
               <Reveal key={v.title} as="li" delay={i * 80} className="card flex gap-5 p-8">
-                <span className="grid size-12 shrink-0 place-items-center rounded-full bg-reef-100 text-reef-600">
+                <span
+                  className={`grid size-12 shrink-0 place-items-center rounded-full ${
+                    i % 2 === 0 ? "bg-flame-100 text-flame-600" : "bg-reef-100 text-reef-600"
+                  }`}
+                >
                   <v.icon className="size-6" />
                 </span>
                 <div>

@@ -11,7 +11,7 @@ export function AnnouncementBar() {
             key={i}
             className="flex items-center gap-3 px-6 text-[11px] font-medium tracking-[0.14em] whitespace-nowrap uppercase"
           >
-            <span className="size-1 rounded-full bg-gold-400" />
+            <span className="size-1 rounded-full bg-flame-400" />
             {text}
           </span>
         ))}

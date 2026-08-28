@@ -71,7 +71,7 @@ export default function IngredientsPage() {
       <section className="border-t border-sand-200 bg-sand-100/70 py-20">
         <div className="container-page">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow text-reef-600">Start with the base</p>
+            <p className="eyebrow text-flame-600">Start with the base</p>
             <h2 className="mt-4 text-4xl leading-tight">
               Every one of these is folded into wildcrafted sea moss
             </h2>

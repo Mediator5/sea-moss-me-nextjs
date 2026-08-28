@@ -16,7 +16,7 @@ export default function ContactPage() {
     <section className="py-16 sm:py-24">
       <div className="container-page grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
-          <p className="eyebrow text-reef-600">Get in touch</p>
+          <p className="eyebrow text-flame-600">Get in touch</p>
           <h1 className="mt-5 text-5xl leading-[1.05]">Talk to a person</h1>
           <p className="mt-6 leading-relaxed text-abyss-800/70">
             Wholesale, allergies, a delayed delivery, or you just want to know which jar to start

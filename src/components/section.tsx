@@ -24,7 +24,7 @@ export function SectionHeading({
       }`}
     >
       {eyebrow && (
-        <p className={`eyebrow ${light ? "text-gold-400" : "text-reef-600"}`}>{eyebrow}</p>
+        <p className={`eyebrow ${light ? "text-gold-400" : "text-flame-600"}`}>{eyebrow}</p>
       )}
       <h2 className="mt-4 text-4xl leading-[1.08] sm:text-5xl">{title}</h2>
       {copy && (

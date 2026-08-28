@@ -280,7 +280,15 @@ export default function SeaMossPage() {
           <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {seaMossFacts.map((fact, i) => (
               <Reveal key={fact.title} as="li" delay={(i % 3) * 80} className="card h-full p-7">
-                <span className="grid size-11 place-items-center rounded-full bg-reef-100 text-reef-600">
+                <span
+                  className={`grid size-11 place-items-center rounded-full ${
+                    i % 3 === 0
+                      ? "bg-flame-100 text-flame-600"
+                      : i % 3 === 1
+                        ? "bg-reef-100 text-reef-600"
+                        : "bg-gold-200 text-gold-600"
+                  }`}
+                >
                   {i % 3 === 0 ? (
                     <Wave className="size-5" />
                   ) : i % 3 === 1 ? (

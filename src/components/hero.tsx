@@ -36,7 +36,7 @@ export function Hero() {
           <h1 className="mt-7 text-5xl leading-[1.02] text-abyss-950 sm:text-6xl lg:text-[4.25rem]">
             Peak health is
             <br />
-            <span className="text-flame-600 italic">true wealth</span>.
+            <span className="text-flame-500 italic">true wealth</span>.
           </h1>
 
           <p className="mt-7 max-w-lg text-lg leading-relaxed text-abyss-800/85">
