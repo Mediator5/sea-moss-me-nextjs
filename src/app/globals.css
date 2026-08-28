@@ -11,7 +11,7 @@
   /* ------------------------------------------------------------------
      Palette shared with the logo artwork:
        Deep Petrol Teal  #05454c   the wordmark
-       Teal              #5fb3b8   the water in the mark
+       Teal              #318b98   the water in the mark
        Sunrise Coral     #f26b4f   the bird in the mark
        Saffron Yellow    #f7bb3f   the sea moss wreath
        Warm Sand         #ddc5ac   from the brand board
@@ -36,24 +36,22 @@
   --color-abyss-700: #0a6a76;
   --color-abyss-600: #0d7e8b;
 
-  /* Teal — the water in the logo, and now the colour of every dark
-     panel on the site. -500 is the logo value exactly; -600 and darker
-     steps are for panels, bands and hovers nested inside it. */
-  --color-reef-800: #1a5d67;
-  --color-reef-700: #23727e;
+  /* Teal — the single brand teal. All reef steps resolve to the same
+     value so components can keep their existing token references. */
+  --color-reef-800: #318b98;
+  --color-reef-700: #318b98;
   --color-reef-600: #318b98;
-  --color-reef-500: #5fb3b8;
-  --color-reef-400: #7dc5cd;
-  --color-reef-300: #a4d6de;
-  --color-reef-200: #c9e7ec;
-  --color-reef-100: #e2f2f5;
+  --color-reef-500: #318b98;
+  --color-reef-400: #318b98;
+  --color-reef-300: #318b98;
+  --color-reef-200: #318b98;
+  --color-reef-100: #318b98;
 
   /* Saffron Yellow — the warm counterpart, and CTAs on dark */
   --color-gold-600: #b8811a;
   --color-gold-500: #f7bb3f;
   --color-gold-400: #facf72;
-  /* Eyebrows on a teal panel. -400 only reaches 4.19:1 against #5fb3b8; this
-     clears AA at 4.51:1 and still reads gold rather than cream. */
+  /* Eyebrows on a teal panel. */
   --color-gold-300: #fbd88c;
   --color-gold-200: #fdecc4;
 
@@ -211,7 +209,7 @@
   .btn-seaglass {
     background-color: var(--color-reef-500);
     color: var(--color-sand-50);
-    box-shadow: 0 14px 30px -14px rgba(95, 179, 184, 0.85);
+    box-shadow: 0 14px 30px -14px rgba(49, 139, 152, 0.85);
   }
 
   .btn-seaglass:hover {

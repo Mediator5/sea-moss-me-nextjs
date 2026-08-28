@@ -36,10 +36,10 @@ const columns = [
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-reef-800 text-sand-100">
+    <footer className="relative overflow-hidden bg-reef-500 text-sand-100">
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 -right-32 size-[32rem] rounded-full bg-reef-700/15 blur-3xl"
+        className="pointer-events-none absolute -top-40 -right-32 size-[32rem] rounded-full bg-reef-500/15 blur-3xl"
       />
 
       <div className="container-page relative py-20">

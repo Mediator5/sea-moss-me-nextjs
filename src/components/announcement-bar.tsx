@@ -4,7 +4,7 @@ export function AnnouncementBar() {
   const items = [...announcements, ...announcements];
 
   return (
-    <div className="relative z-50 overflow-hidden bg-reef-800 py-2.5 text-sand-100">
+    <div className="relative z-50 overflow-hidden bg-reef-500 py-2.5 text-sand-100">
       <div className="flex w-max animate-marquee">
         {items.map((text, i) => (
           <span

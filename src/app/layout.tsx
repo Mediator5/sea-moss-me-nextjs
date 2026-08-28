@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   // The browser chrome tint on mobile — matches the announcement bar at the
   // very top of the page, so the address bar reads as part of the site.
-  themeColor: "#1a5d67",
+  themeColor: "#318b98",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
