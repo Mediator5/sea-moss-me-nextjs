@@ -325,7 +325,7 @@ export default function HomePage() {
           {/* Doctor Bird teaser */}
           <Reveal delay={80} className="mt-7 overflow-hidden rounded-2xl bg-abyss-950 text-sand-50">
             <div className="grid items-center gap-10 p-9 sm:p-12 lg:grid-cols-[auto_1fr_auto]">
-              <LogoMark tone="light" className="mx-auto size-24 lg:mx-0" />
+              <LogoMark tone="light" className="mx-auto h-24 lg:mx-0" />
               <div>
                 <p className="eyebrow text-gold-400">The bird on every jar</p>
                 <h3 className="mt-3 text-2xl leading-snug sm:text-3xl">

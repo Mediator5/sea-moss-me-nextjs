@@ -75,7 +75,8 @@ All artwork lives in `public/images/` and is already wired into the site:
 | File | Where it appears |
 | --- | --- |
 | `logo-lockup.png` / `logo-lockup-light.png` | Header (light backgrounds) and footer / mobile menu (dark) |
-| `logo-mark.png` / `logo-mark-light.png` | Spare mark-only versions |
+| `logo-mark.png` / `logo-mark-light.png` | The bird-and-wreath mark on its own |
+| `logo-full.png` / `logo-full-light.png` | Stacked mark-over-wordmark, for anywhere you need it |
 | `hero.jpg` | Home page hero background |
 | `origin.jpg` | Home "our story" panel, About hero, Journal feature |
 | `ingredients.jpg` | Home "what's inside" band, About sourcing panel |
@@ -114,6 +115,23 @@ on paper, which is fine for large type but short for body text, so links use
 
 To lead with coral instead of teal on the main buttons, swap two colour values in
 the `.btn-primary` rule — there's a comment above it showing exactly what to change.
+
+### The logo artwork
+
+The mark is recoloured from your original file by `scripts/recolor-logo.py`. It
+separates the three elements automatically — the bird, the water and the sea moss
+wreath are found by colour and by connected shape, not by hand-drawn masks — so if
+you ever want to change a colour, edit the hex values at the bottom of that script,
+re-run it, then run `scripts/rebuild-logo-assets.py` to regenerate every derivative
+(both lockups, both marks, the favicon) in one pass.
+
+| Element | Light backgrounds | Dark backgrounds |
+| --- | --- | --- |
+| Bird — wing | `#F26B4F` Sunrise Coral | `#F26B4F` |
+| Bird — body, head, tail | `#C9482C` deeper coral | `#FBA88F` light coral |
+| Water | `#0F6B78` Caribbean Teal | `#F9F2E4` cream |
+| Sea moss wreath | `#D28C22` gold | `#E5AF52` brighter gold |
+| Wordmark | `#05454C` Deep Petrol Teal | `#F9F2E4` cream |
 
 ## Email (optional)
 

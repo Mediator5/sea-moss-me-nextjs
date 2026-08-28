@@ -128,7 +128,7 @@ export default function AboutPage() {
         <div className="container-page relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <Reveal className="order-2 lg:order-1">
             <div className="relative mx-auto max-w-sm rounded-2xl border border-sand-100/12 bg-sand-100/[0.04] p-12 text-center">
-              <LogoMark tone="light" className="mx-auto size-44" />
+              <LogoMark tone="light" className="mx-auto h-44" />
               <p className="mt-8 font-display text-xl leading-snug text-sand-50 italic">
                 &ldquo;{doctorBird.taino}&rdquo;
               </p>

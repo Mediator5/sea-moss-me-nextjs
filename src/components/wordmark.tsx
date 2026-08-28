@@ -18,7 +18,7 @@ export function Wordmark({
     <Image
       src={tone === "light" ? "/images/logo-lockup-light.png" : "/images/logo-lockup.png"}
       alt="Sea Moss Me — peak health is true wealth"
-      width={1024}
+      width={1034}
       height={200}
       priority={priority}
       sizes="260px"
@@ -29,7 +29,7 @@ export function Wordmark({
 
 export function LogoMark({
   tone = "dark",
-  className = "size-10",
+  className = "h-10",
 }: {
   tone?: "dark" | "light";
   className?: string;
@@ -39,7 +39,7 @@ export function LogoMark({
       src={tone === "light" ? "/images/logo-mark-light.png" : "/images/logo-mark.png"}
       alt=""
       aria-hidden
-      width={512}
+      width={467}
       height={512}
       sizes="80px"
       className={`w-auto ${className}`}
