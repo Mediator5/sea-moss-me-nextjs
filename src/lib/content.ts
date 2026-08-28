@@ -1,45 +1,4 @@
-export const ingredients = [
-  {
-    name: "Turmeric",
-    copy: "Supports digestion and helps calm everyday inflammation.",
-    color: "#d5992b",
-  },
-  {
-    name: "Elderberry",
-    copy: "Antioxidant-rich, a go-to for supporting your immune system.",
-    color: "#7b3fa0",
-  },
-  {
-    name: "Spirulina",
-    copy: "A nutrient-dense algae packed with plant protein and minerals.",
-    color: "#14806a",
-  },
-  {
-    name: "Moringa",
-    copy: "Rich in vitamins and minerals that support energy and vitality.",
-    color: "#35b795",
-  },
-  {
-    name: "Ashwagandha",
-    copy: "An adaptogen that helps the body manage stress and stay steady.",
-    color: "#b8842a",
-  },
-  {
-    name: "Chlorella",
-    copy: "A detoxifying, alkalising algae that supports whole-body balance.",
-    color: "#1c9c80",
-  },
-  {
-    name: "Ginger",
-    copy: "Warming and settling — the oldest remedy for an unhappy stomach.",
-    color: "#e6bd6a",
-  },
-  {
-    name: "Beetroot",
-    copy: "A classic for circulation, stamina and steady energy.",
-    color: "#a2295f",
-  },
-];
+/* Ingredient data now lives in src/lib/ingredients.ts — the full library. */
 
 export const faqs = [
   {
@@ -63,6 +22,26 @@ export const faqs = [
     a: "Each flavour's full ingredient list is on its product page. Everything is vegan, gluten-free, dairy-free and free from added sugar, fillers and preservatives. If you have specific allergies, add a note at checkout and we'll confirm before anything ships.",
   },
   {
+    q: "How long does one jar last?",
+    a: "Our 8 oz jar holds roughly 16 tablespoons — about two weeks at one tablespoon a day, or one week if you take two. Most people settle into a jar every two to three weeks once it becomes routine.",
+  },
+  {
+    q: "Does it taste like the ocean?",
+    a: "Properly prepared sea moss is close to neutral — faintly oceanic at most. What you actually taste is the fruit or spice blended into it. Emerald is grassy with a lime finish, Golden Milk is warm and spiced, Purple Power Bomb is tart like a dark fruit compote, and Montego tastes like holiday. If a sea moss gel tastes strongly of the sea, it usually wasn't rinsed properly.",
+  },
+  {
+    q: "Why does sea moss come in different colours?",
+    a: "Because the same plant adjusts its pigment to how much sunlight reaches it underwater — the same species can dry to deep purple, golden yellow or almost black. A natural spread of colours is a good sign. Uniform bleached white usually means the moss was pool-grown or over-processed.",
+  },
+  {
+    q: "Gel, powder or capsules — does the form matter?",
+    a: "Gel is the least processed of the three. It is simply cleaned, soaked and blended moss, so the mucilage that makes it soothing to digest is still intact. Powders and capsules are convenient, but they have been dried hard and milled, and they usually can't carry whole fruits and roots the way a gel can.",
+  },
+  {
+    q: "Can children take it?",
+    a: "Many families do, usually at a smaller amount — half a teaspoon to a teaspoon a day, blended into a smoothie. Montego Tropical Fusion is the one children tend to accept without argument. As with any supplement, check with your paediatrician first, particularly because of the iodine.",
+  },
+  {
     q: "How should I store it, and how long does it last?",
     a: "Keep it refrigerated and it stays fresh for three to four weeks. It also freezes well — portion it into an ice cube tray and drop a cube into your morning smoothie. Always use a clean, dry spoon.",
   },
@@ -81,13 +60,13 @@ export const testimonials = [
     quote:
       "I've tried four different sea moss brands and this is the only one that doesn't taste like the ocean floor. The Emerald goes into my smoothie every single morning.",
     name: "Danielle R.",
-    detail: "Super Green Emerald · 16 oz",
+    detail: "Super Green Emerald · 8 oz",
   },
   {
     quote:
       "Bought the Golden Milk for my mother's joints and ended up ordering three more jars for the rest of us. You can tell it's actually fresh.",
     name: "Marcus T.",
-    detail: "Golden Milk · 16 oz",
+    detail: "Golden Milk · 8 oz",
   },
   {
     quote:
@@ -139,7 +118,7 @@ export const posts: Post[] = [
     readingTime: "8 min read",
     category: "Guides",
     excerpt:
-      "The full rundown on sea moss — its 102 minerals, its history in Caribbean kitchens, and how to actually work it into your week.",
+      "The full rundown on sea moss — its mineral profile, its 14,000-year history, and how to actually work it into your week.",
     body: [
       {
         type: "p",
@@ -150,10 +129,10 @@ export const posts: Post[] = [
         type: "p",
         text: "Sea moss is a sea vegetable — a red algae that grows on rocks in shallow coastal water. In Jamaica the common species is Gracilaria, the slender golden-brown moss you'll see drying in the sun along the south coast. Soaked and blended, it turns into a neutral, faintly ocean-scented gel that thickens whatever you put it in.",
       },
-      { type: "h2", text: "The 102 minerals claim, explained" },
+      { type: "h2", text: "The 92 minerals claim, explained" },
       {
         type: "p",
-        text: "You'll see \"102 of the body's 106 minerals\" repeated everywhere, and it deserves context. Sea moss absorbs trace minerals directly from seawater, so it carries a genuinely broad spectrum — iodine, potassium, calcium, magnesium, iron, zinc, sulphur. It is not a multivitamin in a jar, and no honest seller should tell you it is. What it is: a whole food with an unusually wide mineral profile, in a form your body handles easily.",
+        text: "You'll see a mineral count repeated everywhere, and it deserves context. Sea moss is commonly cited as carrying up to 92 of the minerals and vitamins the human body needs — iodine, potassium, calcium, magnesium, iron, zinc, sulphur among them. It absorbs them straight through its fronds from the surrounding seawater, because it has no true roots at all, only a holdfast gripping the rock. That is exactly why water quality decides how rich a harvest turns out. It is not a multivitamin in a jar, and no honest seller should tell you it is. What it is: a whole food with an unusually wide mineral profile, in a form your body handles easily.",
       },
       { type: "h2", text: "What people actually notice" },
       {

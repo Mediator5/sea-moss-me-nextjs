@@ -8,13 +8,27 @@ import { Testimonials } from "@/components/testimonials";
 import { FaqAccordion } from "@/components/faq-accordion";
 import Image from "next/image";
 import { ProductShot } from "@/components/product-shot";
+import { LogoMark } from "@/components/wordmark";
 import { ArrowRight, Leaf, Spark, Wave } from "@/components/icons";
-import { faqs, ingredients, process } from "@/lib/content";
+import { faqs, process } from "@/lib/content";
+import { ingredientLibrary } from "@/lib/ingredients";
 import { posts } from "@/lib/content";
 import { products } from "@/lib/products";
 
 export default function HomePage() {
   const montego = products.find((p) => p.slug === "montego-tropical-fusion")!;
+  const featuredIngredients = [
+    "sea-moss",
+    "turmeric",
+    "elderberry",
+    "spirulina",
+    "moringa",
+    "ashwagandha",
+    "pineapple",
+    "beetroot",
+  ]
+    .map((slug) => ingredientLibrary.find((i) => i.slug === slug)!)
+    .filter(Boolean);
 
   return (
     <>
@@ -24,7 +38,7 @@ export default function HomePage() {
       <section className="bg-abyss-900 py-14 text-sand-50">
         <div className="container-page grid grid-cols-2 gap-10 text-center sm:grid-cols-4">
           <StatCounter value={5} suffix="+" label="Years of organic wellness" />
-          <StatCounter value={102} label="Essential minerals" />
+          <StatCounter value={92} label="Minerals &amp; vitamins" />
           <StatCounter value={4} label="Small-batch flavours" />
           <StatCounter value={100} suffix="%" label="Wildcrafted, never farmed" />
         </div>
@@ -181,7 +195,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="What's inside"
             title="Superfoods that actually do something"
-            copy="Every flavour is built around real, wildcrafted ingredients — here's what the key ones bring to the jar."
+            copy="Every jar is built around real, wildcrafted ingredients — and we can tell you exactly what each one is doing in there."
             align="center"
           />
 
@@ -197,12 +211,12 @@ export default function HomePage() {
           </Reveal>
 
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {ingredients.map((ing, i) => (
+            {featuredIngredients.map((ing, i) => (
               <Reveal
-                key={ing.name}
+                key={ing.slug}
                 as="li"
                 delay={(i % 4) * 70}
-                className="group relative overflow-hidden rounded-lg border border-sand-200 bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+                className="group relative h-full overflow-hidden rounded-lg border border-sand-200 bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
               >
                 <span
                   className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
@@ -215,10 +229,119 @@ export default function HomePage() {
                   <Leaf className="size-5" />
                 </span>
                 <h3 className="mt-5 text-lg">{ing.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-abyss-800/70">{ing.copy}</p>
+                <p className="mt-2 text-sm leading-relaxed text-abyss-800/70">{ing.summary}</p>
+                <p className="mt-4 text-[11px] font-semibold tracking-[0.1em] uppercase" style={{ color: ing.color }}>
+                  {ing.tags[0]}
+                </p>
               </Reveal>
             ))}
           </ul>
+
+          <Reveal className="mt-12 text-center">
+            <Link href="/ingredients" className="btn btn-ghost">
+              Browse all {ingredientLibrary.length} ingredients <ArrowRight className="size-4" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---------------- Learn ---------------- */}
+      <section className="bg-sand-100/70 pb-24 sm:pb-32">
+        <div className="container-page pt-24 sm:pt-32">
+          <SectionHeading
+            eyebrow="Know what you're taking"
+            title="We'd rather explain it than hype it"
+            copy="Sea moss is a food, not a miracle. Here's everything we know about it, written the way we'd want it written for us."
+            align="center"
+          />
+
+          <div className="mt-14 grid gap-7 lg:grid-cols-2">
+            <Reveal className="group relative isolate flex min-h-80 flex-col justify-end overflow-hidden rounded-2xl p-9 text-sand-50 sm:p-11">
+              <Image
+                src="/images/origin.jpg"
+                alt=""
+                aria-hidden
+                width={1600}
+                height={1067}
+                sizes="(min-width: 1024px) 46vw, 92vw"
+                className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(5,41,50,0.95)_0%,rgba(5,41,50,0.86)_45%,rgba(5,41,50,0.68)_100%)]"
+              />
+              <p className="eyebrow text-gold-400">Sea Moss 101</p>
+              <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
+                What sea moss is, and why its minerals matter
+              </h3>
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-sand-100/80">
+                A sea vegetable with no roots at all, harvested for 14,000 years. What it carries,
+                what a shortfall feels like, and how to tell wildcrafted from pool-grown.
+              </p>
+              <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-gold-400">
+                Read the explainer
+                <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+              <Link href="/sea-moss" className="absolute inset-0" aria-label="Read Sea Moss 101" />
+            </Reveal>
+
+            <Reveal
+              delay={120}
+              className="group relative isolate flex min-h-80 flex-col justify-end overflow-hidden rounded-2xl p-9 text-sand-50 sm:p-11"
+            >
+              <Image
+                src="/images/ingredients.jpg"
+                alt=""
+                aria-hidden
+                width={1600}
+                height={1200}
+                sizes="(min-width: 1024px) 46vw, 92vw"
+                className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(5,41,50,0.95)_0%,rgba(5,41,50,0.86)_45%,rgba(5,41,50,0.68)_100%)]"
+              />
+              <p className="eyebrow text-gold-400">The ingredient library</p>
+              <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
+                {ingredientLibrary.length} ingredients, each one explained
+              </h3>
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-sand-100/80">
+                Fruits, herbs and roots — what each is best for, the compounds behind the claim, and
+                which jar it lives in. Filter it by what you&apos;re actually trying to fix.
+              </p>
+              <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-gold-400">
+                Open the library
+                <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+              <Link
+                href="/ingredients"
+                className="absolute inset-0"
+                aria-label="Open the ingredient library"
+              />
+            </Reveal>
+          </div>
+
+          {/* Doctor Bird teaser */}
+          <Reveal delay={80} className="mt-7 overflow-hidden rounded-2xl bg-abyss-950 text-sand-50">
+            <div className="grid items-center gap-10 p-9 sm:p-12 lg:grid-cols-[auto_1fr_auto]">
+              <LogoMark tone="light" className="mx-auto size-24 lg:mx-0" />
+              <div>
+                <p className="eyebrow text-gold-400">The bird on every jar</p>
+                <h3 className="mt-3 text-2xl leading-snug sm:text-3xl">
+                  Why there&apos;s a hummingbird on our label
+                </h3>
+                <p className="mt-3 max-w-xl text-sm leading-relaxed text-sand-100/70">
+                  The Doctor Bird is found nowhere on earth but Jamaica — the same island, the same
+                  waters as our sea moss. It weighs less than six grams and beats its wings 80 times
+                  a second.
+                </p>
+              </div>
+              <Link href="/about#doctor-bird" className="btn btn-gold shrink-0">
+                Read its story <ArrowRight className="size-4" />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

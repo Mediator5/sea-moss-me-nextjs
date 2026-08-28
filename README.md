@@ -56,11 +56,15 @@ why it's one or the other.
 | Bundle rules (3 jars → 10% + free shipping) | `BUNDLE` at the bottom of `src/lib/products.ts` |
 | Email, phone, nav links, announcement bar | `src/lib/site.ts` |
 | FAQs, testimonials, blog posts, process steps | `src/lib/content.ts` |
+| The ingredient library (30 entries) | `src/lib/ingredients.ts` |
+| Sea moss facts, minerals, Doctor Bird content | `src/lib/learn.ts` |
 | Colours, fonts, buttons, shadows | `src/app/globals.css` (the `@theme` block at the top) |
 
-**Prices are placeholders** — `2400` = $24.00, `3900` = $39.00. They're stored in cents so
-there are no rounding bugs. Change them there and the cards, product pages, cart, drawer and
-Stripe line items all update together.
+**Pricing is one number.** Every flavour is a single 8 oz jar at `3000` — that's $30.00, stored
+in cents so there are no rounding bugs. Change it in `SIZES(...)` in `src/lib/products.ts` and the
+cards, product pages, cart, drawer and Stripe line items all update together. To add a second size
+later, return another object from `SIZES` with its own `id`, `label`, `ounces` and `price` — the
+size selector reappears on the product page automatically.
 
 ---
 
@@ -113,6 +117,8 @@ src/
     about/                      our story, process, benefits
     products/                   shop listing + comparison table
     products/[slug]/            product pages (4, statically generated)
+    sea-moss/                   Sea Moss 101 — the long-form explainer
+    ingredients/                filterable ingredient library
     blog/  blog/[slug]/         journal listing + posts
     faq/  contact/  cart/       supporting pages
     checkout/success/           post-payment confirmation
@@ -135,6 +141,8 @@ src/
 - Full keyboard access, skip link, ARIA labelling and `prefers-reduced-motion` support
 - Self-hosted fonts — no Google Fonts request, so the build works offline
 - Real brand photography throughout, optimised and served through `next/image`
+- A 30-entry ingredient library, filterable by category, benefit and free-text search
+- Long-form Sea Moss 101 explainer with Article schema, and the Doctor Bird brand story
 
 ---
 

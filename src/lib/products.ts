@@ -34,26 +34,19 @@ export type Product = {
 
 /**
  * ---------------------------------------------------------------------------
- * PRICING — placeholder values, priced in cents.
- * Update `price` / `compareAt` here and the whole site (cards, product pages,
- * cart, Stripe checkout) follows automatically.
+ * PRICING — in cents. 3000 = $30.00.
+ * Change the number here and the whole site (cards, product pages, cart and
+ * Stripe checkout) follows automatically. To add a second size later, return
+ * another object from SIZES with its own id, label, ounces and price.
  * ---------------------------------------------------------------------------
  */
-const SIZES = (base8: number, base16: number, slug: string): ProductSize[] => [
+const SIZES = (price: number, slug: string): ProductSize[] => [
   {
     id: `${slug}-8oz`,
     label: "8 oz jar",
     ounces: 8,
-    price: base8,
-    servings: "~16 servings",
-  },
-  {
-    id: `${slug}-16oz`,
-    label: "16 oz jar",
-    ounces: 16,
-    price: base16,
-    compareAt: base8 * 2,
-    servings: "~32 servings",
+    price,
+    servings: "~16 servings · 2 weeks at a tablespoon a day",
   },
 ];
 
@@ -64,7 +57,7 @@ export const products: Product[] = [
     flavor: "green",
     tagline: "Chlorophyll · Moringa · Spirulina · Chlorella",
     blurb:
-      "Our best seller — a detoxifying, alkalising gel packed with 102 essential minerals for whole-body wellness.",
+      "Our best seller — a detoxifying, alkalising gel packed with 92 essential minerals for whole-body wellness.",
     description: [
       "Emerald is the jar most people start with, and the one most people come back for. Four green superfoods are folded into wildcrafted sea moss gel while it is still warm, so nothing is heat-treated into dullness.",
       "The result is deeply green, faintly grassy and surprisingly smooth — the kind of thing that disappears into a morning smoothie and quietly does its work.",
@@ -74,13 +67,13 @@ export const products: Product[] = [
       "Wildcrafted Jamaican sea moss (Genus Gracilaria), spring water, chlorophyll, moringa leaf, spirulina, chlorella, lime.",
     benefits: [
       { title: "Alkalising", copy: "Chlorophyll-rich greens help balance a diet heavy on processed food." },
-      { title: "Mineral dense", copy: "102 of the minerals your body needs, in the form it recognises." },
+      { title: "Mineral dense", copy: "92 of the minerals and vitamins your body needs, in the form it recognises." },
       { title: "Everyday energy", copy: "Steady, food-based energy — no crash, no stimulants." },
     ],
     badge: "Best seller",
     bestFor: "Daily wellness and gentle detox",
     taste: "Fresh and grassy, with a clean lime finish",
-    sizes: SIZES(2400, 3900, "super-green-emerald"),
+    sizes: SIZES(3000, "super-green-emerald"),
     image: "/images/products/super-green-emerald.jpg",
     accent: "#1f5e3c",
     accentSoft: "#e7f1e8",
@@ -107,7 +100,7 @@ export const products: Product[] = [
     ],
     bestFor: "Immunity and recovery",
     taste: "Berry-forward and tart, like a dark fruit compote",
-    sizes: SIZES(2400, 3900, "purple-power-bomb"),
+    sizes: SIZES(3000, "purple-power-bomb"),
     image: "/images/products/purple-power-bomb.jpg",
     accent: "#7a2540",
     accentSoft: "#f7e7ec",
@@ -134,7 +127,7 @@ export const products: Product[] = [
     ],
     bestFor: "Inflammation, digestion and stress",
     taste: "Warm and spiced, cinnamon on the finish",
-    sizes: SIZES(2400, 3900, "golden-milk"),
+    sizes: SIZES(3000, "golden-milk"),
     image: "/images/products/golden-milk.jpg",
     accent: "#c98a1e",
     accentSoft: "#fbf0d9",
@@ -162,7 +155,7 @@ export const products: Product[] = [
     badge: "Limited edition",
     bestFor: "Anyone who wants wellness to taste like holiday",
     taste: "Bright, sweet, unmistakably tropical",
-    sizes: SIZES(2400, 3900, "montego-tropical-fusion"),
+    sizes: SIZES(3000, "montego-tropical-fusion"),
     image: "/images/products/montego-tropical-fusion.jpg",
     accent: "#d9812a",
     accentSoft: "#fcecd9",

@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/section";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { ArrowRight, Check } from "@/components/icons";
 import { products } from "@/lib/products";
+import { formatPrice } from "@/lib/cart";
 import { faqs } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -82,6 +83,7 @@ export default function ProductsPage() {
                   <th className="py-4 pr-6 font-semibold">Best for</th>
                   <th className="py-4 pr-6 font-semibold">Tastes like</th>
                   <th className="py-4 pr-6 font-semibold">Key ingredients</th>
+                  <th className="py-4 pr-6 font-semibold">Price</th>
                   <th className="py-4 font-semibold"></th>
                 </tr>
               </thead>
@@ -100,6 +102,12 @@ export default function ProductsPage() {
                     <td className="py-5 pr-6 text-abyss-800/75">{p.bestFor}</td>
                     <td className="py-5 pr-6 text-abyss-800/75">{p.taste}</td>
                     <td className="py-5 pr-6 text-abyss-800/75">{p.ingredients.join(", ")}</td>
+                    <td className="py-5 pr-6 font-display text-lg whitespace-nowrap">
+                      {formatPrice(p.sizes[0].price)}
+                      <span className="ml-1 font-sans text-xs text-abyss-800/50">
+                        / {p.sizes[0].ounces} oz
+                      </span>
+                    </td>
                     <td className="py-5 whitespace-nowrap">
                       <Link
                         href={`/products/${p.slug}`}

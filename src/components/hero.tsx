@@ -41,7 +41,7 @@ export function Hero() {
 
           <p className="mt-7 max-w-lg text-lg leading-relaxed text-abyss-800/85">
             Hand-harvested sea moss from Jamaica&apos;s clear coastal water, blended in small
-            batches with real superfoods. 102 essential minerals, no fillers, no shortcuts.
+            batches with real superfoods. Up to 92 minerals and vitamins, no fillers, no shortcuts.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">

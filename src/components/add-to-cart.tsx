@@ -42,6 +42,16 @@ export function ProductPurchasePanel({ product }: { product: Product }) {
 
   return (
     <div className="card p-6 sm:p-7">
+      {product.sizes.length === 1 ? (
+        <div className="flex items-end justify-between gap-4 border-b border-sand-200 pb-5">
+          <div>
+            <p className="eyebrow text-abyss-800/60">One size, made fresh</p>
+            <p className="mt-2 text-sm font-semibold">{size.label}</p>
+            <p className="mt-0.5 text-xs text-abyss-800/60">{size.servings}</p>
+          </div>
+          <p className="font-display text-4xl leading-none">{formatPrice(size.price)}</p>
+        </div>
+      ) : (
       <fieldset>
         <legend className="eyebrow text-abyss-800/60">Choose your size</legend>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -74,6 +84,7 @@ export function ProductPurchasePanel({ product }: { product: Product }) {
           })}
         </div>
       </fieldset>
+      )}
 
       <div className="mt-6 flex items-center gap-4">
         <div className="flex items-center gap-2 rounded-full border border-sand-200 bg-white px-2 py-1.5">

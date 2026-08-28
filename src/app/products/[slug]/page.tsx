@@ -7,6 +7,7 @@ import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section";
 import { ArrowRight, Check, Leaf, Shield, Truck } from "@/components/icons";
+import { ingredientsForProduct } from "@/lib/ingredients";
 import { getProduct, products } from "@/lib/products";
 import { site } from "@/lib/site";
 
@@ -42,6 +43,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) notFound();
 
   const related = products.filter((p) => p.slug !== product.slug).slice(0, 3);
+  const jarIngredients = ingredientsForProduct(product.slug);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -165,11 +167,16 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </div>
 
             <div className="card p-7">
-              <h3 className="text-xl">Full ingredients</h3>
-              <p className="mt-4 text-sm leading-relaxed text-abyss-800/75">
-                {product.fullIngredients}
-              </p>
-              <dl className="mt-6 space-y-2.5 border-t border-sand-200 pt-5 text-sm">
+              <h3 className="text-xl">The essentials</h3>
+              <dl className="mt-5 space-y-2.5 text-sm">
+                <div className="flex justify-between gap-4">
+                  <dt className="text-abyss-800/60">Size</dt>
+                  <dd className="text-right font-medium">{product.sizes[0].label}</dd>
+                </div>
+                <div className="flex justify-between gap-4">
+                  <dt className="text-abyss-800/60">Servings</dt>
+                  <dd className="text-right font-medium">~16 at a tablespoon a day</dd>
+                </div>
                 <div className="flex justify-between gap-4">
                   <dt className="text-abyss-800/60">Best for</dt>
                   <dd className="text-right font-medium">{product.bestFor}</dd>
@@ -188,7 +195,64 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      <section className="bg-sand-100/70 py-20 sm:py-24">
+      {/* ---------------- What's in the jar, ingredient by ingredient ---------------- */}
+      <section className="border-t border-sand-200 bg-sand-100/70 py-20 sm:py-24">
+        <div className="container-page">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <SectionHeading
+              eyebrow="Ingredient by ingredient"
+              title="What's actually in this jar"
+              copy="Every ingredient earns its place. Here is what each one brings, and who it suits."
+            />
+            <Reveal>
+              <Link href="/ingredients" className="btn btn-ghost">
+                The full library <ArrowRight className="size-4" />
+              </Link>
+            </Reveal>
+          </div>
+
+          <ul className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {jarIngredients.map((ing, i) => (
+              <Reveal key={ing.slug} as="li" delay={(i % 3) * 80} className="card h-full p-7">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-2xl leading-tight">{ing.name}</h3>
+                  <span
+                    className="grid size-10 shrink-0 place-items-center rounded-full"
+                    style={{ backgroundColor: `${ing.color}1a`, color: ing.color }}
+                  >
+                    <Leaf className="size-5" />
+                  </span>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-abyss-900/85">{ing.summary}</p>
+                <ul className="mt-5 space-y-3">
+                  {ing.benefits.slice(0, 3).map((b) => (
+                    <li key={b.term} className="flex gap-2.5 text-sm leading-relaxed">
+                      <Check className="mt-0.5 size-4 shrink-0" style={{ color: ing.color }} />
+                      <span className="text-abyss-800/80">
+                        <strong className="font-semibold text-abyss-900">{b.term}</strong> — {b.copy}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={`/ingredients#${ing.slug}`}
+                  className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-abyss-800/60 transition hover:text-abyss-900"
+                >
+                  More on {ing.name} <ArrowRight className="size-3.5" />
+                </Link>
+              </Reveal>
+            ))}
+          </ul>
+
+          <Reveal className="mt-10 rounded-xl border border-sand-300 bg-white p-7 text-sm leading-relaxed text-abyss-800/75 sm:p-8">
+            <strong className="font-semibold text-abyss-900">Full ingredient list: </strong>
+            {product.fullIngredients} Vegan, gluten-free, dairy-free, and free from added sugar,
+            fillers and preservatives.
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24">
         <div className="container-page">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading eyebrow="Keep going" title="Pairs well with" />

@@ -6,7 +6,18 @@ import { site } from "@/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const staticRoutes = ["", "/products", "/about", "/blog", "/faq", "/contact", "/privacy", "/terms"];
+  const staticRoutes = [
+    "",
+    "/products",
+    "/sea-moss",
+    "/ingredients",
+    "/about",
+    "/blog",
+    "/faq",
+    "/contact",
+    "/privacy",
+    "/terms",
+  ];
 
   return [
     ...staticRoutes.map((route) => ({

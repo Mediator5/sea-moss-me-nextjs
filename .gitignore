@@ -32,7 +32,6 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
-!.env.example
 
 # vercel
 .vercel
@@ -40,7 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# original full-resolution brand artwork (~118 MB) — not needed to build the site.
-# Keep your own backup of this folder; delete this line if you want it in the repo.
-/brand-source
