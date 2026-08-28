@@ -3,7 +3,7 @@
 /* ============================================================
    Sea Moss Me — design tokens
    Brand palette taken from the Sea Moss Me brand board:
-   Caribbean teal and saffron yellow, with sunrise coral as the accent,
+   Teal and saffron yellow, with sunrise coral as the accent,
    on warm sand — all anchored by deep petrol teal.
    ============================================================ */
 
@@ -11,7 +11,7 @@
   /* ------------------------------------------------------------------
      Palette shared with the logo artwork:
        Deep Petrol Teal  #05454c   the wordmark
-       Caribbean Teal    #0f6b78   the water in the mark
+       Teal              #5fb3b8   the water in the mark
        Sunrise Coral     #f26b4f   the bird in the mark
        Saffron Yellow    #f7bb3f   the sea moss wreath
        Warm Sand         #ddc5ac   from the brand board
@@ -29,30 +29,30 @@
   /* Deep Petrol Teal — body ink only. This is the wordmark colour: dark enough
      to read as text on sand, which is the one job it still has. The dark
      *surfaces* used to live here too and made the site read navy; they moved
-     to the Caribbean teal below. */
+     to the teal below. */
   --color-abyss-950: #03333a;
   --color-abyss-900: #05454c;
   --color-abyss-800: #075761;
   --color-abyss-700: #0a6a76;
   --color-abyss-600: #0d7e8b;
 
-  /* Caribbean Teal — the water in the logo, and now the colour of every dark
-     panel on the site. -500 is the logo value exactly; -600 is the tonal step
-     for bands and hovers nested inside it. */
-  --color-reef-800: #0a4a52;
-  --color-reef-700: #0c545e;
-  --color-reef-600: #0d5c66;
-  --color-reef-500: #0f6b78;
-  --color-reef-400: #2e93a1;
-  --color-reef-300: #7cc3ce;
-  --color-reef-200: #c2e5ea;
-  --color-reef-100: #dceff2;
+  /* Teal — the water in the logo, and now the colour of every dark
+     panel on the site. -500 is the logo value exactly; -600 and darker
+     steps are for panels, bands and hovers nested inside it. */
+  --color-reef-800: #1a5d67;
+  --color-reef-700: #23727e;
+  --color-reef-600: #318b98;
+  --color-reef-500: #5fb3b8;
+  --color-reef-400: #7dc5cd;
+  --color-reef-300: #a4d6de;
+  --color-reef-200: #c9e7ec;
+  --color-reef-100: #e2f2f5;
 
   /* Saffron Yellow — the warm counterpart, and CTAs on dark */
   --color-gold-600: #b8811a;
   --color-gold-500: #f7bb3f;
   --color-gold-400: #facf72;
-  /* Eyebrows on a teal panel. -400 only reaches 4.19:1 against #0f6b78; this
+  /* Eyebrows on a teal panel. -400 only reaches 4.19:1 against #5fb3b8; this
      clears AA at 4.51:1 and still reads gold rather than cream. */
   --color-gold-300: #fbd88c;
   --color-gold-200: #fdecc4;
@@ -188,7 +188,7 @@
   /* ------------------------------------------------------------------
      Colour roles across the site:
        Sunrise Coral  — action. Primary buttons, active nav, badges.
-       Caribbean Teal — structure and trust. Links, icons, savings, borders.
+       Teal           — structure and trust. Links, icons, savings, borders, panels.
        Saffron Yellow — highlight on dark grounds.
      To lead with teal on the buttons instead, swap .btn-primary's two
      colours for --color-reef-500 and --color-reef-600.
@@ -211,7 +211,7 @@
   .btn-seaglass {
     background-color: var(--color-reef-500);
     color: var(--color-sand-50);
-    box-shadow: 0 14px 30px -14px rgba(15, 107, 120, 0.85);
+    box-shadow: 0 14px 30px -14px rgba(95, 179, 184, 0.85);
   }
 
   .btn-seaglass:hover {
