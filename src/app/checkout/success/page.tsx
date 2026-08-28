@@ -1,57 +1,106 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect } from "react";
 import { useCart } from "@/components/cart-provider";
 import { ArrowRight, Check } from "@/components/icons";
+import { site } from "@/lib/site";
 
-export default function CheckoutSuccessPage() {
+function Confirmation() {
   const { clear, ready } = useCart();
+  const reference = useSearchParams().get("ref");
 
+  // The request is in — the cart has done its job.
   useEffect(() => {
     if (ready) clear();
   }, [ready, clear]);
 
   return (
-    <section className="py-20 sm:py-28">
-      <div className="container-page max-w-2xl text-center">
-        <span className="mx-auto grid size-16 place-items-center rounded-full bg-reef-100 text-reef-600">
-          <Check className="size-8" />
-        </span>
-        <h1 className="mt-8 text-4xl sm:text-5xl">Order confirmed</h1>
-        <p className="mt-5 leading-relaxed text-abyss-800/70">
-          Thank you — your payment went through and your jars are already on the list for the next
-          batch. A receipt is on its way to your inbox, and you&apos;ll get tracking as soon as it
-          ships.
-        </p>
-
-        <div className="card mt-10 p-8 text-left">
-          <h2 className="text-xl">What happens next</h2>
-          <ol className="mt-5 space-y-4 text-sm leading-relaxed text-abyss-800/75">
-            <li>
-              <strong className="text-abyss-900">1. We make it.</strong> Your gel is blended fresh
-              rather than pulled off a shelf — usually within one business day.
-            </li>
-            <li>
-              <strong className="text-abyss-900">2. We pack it cold.</strong> Every order ships
-              cold-packed so it arrives the way it left us.
-            </li>
-            <li>
-              <strong className="text-abyss-900">3. You refrigerate it.</strong> Straight into the
-              fridge on arrival. One to two tablespoons a day, and give it three weeks.
-            </li>
-          </ol>
-        </div>
-
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Link href="/blog/ultimate-guide-to-sea-moss" className="btn btn-primary">
-            How to use your gel <ArrowRight className="size-4" />
-          </Link>
-          <Link href="/products" className="btn btn-ghost">
-            Back to the shop
-          </Link>
+    <>
+      <div className="border-b border-sand-200 bg-sand-100/60">
+        <div className="container-page flex items-center gap-3 py-4 text-xs sm:gap-5 sm:text-sm">
+          {["Your cart", "Your details", "Confirmed"].map((step, i) => (
+            <span key={step} className="flex flex-1 items-center gap-3 last:flex-none sm:gap-5">
+              <span
+                className={`flex items-center gap-2 ${
+                  i === 2 ? "font-semibold text-abyss-900" : "text-abyss-800/55"
+                }`}
+              >
+                <span className="grid size-6 place-items-center rounded-full bg-reef-500 text-[11px] font-bold text-sand-50">
+                  <Check className="size-3.5" />
+                </span>
+                {step}
+              </span>
+              {i < 2 && <span aria-hidden className="h-px flex-1 bg-sand-300" />}
+            </span>
+          ))}
         </div>
       </div>
-    </section>
+
+      <section className="py-16 sm:py-24">
+        <div className="container-page max-w-2xl text-center">
+          <span className="mx-auto grid size-16 place-items-center rounded-full bg-reef-100 text-reef-600">
+            <Check className="size-8" />
+          </span>
+          <h1 className="mt-8 text-4xl sm:text-5xl">Request received</h1>
+          <p className="mt-5 leading-relaxed text-abyss-800/70">
+            Thank you — your order request is with us and a confirmation is on its way to your
+            inbox. <strong className="text-abyss-900">Nothing has been charged.</strong>
+          </p>
+
+          {reference && (
+            <p className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full border border-sand-300 bg-white px-5 py-2.5 text-sm">
+              <span className="text-abyss-800/55">Your reference</span>
+              <strong className="tracking-wide">{reference}</strong>
+            </p>
+          )}
+
+          <div className="card mt-10 p-8 text-left">
+            <h2 className="text-xl">What happens next</h2>
+            <ol className="mt-5 space-y-4 text-sm leading-relaxed text-abyss-800/75">
+              <li>
+                <strong className="text-abyss-900">1. We reply within one business day.</strong> A
+                real person confirms availability, the delivery cost and timing to your address, and
+                how you&apos;d like to pay.
+              </li>
+              <li>
+                <strong className="text-abyss-900">2. We blend it fresh.</strong> Nothing is made
+                until your order is confirmed — that&apos;s the whole point of small batches.
+              </li>
+              <li>
+                <strong className="text-abyss-900">3. It ships cold-packed.</strong> You&apos;ll get
+                tracking as soon as it leaves us. Straight into the fridge on arrival.
+              </li>
+            </ol>
+          </div>
+
+          <p className="mt-8 text-sm text-abyss-800/60">
+            Need to change something? Reply to the confirmation email, or reach us at{" "}
+            <a href={`mailto:${site.email}`} className="link-underline font-semibold">
+              {site.email}
+            </a>
+            .
+          </p>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link href="/sea-moss" className="btn btn-primary">
+              How to use your gel <ArrowRight className="size-4" />
+            </Link>
+            <Link href="/products" className="btn btn-ghost">
+              Back to the shop
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default function CheckoutSuccessPage() {
+  return (
+    <Suspense fallback={<div className="py-32" />}>
+      <Confirmation />
+    </Suspense>
   );
 }

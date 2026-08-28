@@ -9,12 +9,12 @@
 
 @theme {
   /* ------------------------------------------------------------------
-     Palette sampled directly from the Sea Moss Me brand board:
-       Deep Petrol Teal  #05454c
-       Caribbean Teal    #28807a
-       Saffron Yellow    #f7bb3f
-       Sunrise Coral     #ea6951
-       Warm Sand         #ddc5ac
+     Palette shared with the logo artwork:
+       Deep Petrol Teal  #05454c   the wordmark
+       Caribbean Teal    #0f6b78   the water in the mark
+       Sunrise Coral     #f26b4f   the bird in the mark
+       Saffron Yellow    #f7bb3f   the sea moss wreath
+       Warm Sand         #ddc5ac   from the brand board
      Each brand colour sits at the -500 step. Darker steps exist so text
      and button fills stay legible; lighter steps are for tints.
      ------------------------------------------------------------------ */
@@ -33,13 +33,13 @@
   --color-abyss-700: #0a6a76;
   --color-abyss-600: #0d7e8b;
 
-  /* Caribbean Teal — the primary action colour */
-  --color-reef-700: #1a5c56;
-  --color-reef-600: #21665f;
-  --color-reef-500: #28807a;
-  --color-reef-400: #45a099;
-  --color-reef-300: #8fccc6;
-  --color-reef-100: #ddf0ed;
+  /* Caribbean Teal — taken from the water in the logo. The primary action colour. */
+  --color-reef-700: #0a4a52;
+  --color-reef-600: #0d5c66;
+  --color-reef-500: #0f6b78;
+  --color-reef-400: #2e93a1;
+  --color-reef-300: #7cc3ce;
+  --color-reef-100: #dceff2;
 
   /* Saffron Yellow — the warm counterpart, and CTAs on dark */
   --color-gold-600: #b8811a;
@@ -47,12 +47,12 @@
   --color-gold-400: #facf72;
   --color-gold-200: #fdecc4;
 
-  /* Sunrise Coral — accents, badges, highlights */
-  --color-flame-700: #b03d29;
-  --color-flame-600: #c8462f;
-  --color-flame-500: #ea6951;
-  --color-flame-400: #f08c79;
-  --color-flame-100: #fde6df;
+  /* Sunrise Coral — taken from the bird in the logo. Accents, badges, highlights. */
+  --color-flame-700: #a93b23;
+  --color-flame-600: #c44328;
+  --color-flame-500: #f26b4f;
+  --color-flame-400: #f79076;
+  --color-flame-100: #fde7e0;
 
   /* Flavour accents — taken from the jars themselves, not the brand board */
   --color-flavor-purple: #7a2540;
@@ -175,24 +175,24 @@
      Coral instead, swap the two colours below for --color-flame-600 and
      --color-flame-500 (the .btn-coral rule underneath shows the exact values). */
   .btn-primary {
-    background-color: var(--color-reef-600);
+    background-color: var(--color-reef-500);
     color: var(--color-sand-50);
-    box-shadow: 0 14px 30px -14px rgba(33, 102, 95, 0.85);
+    box-shadow: 0 14px 30px -14px rgba(15, 107, 120, 0.85);
   }
 
   .btn-primary:hover {
-    background-color: var(--color-reef-500);
-    box-shadow: 0 20px 38px -14px rgba(40, 128, 122, 0.95);
+    background-color: var(--color-reef-600);
+    box-shadow: 0 20px 38px -14px rgba(13, 92, 102, 0.95);
   }
 
   .btn-coral {
     background-color: var(--color-flame-600);
     color: var(--color-sand-50);
-    box-shadow: 0 14px 30px -14px rgba(200, 70, 47, 0.85);
+    box-shadow: 0 14px 30px -14px rgba(196, 67, 40, 0.85);
   }
 
   .btn-coral:hover {
-    background-color: var(--color-flame-500);
+    background-color: var(--color-flame-700);
   }
 
   .btn-teal {

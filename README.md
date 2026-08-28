@@ -20,31 +20,74 @@ Requires Node 20.9 or newer.
 
 ---
 
-## Turning on payments
+## How checkout works
 
-1. Copy `.env.example` to `.env.local`.
-2. Get your secret key from <https://dashboard.stripe.com/apikeys> — use the **test** key
-   (`sk_test_…`) first.
-3. Paste it into `STRIPE_SECRET_KEY` and restart the dev server.
+The shopping flow is a normal store: browse → add to cart → cart drawer → cart page →
+checkout. The last step is where it differs. Instead of taking a card payment, the
+customer lands on **`/checkout`**, an order request form that already knows what they
+chose. They only fill in contact and delivery details.
 
-Until that key exists, the checkout button politely tells the customer to order by email
-instead, so nothing is broken while you set things up.
+```
+/products/[slug]  →  cart drawer  →  /cart  →  /checkout  →  /checkout/success
+                                               (the request form)   (confirmation + reference)
+```
 
-Test card: `4242 4242 4242 4242`, any future expiry, any CVC.
+On submit, two emails go out through Nodemailer:
 
-### How pricing is protected
+1. **The order, to you** at `MAIL_TO` — items, quantities, the bundle discount, the
+   full delivery address and any notes, with reply-to set to the customer.
+2. **An acknowledgement, to the customer** — what they asked for, the estimated
+   total, a reference number, and a clear statement that nothing has been charged.
 
-The browser sends only *what* is in the cart (`sizeId` + quantity), never prices. The
-server re-prices everything from `src/lib/products.ts` in `src/lib/cart.ts` before it
-creates the Stripe session — so editing prices in devtools does nothing.
+The cart empties itself once the request is in.
 
-### Promo codes
+### It re-prices on the server
 
-When a cart qualifies for the 3-jar bundle, a 10% coupon is applied automatically. When it
-doesn't, Stripe's promotion-code box is enabled instead — create `SEAMOSS20` in the Stripe
-dashboard (Products → Coupons → Promotion codes) and it will work at checkout. Stripe
-doesn't allow an automatic coupon and a customer-entered code on the same session, which is
-why it's one or the other.
+The browser sends only *what* is in the cart (`sizeId` + quantity), never prices.
+`/api/order-request` re-prices from `src/lib/products.ts` before composing the email,
+so the figures in your inbox are always the real ones.
+
+### Setting up the email — Gmail or Google Workspace
+
+1. Turn on 2-Step Verification for the Google account that will send:
+   <https://myaccount.google.com/security>
+2. In that same section, open **App passwords** and create one. Google gives you
+   16 characters like `abcd efgh ijkl mnop`. (App passwords only appear once
+   2-Step Verification is on.)
+3. Open `.env.local` and fill in:
+
+   ```
+   SMTP_USER=the-google-account@yourdomain.com
+   SMTP_PASS=abcd efgh ijkl mnop
+   ```
+
+4. Restart the dev server.
+
+`MAIL_TO` is already set to `info@seamossme.com` — that's where every order request,
+contact message and newsletter signup lands.
+
+**Until SMTP is configured, nothing breaks.** Every message is written to the terminal
+running `npm run dev` instead of being emailed, clearly marked `[mail] (not sent —
+SMTP unconfigured)`. Good for testing the flow before you wire up the mailbox.
+
+One Gmail note: the `MAIL_FROM` address must be the `SMTP_USER` account itself, or an
+alias that account is allowed to "send mail as". Gmail rejects anything else.
+
+### Adding Stripe later
+
+The Stripe integration is still in the codebase, untouched, at
+`src/app/api/checkout/route.ts`. To switch from request-form to card payments:
+
+```
+NEXT_PUBLIC_CHECKOUT_MODE=stripe
+STRIPE_SECRET_KEY=sk_test_...
+```
+
+That's the whole change — the checkout button reads that variable and re-points
+itself. Test card: `4242 4242 4242 4242`, any future expiry, any CVC. When a cart
+qualifies for the 3-jar bundle a 10% coupon is applied automatically; otherwise
+Stripe's promotion-code box is enabled, so a `SEAMOSS20` code created in the Stripe
+dashboard will work there.
 
 ---
 
@@ -133,16 +176,6 @@ re-run it, then run `scripts/rebuild-logo-assets.py` to regenerate every derivat
 | Sea moss wreath | `#D28C22` gold | `#E5AF52` brighter gold |
 | Wordmark | `#05454C` Deep Petrol Teal | `#F9F2E4` cream |
 
-## Email (optional)
-
-The contact form and newsletter work without any setup — submissions are written to the
-server log. To have them emailed, add a [Resend](https://resend.com) API key to `.env.local`:
-
-- `RESEND_API_KEY` — sends contact-form messages to `CONTACT_EMAIL`
-- `RESEND_AUDIENCE_ID` — adds newsletter signups to that audience
-
----
-
 ## What's in the box
 
 ```
@@ -156,20 +189,25 @@ src/
     ingredients/                filterable ingredient library
     blog/  blog/[slug]/         journal listing + posts
     faq/  contact/  cart/       supporting pages
-    checkout/success/           post-payment confirmation
+    checkout/                   the order request form
+    checkout/success/           confirmation + order reference
     privacy/  terms/            legal templates
     api/checkout/               Stripe Checkout session
-    api/order/  api/newsletter/ form handlers
+    api/order-request/          order emails (Nodemailer)
+    api/order/  api/newsletter/ contact form and signups
     sitemap.ts  robots.ts       SEO
   components/                   header, footer, cart, product UI, animations
   lib/                          products, pricing, content, site config
+                                mailer.ts (SMTP), order.ts (email templates)
+  scripts/                      logo recolour + asset rebuild
 ```
 
 ### Built in
 
 - Cart with localStorage persistence, slide-over drawer and a full cart page
+- Order request checkout — pre-filled from the cart, emailed via Nodemailer, no payment step
 - Automatic bundle pricing (3+ jars → 10% off + free shipping) with progress prompts
-- Server-side price validation before every Stripe session
+- Server-side price validation before any order email or Stripe session
 - Product, FAQ and BlogPosting JSON-LD structured data
 - Generated `sitemap.xml` and `robots.txt`, per-page canonical URLs and OG tags
 - Scroll-reveal animations, marquee announcement bar, animated counters
@@ -184,8 +222,9 @@ src/
 ## Deploying
 
 Easiest is Vercel: push the folder to a Git repo, import it, and add the same environment
-variables from `.env.local` in the project settings. `npm run build` also produces a normal
-Node server (`npm start`) if you'd rather host it yourself.
+variables from `.env.local` in the project settings — including `SMTP_USER` and `SMTP_PASS`,
+or the order form will only log to the server instead of emailing. `npm run build` also
+produces a normal Node server (`npm start`) if you'd rather host it yourself.
 
 Note this is a Node application, not a WordPress theme — it doesn't run under XAMPP/Apache.
 Run it with `npm run dev` while you're working on it locally.

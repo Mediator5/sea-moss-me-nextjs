@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sendMail } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 
@@ -15,31 +16,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
-
-  // Not wired to a provider yet — log the signup rather than dropping it.
-  if (!apiKey || !audienceId) {
-    console.info(`[newsletter] signup: ${email}`);
-    return NextResponse.json({ ok: true, stored: false });
-  }
-
   try {
-    const res = await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, unsubscribed: false }),
+    const delivered = await sendMail({
+      subject: `Newsletter signup — ${email}`,
+      text: `${email} joined the Sea Moss Me list.\n\nAdd them to your mailing list.`,
+      replyTo: email,
     });
-
-    if (!res.ok) {
-      console.error("[newsletter] resend error", await res.text());
-      return NextResponse.json({ error: "Signup failed." }, { status: 502 });
-    }
-
-    return NextResponse.json({ ok: true, stored: true });
+    return NextResponse.json({ ok: true, delivered });
   } catch (err) {
     console.error("[newsletter]", err);
     return NextResponse.json({ error: "Signup failed." }, { status: 502 });

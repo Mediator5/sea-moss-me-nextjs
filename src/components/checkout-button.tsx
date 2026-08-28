@@ -5,16 +5,45 @@ import { useState } from "react";
 import { useCart } from "./cart-provider";
 import { ArrowRight } from "./icons";
 
+/**
+ * The last step of the cart.
+ *
+ * Two modes, set by NEXT_PUBLIC_CHECKOUT_MODE:
+ *   "request" (default) — hands off to /checkout, the order request form.
+ *   "stripe"            — creates a Stripe Checkout session instead.
+ *
+ * The Stripe route is still in the codebase (src/app/api/checkout/route.ts), so
+ * switching to card payments later is one environment variable, not a rebuild.
+ */
+const MODE = process.env.NEXT_PUBLIC_CHECKOUT_MODE === "stripe" ? "stripe" : "request";
+
 export function CheckoutButton({
-  className = "btn btn-gold w-full",
-  label = "Secure checkout",
+  className = "btn btn-primary w-full",
+  label,
 }: {
   className?: string;
   label?: string;
 }) {
-  const { lines, totals } = useCart();
+  const { lines, totals, closeCart } = useCart();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const text = label ?? (MODE === "stripe" ? "Secure checkout" : "Continue to checkout");
+  const empty = totals.jars === 0;
+
+  if (MODE === "request") {
+    return (
+      <Link
+        href="/checkout"
+        onClick={closeCart}
+        aria-disabled={empty}
+        className={`${className} ${empty ? "pointer-events-none opacity-55" : ""}`}
+      >
+        {text}
+        <ArrowRight className="size-4" />
+      </Link>
+    );
+  }
 
   async function checkout() {
     setLoading(true);
@@ -40,20 +69,15 @@ export function CheckoutButton({
 
   return (
     <div className="w-full">
-      <button
-        type="button"
-        onClick={checkout}
-        disabled={loading || totals.jars === 0}
-        className={className}
-      >
-        {loading ? "Starting checkout…" : label}
+      <button type="button" onClick={checkout} disabled={loading || empty} className={className}>
+        {loading ? "Starting checkout…" : text}
         {!loading && <ArrowRight className="size-4" />}
       </button>
       {error && (
-        <p className="mt-3 text-center text-xs leading-relaxed text-red-700">
+        <p className="mt-3 text-center text-xs leading-relaxed text-flame-700">
           {error}{" "}
-          <Link href="/contact" className="link-underline font-semibold">
-            Order by email instead →
+          <Link href="/checkout" className="link-underline font-semibold">
+            Send an order request instead →
           </Link>
         </p>
       )}
