@@ -2,45 +2,59 @@
 
 /* ============================================================
    Sea Moss Me — design tokens
-   Brand palette sampled from the Sea Moss Me hummingbird logo:
-   deep teal, terracotta orange, ochre gold on warm cream.
+   Brand palette taken from the Sea Moss Me brand board:
+   Caribbean teal and saffron yellow, with sunrise coral as the accent,
+   on warm sand — all anchored by deep petrol teal.
    ============================================================ */
 
 @theme {
-  /* Neutrals / paper — warm cream from the brand artwork */
-  --color-sand-50: #fdfaf4;
-  --color-sand-100: #f9f2e4;
-  --color-sand-200: #f1e7d1;
-  --color-sand-300: #e3d3b4;
-  --color-sand-400: #c9b48a;
+  /* ------------------------------------------------------------------
+     Palette sampled directly from the Sea Moss Me brand board:
+       Deep Petrol Teal  #05454c
+       Caribbean Teal    #28807a
+       Saffron Yellow    #f7bb3f
+       Sunrise Coral     #ea6951
+       Warm Sand         #ddc5ac
+     Each brand colour sits at the -500 step. Darker steps exist so text
+     and button fills stay legible; lighter steps are for tints.
+     ------------------------------------------------------------------ */
 
-  /* Deep brand teal */
-  --color-abyss-950: #052932;
-  --color-abyss-900: #083d4a;
-  --color-abyss-800: #0b4b5a;
-  --color-abyss-700: #0f5b6c;
-  --color-abyss-600: #146f84;
+  /* Warm Sand — paper */
+  --color-sand-50: #fdf8f0;
+  --color-sand-100: #f8efe1;
+  --color-sand-200: #efe1cd;
+  --color-sand-300: #ddc5ac;
+  --color-sand-400: #c4a886;
 
-  /* Mid teal — links, eyebrows, quiet accents */
-  --color-reef-600: #12667a;
-  --color-reef-500: #17849b;
-  --color-reef-400: #3aa3b8;
-  --color-reef-300: #86cbd8;
-  --color-reef-100: #dceff3;
+  /* Deep Petrol Teal — dark sections and body ink */
+  --color-abyss-950: #03333a;
+  --color-abyss-900: #05454c;
+  --color-abyss-800: #075761;
+  --color-abyss-700: #0a6a76;
+  --color-abyss-600: #0d7e8b;
 
-  /* Ochre gold */
-  --color-gold-600: #b0791d;
-  --color-gold-500: #d68f26;
-  --color-gold-400: #e5af52;
-  --color-gold-200: #f6e4bc;
+  /* Caribbean Teal — the primary action colour */
+  --color-reef-700: #1a5c56;
+  --color-reef-600: #21665f;
+  --color-reef-500: #28807a;
+  --color-reef-400: #45a099;
+  --color-reef-300: #8fccc6;
+  --color-reef-100: #ddf0ed;
 
-  /* Terracotta — the primary call-to-action colour */
-  --color-flame-600: #c24e23;
-  --color-flame-500: #dd5f30;
-  --color-flame-400: #ea7c50;
-  --color-flame-100: #fbe5da;
+  /* Saffron Yellow — the warm counterpart, and CTAs on dark */
+  --color-gold-600: #b8811a;
+  --color-gold-500: #f7bb3f;
+  --color-gold-400: #facf72;
+  --color-gold-200: #fdecc4;
 
-  /* Flavour accents */
+  /* Sunrise Coral — accents, badges, highlights */
+  --color-flame-700: #b03d29;
+  --color-flame-600: #c8462f;
+  --color-flame-500: #ea6951;
+  --color-flame-400: #f08c79;
+  --color-flame-100: #fde6df;
+
+  /* Flavour accents — taken from the jars themselves, not the brand board */
   --color-flavor-purple: #7a2540;
   --color-flavor-golden: #c98a1e;
   --color-flavor-green: #1f5e3c;
@@ -157,15 +171,28 @@
     transform: none;
   }
 
+  /* The main call-to-action. Caribbean teal by default; to lead with Sunrise
+     Coral instead, swap the two colours below for --color-flame-600 and
+     --color-flame-500 (the .btn-coral rule underneath shows the exact values). */
   .btn-primary {
-    background-color: var(--color-flame-600);
+    background-color: var(--color-reef-600);
     color: var(--color-sand-50);
-    box-shadow: 0 14px 30px -14px rgba(194, 78, 35, 0.85);
+    box-shadow: 0 14px 30px -14px rgba(33, 102, 95, 0.85);
   }
 
   .btn-primary:hover {
+    background-color: var(--color-reef-500);
+    box-shadow: 0 20px 38px -14px rgba(40, 128, 122, 0.95);
+  }
+
+  .btn-coral {
+    background-color: var(--color-flame-600);
+    color: var(--color-sand-50);
+    box-shadow: 0 14px 30px -14px rgba(200, 70, 47, 0.85);
+  }
+
+  .btn-coral:hover {
     background-color: var(--color-flame-500);
-    box-shadow: 0 20px 38px -14px rgba(194, 78, 35, 0.95);
   }
 
   .btn-teal {
@@ -180,7 +207,7 @@
 
   .btn-gold {
     background-color: var(--color-gold-500);
-    color: var(--color-abyss-950);
+    color: var(--color-abyss-900);
     box-shadow: 0 14px 30px -14px rgba(184, 132, 42, 0.9);
   }
 

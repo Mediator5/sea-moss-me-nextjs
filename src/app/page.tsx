@@ -43,7 +43,7 @@ export default function HomePage() {
           <StatCounter value={100} suffix="%" label="Wildcrafted, never farmed" />
         </div>
       </section>
-      <WaveDivider flip fill="#083d4a" className="-mt-px bg-sand-50" />
+      <WaveDivider flip fill="#05454c" className="-mt-px bg-sand-50" />
 
       {/* ---------------- Story ---------------- */}
       <section id="story" className="py-24 sm:py-32">
@@ -60,7 +60,7 @@ export default function HomePage() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-[linear-gradient(to_top,rgba(5,41,50,0.78),rgba(5,41,50,0.05)_55%)]"
+                className="absolute inset-0 bg-[linear-gradient(to_top,rgba(3,51,58,0.78),rgba(3,51,58,0.05)_55%)]"
               />
               <div className="absolute inset-x-0 bottom-0 p-8">
                 <p className="font-display text-2xl text-sand-50 italic">
@@ -268,7 +268,7 @@ export default function HomePage() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(5,41,50,0.95)_0%,rgba(5,41,50,0.86)_45%,rgba(5,41,50,0.68)_100%)]"
+                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(3,51,58,0.95)_0%,rgba(3,51,58,0.86)_45%,rgba(3,51,58,0.68)_100%)]"
               />
               <p className="eyebrow text-gold-400">Sea Moss 101</p>
               <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
@@ -300,7 +300,7 @@ export default function HomePage() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(5,41,50,0.95)_0%,rgba(5,41,50,0.86)_45%,rgba(5,41,50,0.68)_100%)]"
+                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(3,51,58,0.95)_0%,rgba(3,51,58,0.86)_45%,rgba(3,51,58,0.68)_100%)]"
               />
               <p className="eyebrow text-gold-400">The ingredient library</p>
               <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
@@ -360,7 +360,7 @@ export default function HomePage() {
             />
             <div
               aria-hidden
-              className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(5,41,50,0.94)_0%,rgba(5,41,50,0.86)_45%,rgba(5,41,50,0.35)_100%)]"
+              className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(3,51,58,0.94)_0%,rgba(3,51,58,0.86)_45%,rgba(3,51,58,0.35)_100%)]"
             />
             <div className="relative max-w-md">
               <p className="eyebrow text-gold-400">Bundle &amp; save</p>

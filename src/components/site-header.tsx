@@ -32,7 +32,7 @@ export function SiteHeader() {
     <>
       <header
         className={`sticky top-0 z-[60] bg-sand-50/90 backdrop-blur-xl transition-shadow duration-500 ${
-          scrolled ? "border-b border-sand-200 shadow-[0_10px_30px_-24px_rgba(5,41,50,0.6)]" : "border-b border-transparent"
+          scrolled ? "border-b border-sand-200 shadow-[0_10px_30px_-24px_rgba(3,51,58,0.6)]" : "border-b border-transparent"
         }`}
       >
         <div className="container-page flex h-20 items-center justify-between gap-6">
@@ -60,7 +60,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-2.5">
             <Link
               href="/products"
-              className="hidden rounded-full bg-flame-600 px-5 py-2.5 text-sm font-semibold text-sand-50 transition hover:bg-flame-500 sm:inline-flex"
+              className="hidden rounded-full bg-reef-600 px-5 py-2.5 text-sm font-semibold text-sand-50 transition hover:bg-reef-500 sm:inline-flex"
             >
               Shop now
             </Link>

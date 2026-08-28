@@ -95,8 +95,25 @@ Your original full-resolution artwork is kept out of the deployed site in
 `brand-source/` at the project root. Nothing there is served to visitors, so it
 never slows the site down — but it is there when you need to re-crop something.
 
-The palette in `src/app/globals.css` is sampled directly from the logo: deep teal
-`#083d4a`, terracotta `#c24e23`, ochre `#d68f26`, cream `#fdfaf4`.
+### The palette
+
+Sampled pixel-for-pixel from your brand board, in `src/app/globals.css`:
+
+| Brand name | Hex | Token | Where it leads |
+| --- | --- | --- | --- |
+| Deep Petrol Teal | `#05454c` | `abyss-900` | Body text, dark sections, footer |
+| Caribbean Teal | `#28807a` | `reef-500` | Primary buttons, links, eyebrows, icons |
+| Saffron Yellow | `#f7bb3f` | `gold-500` | Buttons and eyebrows on dark sections |
+| Sunrise Coral | `#ea6951` | `flame-500` | Active nav, badges, cart count, highlights |
+| Warm Sand | `#ddc5ac` | `sand-300` | Borders and rules; lighter steps are the page paper |
+
+Each brand colour sits at the `-500` step. Darker steps (`-600`, `-700`) exist so
+button fills and link text clear WCAG AA contrast — Caribbean Teal itself is 4.45:1
+on paper, which is fine for large type but short for body text, so links use
+`reef-600` at 6.3:1.
+
+To lead with coral instead of teal on the main buttons, swap two colour values in
+the `.btn-primary` rule — there's a comment above it showing exactly what to change.
 
 ## Email (optional)
 
