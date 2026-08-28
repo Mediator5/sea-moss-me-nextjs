@@ -59,7 +59,7 @@ export function IngredientExplorer() {
                   aria-pressed={group === g.value}
                   className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                     group === g.value
-                      ? "bg-abyss-900 text-sand-50"
+                      ? "bg-reef-600 text-sand-50"
                       : "border border-sand-300 text-abyss-800/80 hover:border-abyss-900/40"
                   }`}
                 >

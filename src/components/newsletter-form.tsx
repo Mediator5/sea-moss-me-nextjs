@@ -28,7 +28,7 @@ export function NewsletterForm({ tone = "dark" }: { tone?: "dark" | "light" }) {
     return (
       <p
         className={`flex items-center gap-2 text-sm font-medium ${
-          dark ? "text-reef-300" : "text-reef-600"
+          dark ? "text-reef-200" : "text-reef-600"
         }`}
       >
         <Check className="size-5" /> You&apos;re on the list. Watch your inbox.
@@ -50,7 +50,7 @@ export function NewsletterForm({ tone = "dark" }: { tone?: "dark" | "light" }) {
         placeholder="you@example.com"
         className={`flex-1 rounded-full px-5 py-3.5 text-sm outline-none transition ${
           dark
-            ? "border border-sand-100/20 bg-sand-100/5 text-sand-50 placeholder:text-sand-100/35 focus:border-reef-300"
+            ? "border border-sand-100/20 bg-sand-100/5 text-sand-50 placeholder:text-sand-100/60 focus:border-reef-200"
             : "border border-sand-300 bg-white text-abyss-900 placeholder:text-abyss-800/35 focus:border-reef-500"
         }`}
       />

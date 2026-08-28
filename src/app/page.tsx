@@ -35,7 +35,7 @@ export default function HomePage() {
       <Hero />
 
       {/* ---------------- Stats ---------------- */}
-      <section className="bg-abyss-900 py-14 text-sand-50">
+      <section className="bg-reef-600 py-14 text-sand-50">
         <div className="container-page grid grid-cols-2 gap-10 text-center sm:grid-cols-4">
           <StatCounter value={5} suffix="+" label="Years of organic wellness" />
           <StatCounter value={92} label="Minerals &amp; vitamins" />
@@ -66,7 +66,7 @@ export default function HomePage() {
                 <p className="font-display text-2xl text-sand-50 italic">
                   &ldquo;Real ingredients. No shortcuts.&rdquo;
                 </p>
-                <p className="mt-2 text-xs tracking-[0.16em] text-sand-100/70 uppercase">
+                <p className="mt-2 text-xs tracking-[0.16em] text-sand-100/85 uppercase">
                   Our family standard since day one
                 </p>
               </div>
@@ -159,7 +159,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------------- Process ---------------- */}
-      <section id="process" className="relative overflow-hidden bg-abyss-950 py-24 text-sand-50 sm:py-32">
+      <section id="process" className="relative overflow-hidden bg-reef-500 py-24 text-sand-50 sm:py-32">
         <div
           aria-hidden
           className="animate-drift pointer-events-none absolute -top-32 -left-32 size-[36rem] rounded-full bg-reef-500/12 blur-3xl"
@@ -178,11 +178,11 @@ export default function HomePage() {
                 key={step.step}
                 as="li"
                 delay={i * 90}
-                className="bg-abyss-950 p-8 transition-colors duration-500 hover:bg-abyss-900"
+                className="bg-reef-500 p-8 transition-colors duration-500 hover:bg-reef-600"
               >
-                <span className="font-display text-4xl text-flame-400">{step.step}</span>
+                <span className="font-display text-4xl text-flame-300">{step.step}</span>
                 <h3 className="mt-5 text-xl">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-sand-100/60">{step.copy}</p>
+                <p className="mt-3 text-sm leading-relaxed text-sand-100/80">{step.copy}</p>
               </Reveal>
             ))}
           </ol>
@@ -270,15 +270,15 @@ export default function HomePage() {
                 aria-hidden
                 className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(3,51,58,0.95)_0%,rgba(3,51,58,0.86)_45%,rgba(3,51,58,0.68)_100%)]"
               />
-              <p className="eyebrow text-gold-400">Sea Moss 101</p>
+              <p className="eyebrow text-gold-300">Sea Moss 101</p>
               <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
                 What sea moss is, and why its minerals matter
               </h3>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-sand-100/80">
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-sand-100/90">
                 A sea vegetable with no roots at all, harvested for 14,000 years. What it carries,
                 what a shortfall feels like, and how to tell wildcrafted from pool-grown.
               </p>
-              <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-gold-400">
+              <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-gold-300">
                 Read the explainer
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
@@ -302,15 +302,15 @@ export default function HomePage() {
                 aria-hidden
                 className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(3,51,58,0.95)_0%,rgba(3,51,58,0.86)_45%,rgba(3,51,58,0.68)_100%)]"
               />
-              <p className="eyebrow text-gold-400">Nature&apos;s Wisdom</p>
+              <p className="eyebrow text-gold-300">Nature&apos;s Wisdom</p>
               <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
                 {ingredientLibrary.length} ingredients, each one explained
               </h3>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-sand-100/80">
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-sand-100/90">
                 Fruits, herbs and roots — what each is best for, the compounds behind the claim, and
                 which jar it lives in. Filter it by what you&apos;re actually trying to fix.
               </p>
-              <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-gold-400">
+              <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-gold-300">
                 Open the library
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
@@ -323,15 +323,15 @@ export default function HomePage() {
           </div>
 
           {/* Doctor Bird teaser */}
-          <Reveal delay={80} className="mt-7 overflow-hidden rounded-2xl bg-abyss-950 text-sand-50">
+          <Reveal delay={80} className="mt-7 overflow-hidden rounded-2xl bg-reef-500 text-sand-50">
             <div className="grid items-center gap-10 p-9 sm:p-12 lg:grid-cols-[auto_1fr_auto]">
               <LogoMark tone="light" className="mx-auto h-24 lg:mx-0" />
               <div>
-                <p className="eyebrow text-gold-400">The bird on every jar</p>
+                <p className="eyebrow text-gold-300">The bird on every jar</p>
                 <h3 className="mt-3 text-2xl leading-snug sm:text-3xl">
                   Why there&apos;s a hummingbird on our label
                 </h3>
-                <p className="mt-3 max-w-xl text-sm leading-relaxed text-sand-100/70">
+                <p className="mt-3 max-w-xl text-sm leading-relaxed text-sand-100/85">
                   The Doctor Bird is found nowhere on earth but Jamaica — the same island, the same
                   waters as our sea moss. It weighs less than six grams and beats its wings 80 times
                   a second.
@@ -363,11 +363,11 @@ export default function HomePage() {
               className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(3,51,58,0.94)_0%,rgba(3,51,58,0.86)_45%,rgba(3,51,58,0.35)_100%)]"
             />
             <div className="relative max-w-md">
-              <p className="eyebrow text-gold-400">Bundle &amp; save</p>
+              <p className="eyebrow text-gold-300">Bundle &amp; save</p>
               <h2 className="mt-4 text-4xl leading-tight sm:text-5xl">
                 Buy 3 jars, get 10% off and free shipping
               </h2>
-              <p className="mt-5 leading-relaxed text-sand-100/75">
+              <p className="mt-5 leading-relaxed text-sand-100/85">
                 Mix and match any flavours you like. Most people run one green and one gold at a
                 time — and keep a Purple in the door of the fridge for winter.
               </p>
@@ -477,19 +477,19 @@ export default function HomePage() {
       </section>
 
       {/* ---------------- Final CTA ---------------- */}
-      <section className="relative overflow-hidden bg-abyss-950 py-24 text-center text-sand-50 sm:py-32">
+      <section className="relative overflow-hidden bg-reef-500 py-24 text-center text-sand-50 sm:py-32">
         <div
           aria-hidden
           className="animate-drift pointer-events-none absolute inset-x-0 top-0 mx-auto size-[40rem] rounded-full bg-[radial-gradient(circle,rgba(213,160,60,0.18),transparent_65%)] blur-2xl"
         />
         <div className="container-page relative">
           <Reveal>
-            <p className="eyebrow text-gold-400">Ready when you are</p>
+            <p className="eyebrow text-gold-300">Ready when you are</p>
             <h2 className="mx-auto mt-5 max-w-3xl text-4xl leading-[1.06] sm:text-6xl">
               Start with one jar. Your body will tell you the rest.
             </h2>
-            <p className="mx-auto mt-6 max-w-xl leading-relaxed text-sand-100/70">
-              Use code <strong className="text-gold-400">SEAMOSS20</strong> for 20% off your first
+            <p className="mx-auto mt-6 max-w-xl leading-relaxed text-sand-100/85">
+              Use code <strong className="text-gold-300">SEAMOSS20</strong> for 20% off your first
               order. Ships cold-packed from Jamaica, worldwide.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">

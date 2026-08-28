@@ -53,9 +53,9 @@ export default function FaqPage() {
             <FaqAccordion items={faqs} />
           </Reveal>
 
-          <Reveal delay={120} className="mt-14 rounded-xl bg-abyss-950 p-10 text-sand-50">
+          <Reveal delay={120} className="mt-14 rounded-xl bg-reef-500 p-10 text-sand-50">
             <h2 className="text-2xl">Still deciding?</h2>
-            <p className="mt-3 text-sm leading-relaxed text-sand-100/70">
+            <p className="mt-3 text-sm leading-relaxed text-sand-100/85">
               Start with a single 8 oz jar of Super Green Emerald. It&apos;s the flavour most people
               begin with, and the smallest commitment we sell.
             </p>

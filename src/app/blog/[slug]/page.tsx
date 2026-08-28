@@ -102,10 +102,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             })}
           </div>
 
-          <div className="mt-14 rounded-xl bg-abyss-950 p-8 text-sand-50 sm:p-10">
-            <p className="eyebrow text-gold-400">Put it into practice</p>
+          <div className="mt-14 rounded-xl bg-reef-500 p-8 text-sand-50 sm:p-10">
+            <p className="eyebrow text-gold-300">Put it into practice</p>
             <h2 className="mt-4 text-2xl">Start with a jar of the real thing</h2>
-            <p className="mt-3 text-sm leading-relaxed text-sand-100/70">
+            <p className="mt-3 text-sm leading-relaxed text-sand-100/85">
               Wildcrafted in Jamaica, blended in small batches, shipped cold-packed. 20% off your
               first order with code SEAMOSS20.
             </p>

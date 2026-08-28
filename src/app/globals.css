@@ -26,25 +26,35 @@
   --color-sand-300: #ddc5ac;
   --color-sand-400: #c4a886;
 
-  /* Deep Petrol Teal — dark sections and body ink */
+  /* Deep Petrol Teal — body ink only. This is the wordmark colour: dark enough
+     to read as text on sand, which is the one job it still has. The dark
+     *surfaces* used to live here too and made the site read navy; they moved
+     to the Caribbean teal below. */
   --color-abyss-950: #03333a;
   --color-abyss-900: #05454c;
   --color-abyss-800: #075761;
   --color-abyss-700: #0a6a76;
   --color-abyss-600: #0d7e8b;
 
-  /* Caribbean Teal — taken from the water in the logo. The primary action colour. */
-  --color-reef-700: #0a4a52;
+  /* Caribbean Teal — the water in the logo, and now the colour of every dark
+     panel on the site. -500 is the logo value exactly; -600 is the tonal step
+     for bands and hovers nested inside it. */
+  --color-reef-800: #0a4a52;
+  --color-reef-700: #0c545e;
   --color-reef-600: #0d5c66;
   --color-reef-500: #0f6b78;
   --color-reef-400: #2e93a1;
   --color-reef-300: #7cc3ce;
+  --color-reef-200: #c2e5ea;
   --color-reef-100: #dceff2;
 
   /* Saffron Yellow — the warm counterpart, and CTAs on dark */
   --color-gold-600: #b8811a;
   --color-gold-500: #f7bb3f;
   --color-gold-400: #facf72;
+  /* Eyebrows on a teal panel. -400 only reaches 4.19:1 against #0f6b78; this
+     clears AA at 4.51:1 and still reads gold rather than cream. */
+  --color-gold-300: #fbd88c;
   --color-gold-200: #fdecc4;
 
   /* Sunrise Coral — taken from the bird in the logo. Accents, badges, highlights. */
@@ -54,6 +64,8 @@
   --color-flame-550: #d1462b;
   --color-flame-500: #f26b4f;
   --color-flame-400: #f79076;
+  /* Large display numerals on a teal panel — clears the 3:1 large-text bar. */
+  --color-flame-300: #fbb3a0;
   --color-flame-100: #fde7e0;
 
   /* Flavour accents — taken from the jars themselves, not the brand board */

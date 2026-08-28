@@ -54,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CartProvider>
           <a
             href="#main"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-abyss-900 focus:px-5 focus:py-3 focus:text-sm focus:text-sand-50"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-reef-600 focus:px-5 focus:py-3 focus:text-sm focus:text-sand-50"
           >
             Skip to content
           </a>

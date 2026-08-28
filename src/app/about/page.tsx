@@ -70,7 +70,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ---------------- Hero ---------------- */}
-      <section className="relative isolate overflow-hidden bg-abyss-950 pt-20 pb-28 text-sand-50">
+      <section className="relative isolate overflow-hidden bg-reef-500 pt-20 pb-28 text-sand-50">
         <Image
           src="/images/origin.jpg"
           alt=""
@@ -87,12 +87,12 @@ export default function AboutPage() {
         />
         <div className="container-page relative grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
-            <p className="eyebrow text-gold-400">Nature&apos;s notes</p>
+            <p className="eyebrow text-gold-300">Nature&apos;s notes</p>
             <h1 className="mt-5 max-w-2xl text-5xl leading-[1.03] sm:text-6xl">
               {philosophy.headline}
             </h1>
           </div>
-          <p className="max-w-md text-lg leading-relaxed text-sand-100/75">
+          <p className="max-w-md text-lg leading-relaxed text-sand-100/85">
             That is the whole philosophy Sea Moss Me was founded on — and the standard every jar we
             make is held to.
           </p>
@@ -119,7 +119,7 @@ export default function AboutPage() {
       {/* ---------------- The Doctor Bird ---------------- */}
       <section
         id="doctor-bird"
-        className="relative scroll-mt-24 overflow-hidden bg-abyss-950 py-20 text-sand-50 sm:py-28"
+        className="relative scroll-mt-24 overflow-hidden bg-reef-500 py-20 text-sand-50 sm:py-28"
       >
         <div
           aria-hidden
@@ -132,7 +132,7 @@ export default function AboutPage() {
               <p className="mt-8 font-display text-xl leading-snug text-sand-50 italic">
                 &ldquo;{doctorBird.taino}&rdquo;
               </p>
-              <p className="mt-3 text-[11px] tracking-[0.16em] text-sand-100/50 uppercase">
+              <p className="mt-3 text-[11px] tracking-[0.16em] text-sand-100/85 uppercase">
                 Taino tradition
               </p>
             </div>
@@ -144,7 +144,7 @@ export default function AboutPage() {
               eyebrow="The bird on every jar"
               title="The Doctor Bird — found nowhere else on earth"
             />
-            <Reveal delay={90} className="mt-6 space-y-4 leading-[1.8] text-sand-100/75">
+            <Reveal delay={90} className="mt-6 space-y-4 leading-[1.8] text-sand-100/85">
               {doctorBird.intro.map((p) => (
                 <p key={p}>{p}</p>
               ))}
@@ -152,12 +152,12 @@ export default function AboutPage() {
 
             <div className="mt-10 grid gap-px overflow-hidden rounded-xl bg-sand-100/10 sm:grid-cols-2">
               {doctorBird.facts.map((f, i) => (
-                <Reveal key={f.label} delay={i * 80} className="bg-abyss-950 p-6">
-                  <p className="font-display text-3xl text-gold-400">{f.stat}</p>
-                  <p className="mt-1 text-[11px] font-semibold tracking-[0.12em] text-sand-100/55 uppercase">
+                <Reveal key={f.label} delay={i * 80} className="bg-reef-500 p-6">
+                  <p className="font-display text-3xl text-gold-300">{f.stat}</p>
+                  <p className="mt-1 text-[11px] font-semibold tracking-[0.12em] text-sand-100/85 uppercase">
                     {f.label}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-sand-100/70">{f.copy}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-sand-100/85">{f.copy}</p>
                 </Reveal>
               ))}
             </div>
@@ -212,7 +212,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---------------- Process ---------------- */}
-      <section id="process" className="scroll-mt-24 bg-abyss-950 py-20 text-sand-50 sm:py-28">
+      <section id="process" className="scroll-mt-24 bg-reef-500 py-20 text-sand-50 sm:py-28">
         <div className="container-page">
           <SectionHeading
             tone="light"
@@ -233,10 +233,10 @@ export default function AboutPage() {
 
           <ol className="mt-10 grid gap-px overflow-hidden rounded-xl bg-sand-100/10 md:grid-cols-2 lg:grid-cols-4">
             {process.map((step, i) => (
-              <Reveal key={step.step} as="li" delay={i * 90} className="bg-abyss-950 p-8">
-                <span className="font-display text-4xl text-flame-400">{step.step}</span>
+              <Reveal key={step.step} as="li" delay={i * 90} className="bg-reef-500 p-8">
+                <span className="font-display text-4xl text-flame-300">{step.step}</span>
                 <h3 className="mt-5 text-xl">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-sand-100/60">{step.copy}</p>
+                <p className="mt-3 text-sm leading-relaxed text-sand-100/80">{step.copy}</p>
               </Reveal>
             ))}
           </ol>

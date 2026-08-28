@@ -95,7 +95,7 @@ export function SiteHeader() {
         aria-hidden={!menuOpen}
       >
         <div
-          className={`absolute inset-0 bg-abyss-950 transition-opacity duration-[400ms] ${
+          className={`absolute inset-0 bg-reef-500 transition-opacity duration-[400ms] ${
             menuOpen ? "opacity-100" : "opacity-0"
           }`}
         />
@@ -141,7 +141,7 @@ export function SiteHeader() {
             >
               Shop the flavours
             </Link>
-            <p className="text-xs text-sand-100/60">
+            <p className="text-xs text-sand-100/80">
               {site.email} · {site.phone}
             </p>
           </div>

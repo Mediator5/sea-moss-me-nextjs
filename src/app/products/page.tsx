@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-abyss-950 pt-20 pb-24 text-sand-50">
+      <section className="relative isolate overflow-hidden bg-reef-500 pt-20 pb-24 text-sand-50">
         <Image
           src="/images/showcase.jpg"
           alt=""
@@ -36,19 +36,19 @@ export default function ProductsPage() {
           className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(3,51,58,0.93),rgba(3,51,58,0.86))]"
         />
         <div className="container-page relative text-center">
-          <p className="eyebrow text-gold-400">The collection</p>
+          <p className="eyebrow text-gold-300">The collection</p>
           <h1 className="mx-auto mt-5 max-w-3xl text-5xl leading-[1.04] sm:text-6xl">
             Pick your jar
           </h1>
-          <p className="mx-auto mt-6 max-w-xl leading-relaxed text-sand-100/70">
+          <p className="mx-auto mt-6 max-w-xl leading-relaxed text-sand-100/85">
             Same wildcrafted Jamaican base, four different jobs. Every jar is made to order in small
             batches and ships cold-packed.
           </p>
-          <ul className="mt-9 flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-sand-100/65">
+          <ul className="mt-9 flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-sand-100/80">
             {["Vegan & gluten-free", "No added sugar", "No fillers or gelatine", "3 jars ship free"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <Check className="size-4 text-gold-400" /> {item}
+                  <Check className="size-4 text-gold-300" /> {item}
                 </li>
               ),
             )}

@@ -51,7 +51,7 @@ export default function SeaMossPage() {
       />
 
       {/* ---------------- Hero ---------------- */}
-      <section className="relative isolate overflow-hidden bg-abyss-950 pt-20 pb-24 text-sand-50">
+      <section className="relative isolate overflow-hidden bg-reef-500 pt-20 pb-24 text-sand-50">
         <Image
           src="/images/origin.jpg"
           alt=""
@@ -67,11 +67,11 @@ export default function SeaMossPage() {
           className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(3,51,58,0.96)_0%,rgba(3,51,58,0.9)_45%,rgba(3,51,58,0.62)_100%)]"
         />
         <div className="container-page relative">
-          <p className="eyebrow text-gold-400">Sea Moss 101</p>
+          <p className="eyebrow text-gold-300">Sea Moss 101</p>
           <h1 className="mt-5 max-w-3xl text-5xl leading-[1.04] sm:text-6xl">
             The honest explainer on sea moss
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-sand-100/75">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-sand-100/85">
             Sea moss has had a strange decade. For most of its history it was an unglamorous
             Caribbean pantry staple. Then it hit the internet and became a miracle. The truth is
             somewhere more useful than either version — and it takes about eight minutes to explain.
@@ -82,7 +82,7 @@ export default function SeaMossPage() {
               <a
                 key={c.href}
                 href={c.href}
-                className="rounded-full border border-sand-100/25 px-4 py-2 text-sm text-sand-100/80 transition hover:border-sand-100/60 hover:text-sand-50"
+                className="rounded-full border border-sand-100/25 px-4 py-2 text-sm text-sand-100/90 transition hover:border-sand-100/60 hover:text-sand-50"
               >
                 {c.label}
               </a>
@@ -127,8 +127,8 @@ export default function SeaMossPage() {
 
           <Reveal delay={140} className="lg:sticky lg:top-28">
             <div className="card overflow-hidden">
-              <div className="bg-abyss-950 px-7 py-6 text-sand-50">
-                <p className="eyebrow text-gold-400">The short version</p>
+              <div className="bg-reef-500 px-7 py-6 text-sand-50">
+                <p className="eyebrow text-gold-300">The short version</p>
                 <p className="mt-3 font-display text-2xl leading-snug">
                   A whole food with an unusually wide mineral profile — not a medicine, and not a
                   miracle.
@@ -247,8 +247,8 @@ export default function SeaMossPage() {
             </table>
           </Reveal>
 
-          <Reveal delay={120} className="mt-8 rounded-xl bg-abyss-950 p-8 text-sand-50 sm:p-10">
-            <p className="eyebrow text-gold-400">Three questions to ask any seller</p>
+          <Reveal delay={120} className="mt-8 rounded-xl bg-reef-500 p-8 text-sand-50 sm:p-10">
+            <p className="eyebrow text-gold-300">Three questions to ask any seller</p>
             <ol className="mt-5 grid gap-5 sm:grid-cols-3">
               {[
                 "Is it wildcrafted or pool-grown?",
@@ -257,11 +257,11 @@ export default function SeaMossPage() {
               ].map((q, i) => (
                 <li key={q} className="flex gap-3">
                   <span className="font-display text-3xl text-gold-500/70">0{i + 1}</span>
-                  <p className="mt-1 text-sm leading-relaxed text-sand-100/80">{q}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-sand-100/90">{q}</p>
                 </li>
               ))}
             </ol>
-            <p className="mt-7 text-sm leading-relaxed text-sand-100/65">
+            <p className="mt-7 text-sm leading-relaxed text-sand-100/80">
               We answer all three on every jar: wildcrafted, hand-cut on the south coast of Jamaica,
               and nothing in the jar but sea moss, spring water and whole superfoods.
             </p>

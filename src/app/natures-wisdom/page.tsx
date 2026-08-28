@@ -19,7 +19,7 @@ export default function IngredientsPage() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-abyss-950 pt-20 pb-24 text-sand-50">
+      <section className="relative isolate overflow-hidden bg-reef-500 pt-20 pb-24 text-sand-50">
         <Image
           src="/images/ingredients.jpg"
           alt=""
@@ -35,11 +35,11 @@ export default function IngredientsPage() {
           className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(3,51,58,0.96)_0%,rgba(3,51,58,0.9)_50%,rgba(3,51,58,0.7)_100%)]"
         />
         <div className="container-page relative">
-          <p className="eyebrow text-gold-400">Nature&apos;s Wisdom</p>
+          <p className="eyebrow text-gold-300">Nature&apos;s Wisdom</p>
           <h1 className="mt-5 max-w-3xl text-5xl leading-[1.04] sm:text-6xl">
             Every ingredient, and exactly why it&apos;s in there
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-sand-100/75">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-sand-100/85">
             We don&apos;t put anything in a jar we can&apos;t explain. This is the whole library —
             the fruits and roots already in our blends, the herbs we formulate from, and the ones
             still in development. Filter it by what you&apos;re actually trying to fix.
@@ -52,8 +52,8 @@ export default function IngredientsPage() {
               { n: pipeline, label: "In development" },
             ].map((s) => (
               <div key={s.label}>
-                <dd className="font-display text-3xl text-gold-400">{s.n}</dd>
-                <dt className="mt-1 text-[11px] tracking-[0.14em] text-sand-100/60 uppercase">
+                <dd className="font-display text-3xl text-gold-300">{s.n}</dd>
+                <dt className="mt-1 text-[11px] tracking-[0.14em] text-sand-100/80 uppercase">
                   {s.label}
                 </dt>
               </div>
