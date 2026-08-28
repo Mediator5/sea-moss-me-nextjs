@@ -238,8 +238,8 @@ export default function HomePage() {
           </ul>
 
           <Reveal className="mt-12 text-center">
-            <Link href="/ingredients" className="btn btn-ghost">
-              Browse all {ingredientLibrary.length} ingredients <ArrowRight className="size-4" />
+            <Link href="/natures-wisdom" className="btn btn-ghost">
+              Explore Nature&apos;s Wisdom <ArrowRight className="size-4" />
             </Link>
           </Reveal>
         </div>
@@ -302,7 +302,7 @@ export default function HomePage() {
                 aria-hidden
                 className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(3,51,58,0.95)_0%,rgba(3,51,58,0.86)_45%,rgba(3,51,58,0.68)_100%)]"
               />
-              <p className="eyebrow text-gold-400">The ingredient library</p>
+              <p className="eyebrow text-gold-400">Nature&apos;s Wisdom</p>
               <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
                 {ingredientLibrary.length} ingredients, each one explained
               </h3>
@@ -315,9 +315,9 @@ export default function HomePage() {
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
               <Link
-                href="/ingredients"
+                href="/natures-wisdom"
                 className="absolute inset-0"
-                aria-label="Open the ingredient library"
+                aria-label="Explore Nature&apos;s Wisdom"
               />
             </Reveal>
           </div>

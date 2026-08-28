@@ -202,8 +202,8 @@ export default function AboutPage() {
                 <Link href="/sea-moss" className="btn btn-primary">
                   Read Sea Moss 101 <ArrowRight className="size-4" />
                 </Link>
-                <Link href="/ingredients" className="btn btn-ghost">
-                  Browse the ingredients
+                <Link href="/natures-wisdom" className="btn btn-ghost">
+                  Nature&apos;s Wisdom
                 </Link>
               </div>
             </Reveal>

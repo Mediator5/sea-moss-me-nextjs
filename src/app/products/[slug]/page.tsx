@@ -205,8 +205,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               copy="Every ingredient earns its place. Here is what each one brings, and who it suits."
             />
             <Reveal>
-              <Link href="/ingredients" className="btn btn-ghost">
-                The full library <ArrowRight className="size-4" />
+              <Link href="/natures-wisdom" className="btn btn-ghost">
+                Nature&apos;s Wisdom <ArrowRight className="size-4" />
               </Link>
             </Reveal>
           </div>
@@ -235,7 +235,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   ))}
                 </ul>
                 <Link
-                  href={`/ingredients#${ing.slug}`}
+                  href={`/natures-wisdom#${ing.slug}`}
                   className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-abyss-800/60 transition hover:text-abyss-900"
                 >
                   More on {ing.name} <ArrowRight className="size-3.5" />

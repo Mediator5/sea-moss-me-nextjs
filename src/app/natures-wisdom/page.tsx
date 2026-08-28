@@ -7,10 +7,10 @@ import { ArrowRight } from "@/components/icons";
 import { ingredientLibrary } from "@/lib/ingredients";
 
 export const metadata: Metadata = {
-  title: "Ingredient library",
+  title: "Nature's Wisdom",
   description:
-    "Every fruit, herb and root we formulate with — what each one is best for, the compounds behind the claim, and which Sea Moss Me jar it lives in.",
-  alternates: { canonical: "/ingredients" },
+    "Nature's Wisdom — every fruit, herb and root we formulate with. What each one is best for, the compounds behind the claim, and which Sea Moss Me jar it lives in.",
+  alternates: { canonical: "/natures-wisdom" },
 };
 
 export default function IngredientsPage() {
@@ -35,7 +35,7 @@ export default function IngredientsPage() {
           className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(3,51,58,0.96)_0%,rgba(3,51,58,0.9)_50%,rgba(3,51,58,0.7)_100%)]"
         />
         <div className="container-page relative">
-          <p className="eyebrow text-gold-400">The ingredient library</p>
+          <p className="eyebrow text-gold-400">Nature&apos;s Wisdom</p>
           <h1 className="mt-5 max-w-3xl text-5xl leading-[1.04] sm:text-6xl">
             Every ingredient, and exactly why it&apos;s in there
           </h1>

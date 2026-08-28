@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/products",
     "/sea-moss",
-    "/ingredients",
+    "/natures-wisdom",
     "/about",
     "/blog",
     "/faq",

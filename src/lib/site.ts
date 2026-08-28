@@ -22,7 +22,7 @@ export const site = {
 export const nav = [
   { label: "Shop", href: "/products" },
   { label: "Sea Moss 101", href: "/sea-moss" },
-  { label: "Ingredients", href: "/ingredients" },
+  { label: "Nature's Wisdom", href: "/natures-wisdom" },
   { label: "Our Story", href: "/about" },
   { label: "Journal", href: "/blog" },
   { label: "FAQ", href: "/faq" },

@@ -15,6 +15,8 @@ const columns = [
   {
     title: "Learn",
     links: [
+      { label: "Sea Moss 101", href: "/sea-moss" },
+      { label: "Nature's Wisdom", href: "/natures-wisdom" },
       { label: "Our story", href: "/about" },
       { label: "How it's made", href: "/about#process" },
       { label: "Journal", href: "/blog" },

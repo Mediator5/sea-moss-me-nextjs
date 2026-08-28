@@ -99,7 +99,7 @@ dashboard will work there.
 | Bundle rules (3 jars → 10% + free shipping) | `BUNDLE` at the bottom of `src/lib/products.ts` |
 | Email, phone, nav links, announcement bar | `src/lib/site.ts` |
 | FAQs, testimonials, blog posts, process steps | `src/lib/content.ts` |
-| The ingredient library (30 entries) | `src/lib/ingredients.ts` |
+| Nature's Wisdom entries (the ingredient library) | `src/lib/ingredients.ts` |
 | Sea moss facts, minerals, Doctor Bird content | `src/lib/learn.ts` |
 | Colours, fonts, buttons, shadows | `src/app/globals.css` (the `@theme` block at the top) |
 
@@ -186,7 +186,7 @@ src/
     products/                   shop listing + comparison table
     products/[slug]/            product pages (4, statically generated)
     sea-moss/                   Sea Moss 101 — the long-form explainer
-    ingredients/                filterable ingredient library
+    natures-wisdom/             Nature's Wisdom — the filterable ingredient library
     blog/  blog/[slug]/         journal listing + posts
     faq/  contact/  cart/       supporting pages
     checkout/                   the order request form
@@ -214,7 +214,7 @@ src/
 - Full keyboard access, skip link, ARIA labelling and `prefers-reduced-motion` support
 - Self-hosted fonts — no Google Fonts request, so the build works offline
 - Real brand photography throughout, optimised and served through `next/image`
-- A 30-entry ingredient library, filterable by category, benefit and free-text search
+- Nature's Wisdom — a 35-entry ingredient library, filterable by category, benefit and free-text search
 - Long-form Sea Moss 101 explainer with Article schema, and the Doctor Bird brand story
 
 ---
