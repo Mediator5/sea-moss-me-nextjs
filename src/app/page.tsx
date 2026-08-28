@@ -43,7 +43,8 @@ export default function HomePage() {
           <StatCounter value={100} suffix="%" label="Wildcrafted, never farmed" />
         </div>
       </section>
-      <WaveDivider flip fill="#05454c" className="-mt-px bg-sand-50" />
+      {/* Reads from the token so it can never drift from the stats band above it */}
+      <WaveDivider flip fill="var(--color-reef-600)" className="-mt-px bg-sand-50" />
 
       {/* ---------------- Story ---------------- */}
       <section id="story" className="py-24 sm:py-32">

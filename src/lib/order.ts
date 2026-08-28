@@ -100,8 +100,8 @@ export function orderHtml(ref: string, d: OrderDetails, totals: CartTotals) {
   return `
   <div style="background:#fdf8f0;padding:28px;font-family:-apple-system,Segoe UI,Roboto,sans-serif">
     <div style="max-width:600px;margin:0 auto;background:#fff;border:1px solid #efe1cd;border-radius:16px;overflow:hidden">
-      <div style="background:#05454c;padding:22px 28px">
-        <div style="color:#f7bb3f;font-size:11px;letter-spacing:2px;text-transform:uppercase">New order request</div>
+      <div style="background:#0f6b78;padding:22px 28px">
+        <div style="color:#fbd88c;font-size:11px;letter-spacing:2px;text-transform:uppercase">New order request</div>
         <div style="color:#fdf8f0;font-size:22px;margin-top:6px">${ref}</div>
       </div>
 
@@ -196,10 +196,10 @@ export function customerAckHtml(ref: string, d: OrderDetails, totals: CartTotals
   return `
   <div style="background:#fdf8f0;padding:28px;font-family:-apple-system,Segoe UI,Roboto,sans-serif">
     <div style="max-width:600px;margin:0 auto;background:#fff;border:1px solid #efe1cd;border-radius:16px;overflow:hidden">
-      <div style="background:#05454c;padding:26px 28px">
-        <div style="color:#f7bb3f;font-size:11px;letter-spacing:2px;text-transform:uppercase">Order request received</div>
+      <div style="background:#0f6b78;padding:26px 28px">
+        <div style="color:#fbd88c;font-size:11px;letter-spacing:2px;text-transform:uppercase">Order request received</div>
         <div style="color:#fdf8f0;font-size:24px;margin-top:8px">Thank you, ${d.name.split(" ")[0]}</div>
-        <div style="color:#9fc3ca;font-size:13px;margin-top:6px">Reference ${ref}</div>
+        <div style="color:#c2e5ea;font-size:13px;margin-top:6px">Reference ${ref}</div>
       </div>
 
       <div style="padding:24px 28px;color:#33484d;font-size:15px;line-height:1.7">
