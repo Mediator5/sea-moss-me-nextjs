@@ -13,7 +13,7 @@ import { faqs } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Shop sea moss gel",
   description:
-    "Four small-batch flavours of wildcrafted Jamaican sea moss gel — Super Green Emerald, Purple Power Bomb, Golden Milk and Montego Tropical Fusion.",
+    "Four small-batch flavours of wildcrafted Jamaican sea moss gel — Alkaline Me, Beets and Berry Me, Golden Me and Tropical Me.",
   alternates: { canonical: "/products" },
 };
 
@@ -72,7 +72,7 @@ export default function ProductsPage() {
           <SectionHeading
             eyebrow="Side by side"
             title="Which one is for you?"
-            copy="If you're only buying one, start with Emerald. If you're buying three, this is how most people split it."
+            copy="If you're only buying one, start with Alkaline Me. If you're buying three, this is how most people split it."
           />
 
           <Reveal className="mt-10 overflow-x-auto">

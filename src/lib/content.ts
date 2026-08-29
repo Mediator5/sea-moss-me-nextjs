@@ -27,7 +27,7 @@ export const faqs = [
   },
   {
     q: "Does it taste like the ocean?",
-    a: "Properly prepared sea moss is close to neutral — faintly oceanic at most. What you actually taste is the fruit or spice blended into it. Emerald is grassy with a lime finish, Golden Milk is warm and spiced, Purple Power Bomb is tart like a dark fruit compote, and Montego tastes like holiday. If a sea moss gel tastes strongly of the sea, it usually wasn't rinsed properly.",
+    a: "Properly prepared sea moss is close to neutral — faintly oceanic at most. What you actually taste is the fruit or spice blended into it. Alkaline Me is grassy with a lime finish, Golden Me is warm and spiced with a citrus lift, Beets and Berry Me is tart like a dark fruit compote, and Tropical Me tastes like holiday. If a sea moss gel tastes strongly of the sea, it usually wasn't rinsed properly.",
   },
   {
     q: "Why does sea moss come in different colours?",
@@ -39,7 +39,7 @@ export const faqs = [
   },
   {
     q: "Can children take it?",
-    a: "Many families do, usually at a smaller amount — half a teaspoon to a teaspoon a day, blended into a smoothie. Montego Tropical Fusion is the one children tend to accept without argument. As with any supplement, check with your paediatrician first, particularly because of the iodine.",
+    a: "Many families do, usually at a smaller amount — half a teaspoon to a teaspoon a day, blended into a smoothie. Tropical Me is the one children tend to accept without argument. As with any supplement, check with your paediatrician first, particularly because of the iodine.",
   },
   {
     q: "How should I store it, and how long does it last?",
@@ -58,21 +58,21 @@ export const faqs = [
 export const testimonials = [
   {
     quote:
-      "I've tried four different sea moss brands and this is the only one that doesn't taste like the ocean floor. The Emerald goes into my smoothie every single morning.",
+      "I've tried four different sea moss brands and this is the only one that doesn't taste like the ocean floor. Alkaline Me goes into my smoothie every single morning.",
     name: "Danielle R.",
-    detail: "Super Green Emerald · 8 oz",
+    detail: "Alkaline Me · 8 oz",
   },
   {
     quote:
-      "Bought the Golden Milk for my mother's joints and ended up ordering three more jars for the rest of us. You can tell it's actually fresh.",
+      "Bought Golden Me for my mother's joints and ended up ordering three more jars for the rest of us. You can tell it's actually fresh.",
     name: "Marcus T.",
-    detail: "Golden Milk · 8 oz",
+    detail: "Golden Me · 8 oz",
   },
   {
     quote:
       "Three weeks in and my energy in the afternoon is completely different. No crash at 3pm anymore. That alone is worth it.",
     name: "Ayo B.",
-    detail: "Purple Power Bomb · 8 oz",
+    detail: "Beets and Berry Me · 8 oz",
   },
 ];
 
@@ -187,7 +187,7 @@ export const posts: Post[] = [
       { type: "h2", text: "4. Choose a blend that matches your problem" },
       {
         type: "p",
-        text: "Golden Milk, with ginger and turmeric, is the one to reach for if bloating and inflammation are the issue. Montego Tropical Fusion carries bromelain and papain — enzymes that help break down protein — which makes it a good fit after heavy meals.",
+        text: "Golden Me, with ginger and turmeric, is the one to reach for if bloating and inflammation are the issue. Tropical Me carries bromelain and papain — enzymes that help break down protein — which makes it a good fit after heavy meals.",
       },
       { type: "h2", text: "5. Give it three weeks" },
       {

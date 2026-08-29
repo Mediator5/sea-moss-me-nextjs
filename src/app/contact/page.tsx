@@ -53,7 +53,7 @@ export default function ContactPage() {
           <div className="mt-10 rounded-lg border border-sand-200 bg-sand-100/60 p-6">
             <p className="text-sm font-semibold">Restock alerts</p>
             <p className="mt-1.5 mb-4 text-xs leading-relaxed text-abyss-800/65">
-              Montego Tropical Fusion sells out. Get told when the next batch lands.
+              Tropical Me sells out. Get told when the next batch lands.
             </p>
             <NewsletterForm tone="light" />
           </div>

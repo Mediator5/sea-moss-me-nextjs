@@ -56,12 +56,12 @@ export default function FaqPage() {
           <Reveal delay={120} className="mt-14 rounded-xl bg-reef-500 p-10 text-sand-50">
             <h2 className="text-2xl">Still deciding?</h2>
             <p className="mt-3 text-sm leading-relaxed text-sand-100/85">
-              Start with a single 8 oz jar of Super Green Emerald. It&apos;s the flavour most people
+              Start with a single 8 oz jar of Alkaline Me. It&apos;s the flavour most people
               begin with, and the smallest commitment we sell.
             </p>
             <div className="mt-7 flex flex-wrap gap-4">
-              <Link href="/products/super-green-emerald" className="btn btn-gold">
-                See Emerald <ArrowRight className="size-4" />
+              <Link href="/products/alkaline-me" className="btn btn-gold">
+                See Alkaline Me <ArrowRight className="size-4" />
               </Link>
               <Link href="/contact" className="btn btn-ghost-light">
                 Ask a question

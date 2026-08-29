@@ -73,22 +73,22 @@ export const ingredientLibrary: Ingredient[] = [
     ],
     tags: ["Minerals", "Digestion", "Energy"],
     inJars: [
-      "super-green-emerald",
-      "purple-power-bomb",
-      "golden-milk",
-      "montego-tropical-fusion",
+      "alkaline-me",
+      "beets-and-berry-me",
+      "golden-me",
+      "tropical-me",
     ],
     color: "#0f5b6c",
   },
 
   /* ------------------------------------------------------------------ */
-  /* Greens & algae — Super Green Emerald                                */
+  /* Greens & algae — Alkaline Me                                         */
   /* ------------------------------------------------------------------ */
   {
     slug: "chlorophyll",
     name: "Chlorophyll",
     group: "green",
-    summary: "The green pigment that gives plants their colour — and Emerald its name.",
+    summary: "The green pigment that gives plants their colour — and Alkaline Me its depth.",
     bestFor: "Anyone eating a diet heavy on processed food and light on greens.",
     benefits: [
       {
@@ -105,7 +105,7 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Detox & liver", "Energy"],
-    inJars: ["super-green-emerald"],
+    inJars: ["alkaline-me"],
     color: "#1f5e3c",
   },
   {
@@ -133,7 +133,7 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Energy", "Minerals", "Joints & inflammation"],
-    inJars: ["super-green-emerald"],
+    inJars: ["alkaline-me"],
     color: "#3f8a5f",
   },
   {
@@ -157,7 +157,7 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Energy", "Minerals", "Immunity"],
-    inJars: ["super-green-emerald"],
+    inJars: ["alkaline-me"],
     color: "#12667a",
   },
   {
@@ -181,12 +181,12 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Detox & liver", "Digestion", "Minerals"],
-    inJars: ["super-green-emerald"],
+    inJars: ["alkaline-me"],
     color: "#256b4f",
   },
 
   /* ------------------------------------------------------------------ */
-  /* Fruits — Purple Power Bomb                                          */
+  /* Fruits — Beets and Berry Me                                          */
   /* ------------------------------------------------------------------ */
   {
     slug: "elderberry",
@@ -213,7 +213,7 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Immunity"],
-    inJars: ["purple-power-bomb"],
+    inJars: ["beets-and-berry-me"],
     color: "#4c1428",
   },
   {
@@ -238,33 +238,8 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Heart & circulation", "Energy", "Digestion"],
-    inJars: ["purple-power-bomb"],
+    inJars: ["beets-and-berry-me"],
     color: "#7a2540",
-  },
-  {
-    slug: "acai",
-    name: "Acai",
-    group: "fruit",
-    summary: "Among the highest antioxidant levels measured in any fruit.",
-    bestFor: "Superfood shoppers and antioxidant-focused customers.",
-    benefits: [
-      {
-        term: "Anthocyanins",
-        copy: "The deep purple pigment responsible for acai's antioxidant reputation.",
-      },
-      {
-        term: "Healthy fats",
-        copy: "Unusual for a berry, and helpful for absorbing fat-soluble nutrients.",
-      },
-      { term: "Fibre", copy: "Supports digestion and a healthy gut environment." },
-      {
-        term: "Established superfruit",
-        copy: "Strong existing recognition — most customers already know why they want it.",
-      },
-    ],
-    tags: ["Immunity", "Digestion", "Heart & circulation"],
-    inJars: ["purple-power-bomb"],
-    color: "#3d1a4a",
   },
   {
     slug: "dragonfruit",
@@ -281,16 +256,67 @@ export const ingredientLibrary: Ingredient[] = [
       { term: "Low calorie", copy: "Nutrient-dense without being heavy." },
       {
         term: "Visual standout",
-        copy: "The vivid colour that makes the Purple Power Bomb jar what it is.",
+        copy: "The vivid colour that makes the Beets and Berry Me jar what it is.",
       },
     ],
     tags: ["Digestion", "Immunity"],
-    inJars: ["purple-power-bomb"],
+    inJars: ["beets-and-berry-me"],
     color: "#a44766",
   },
 
+  {
+    slug: "blueberry",
+    name: "Blueberry",
+    group: "fruit",
+    summary: "The berry most associated with memory and focus, and deservedly so.",
+    bestFor: "Brain-health and heart-health-focused shoppers.",
+    benefits: [
+      {
+        term: "Anthocyanins",
+        copy: "One of the highest antioxidant levels of any common fruit.",
+      },
+      {
+        term: "Vitamin C & K",
+        copy: "Supports immune function and bone health.",
+      },
+      { term: "Fibre", copy: "Supports gut and digestive health." },
+      {
+        term: "Cognitive support",
+        copy: "Widely recognised for supporting memory and focus.",
+      },
+    ],
+    tags: ["Focus & mood", "Heart & circulation", "Immunity"],
+    inJars: ["beets-and-berry-me"],
+    color: "#3f4a8a",
+  },
+  {
+    slug: "raspberry",
+    name: "Raspberry",
+    group: "fruit",
+    summary: "One of the highest-fibre, lowest-glycemic fruits you can eat.",
+    bestFor: "Blood-sugar-conscious shoppers and everyday antioxidant seekers.",
+    benefits: [
+      {
+        term: "Fibre",
+        copy: "One of the highest fibre contents of any common fruit.",
+      },
+      {
+        term: "Vitamin C & manganese",
+        copy: "Supports immunity and healthy skin.",
+      },
+      {
+        term: "Ellagic acid & anthocyanins",
+        copy: "Antioxidant compounds that help fight oxidative stress.",
+      },
+      { term: "Low glycemic", copy: "A lower-sugar fruit option." },
+    ],
+    tags: ["Digestion", "Immunity", "Skin & hair"],
+    inJars: ["beets-and-berry-me"],
+    color: "#a82f4a",
+  },
+
   /* ------------------------------------------------------------------ */
-  /* Fruits — Montego Tropical Fusion                                    */
+  /* Fruits — Tropical Me                                                 */
   /* ------------------------------------------------------------------ */
   {
     slug: "mango",
@@ -314,7 +340,7 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Immunity", "Skin & hair"],
-    inJars: ["montego-tropical-fusion"],
+    inJars: ["tropical-me"],
     color: "#d9812a",
   },
   {
@@ -339,7 +365,7 @@ export const ingredientLibrary: Ingredient[] = [
       { term: "Naturally hydrating", copy: "Supports healthy fluid balance." },
     ],
     tags: ["Energy", "Digestion", "Minerals"],
-    inJars: ["montego-tropical-fusion"],
+    inJars: ["tropical-me"],
     color: "#c9b48a",
   },
   {
@@ -367,7 +393,7 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Digestion", "Immunity", "Joints & inflammation"],
-    inJars: ["montego-tropical-fusion"],
+    inJars: ["tropical-me"],
     color: "#d68f26",
   },
   {
@@ -395,12 +421,12 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Digestion", "Skin & hair", "Immunity"],
-    inJars: ["montego-tropical-fusion"],
+    inJars: ["tropical-me"],
     color: "#ea7c50",
   },
 
   /* ------------------------------------------------------------------ */
-  /* Herbs & roots — Golden Milk                                         */
+  /* Herbs & roots — Golden Me                                            */
   /* ------------------------------------------------------------------ */
   {
     slug: "turmeric",
@@ -427,7 +453,7 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Joints & inflammation", "Heart & circulation", "Detox & liver"],
-    inJars: ["golden-milk"],
+    inJars: ["golden-me"],
     color: "#c98a1e",
   },
   {
@@ -455,7 +481,7 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Digestion", "Joints & inflammation", "Immunity"],
-    inJars: ["golden-milk"],
+    inJars: ["golden-me"],
     color: "#e5af52",
   },
   {
@@ -483,8 +509,64 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Calm & sleep", "Focus & mood", "Energy"],
-    inJars: ["golden-milk"],
+    inJars: ["golden-me"],
     color: "#b0791d",
+  },
+  {
+    slug: "lemon",
+    name: "Lemon",
+    group: "fruit",
+    summary: "The bright citrus lift that makes a warming blend easy to drink.",
+    bestFor: "Anyone who wants vitamin C and a cleaner finish on a spiced blend.",
+    benefits: [
+      {
+        term: "Vitamin C",
+        copy: "A dependable everyday source, supporting immunity and collagen formation.",
+      },
+      {
+        term: "Citrus flavonoids",
+        copy: "Antioxidant compounds long associated with circulation and vessel health.",
+      },
+      {
+        term: "Digestive lift",
+        copy: "Traditionally taken warm in the morning to wake the digestive system up.",
+      },
+      {
+        term: "Balances the blend",
+        copy: "Cuts the earthiness of turmeric and ginger so the jar stays drinkable.",
+      },
+    ],
+    tags: ["Immunity", "Digestion", "Skin & hair"],
+    inJars: ["golden-me"],
+    color: "#d8a521",
+  },
+
+  /* ------------------------------------------------------------------ */
+  /* Wider herbal library                                                */
+  {
+    slug: "acai",
+    name: "Acai",
+    group: "fruit",
+    summary: "Among the highest antioxidant levels measured in any fruit.",
+    bestFor: "Superfood shoppers and antioxidant-focused customers.",
+    benefits: [
+      {
+        term: "Anthocyanins",
+        copy: "The deep purple pigment responsible for acai's antioxidant reputation.",
+      },
+      {
+        term: "Healthy fats",
+        copy: "Unusual for a berry, and helpful for absorbing fat-soluble nutrients.",
+      },
+      { term: "Fibre", copy: "Supports digestion and a healthy gut environment." },
+      {
+        term: "Established superfruit",
+        copy: "Strong existing recognition — most customers already know why they want it.",
+      },
+    ],
+    tags: ["Immunity", "Digestion", "Heart & circulation"],
+    inJars: [],
+    color: "#3d1a4a",
   },
   {
     slug: "black-pepper",
@@ -507,7 +589,7 @@ export const ingredientLibrary: Ingredient[] = [
       },
     ],
     tags: ["Digestion", "Joints & inflammation"],
-    inJars: ["golden-milk"],
+    inJars: [],
     color: "#5a4632",
   },
   {
@@ -527,16 +609,13 @@ export const ingredientLibrary: Ingredient[] = [
       },
       {
         term: "Natural sweetness",
-        copy: "Adds perceived sweetness to the Golden Milk jar without a gram of added sugar.",
+        copy: "Adds perceived sweetness to the Golden Me jar without a gram of added sugar.",
       },
     ],
     tags: ["Digestion", "Heart & circulation"],
-    inJars: ["golden-milk"],
+    inJars: [],
     color: "#8a5a12",
   },
-
-  /* ------------------------------------------------------------------ */
-  /* Wider herbal library                                                */
   /* ------------------------------------------------------------------ */
   {
     slug: "cloves",
@@ -897,58 +976,6 @@ export const ingredientLibrary: Ingredient[] = [
   /* ------------------------------------------------------------------ */
   /* In development                                                      */
   /* ------------------------------------------------------------------ */
-  {
-    slug: "blueberry",
-    name: "Blueberry",
-    group: "fruit",
-    pipeline: true,
-    summary: "The berry most associated with memory and focus, and deservedly so.",
-    bestFor: "Brain-health and heart-health-focused shoppers.",
-    benefits: [
-      {
-        term: "Anthocyanins",
-        copy: "One of the highest antioxidant levels of any common fruit.",
-      },
-      {
-        term: "Vitamin C & K",
-        copy: "Supports immune function and bone health.",
-      },
-      { term: "Fibre", copy: "Supports gut and digestive health." },
-      {
-        term: "Cognitive support",
-        copy: "Widely recognised for supporting memory and focus.",
-      },
-    ],
-    tags: ["Focus & mood", "Heart & circulation", "Immunity"],
-    inJars: [],
-    color: "#3f4a8a",
-  },
-  {
-    slug: "raspberry",
-    name: "Raspberry",
-    group: "fruit",
-    pipeline: true,
-    summary: "One of the highest-fibre, lowest-glycemic fruits you can eat.",
-    bestFor: "Blood-sugar-conscious shoppers and everyday antioxidant seekers.",
-    benefits: [
-      {
-        term: "Fibre",
-        copy: "One of the highest fibre contents of any common fruit.",
-      },
-      {
-        term: "Vitamin C & manganese",
-        copy: "Supports immunity and healthy skin.",
-      },
-      {
-        term: "Ellagic acid & anthocyanins",
-        copy: "Antioxidant compounds that help fight oxidative stress.",
-      },
-      { term: "Low glycemic", copy: "A lower-sugar fruit option." },
-    ],
-    tags: ["Digestion", "Immunity", "Skin & hair"],
-    inJars: [],
-    color: "#a82f4a",
-  },
   {
     slug: "strawberry",
     name: "Strawberry",

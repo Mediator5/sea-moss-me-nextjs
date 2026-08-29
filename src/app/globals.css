@@ -67,10 +67,10 @@
   --color-flame-100: #fde7e0;
 
   /* Flavour accents — taken from the jars themselves, not the brand board */
-  --color-flavor-purple: #7a2540;
+  --color-flavor-berry: #7a2540;
   --color-flavor-golden: #c98a1e;
-  --color-flavor-green: #1f5e3c;
-  --color-flavor-montego: #d9812a;
+  --color-flavor-alkaline: #1f5e3c;
+  --color-flavor-tropical: #d9812a;
 
   --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;

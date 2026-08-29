@@ -16,7 +16,7 @@ import { posts } from "@/lib/content";
 import { products } from "@/lib/products";
 
 export default function HomePage() {
-  const montego = products.find((p) => p.slug === "montego-tropical-fusion")!;
+  const tropical = products.find((p) => p.slug === "tropical-me")!;
   const featuredIngredients = [
     "sea-moss",
     "turmeric",
@@ -386,21 +386,21 @@ export default function HomePage() {
             delay={120}
             className="relative overflow-hidden rounded-2xl border border-sand-200 bg-white p-10 sm:p-12"
           >
-            <p className="eyebrow text-flavor-montego">Limited edition</p>
-            <h2 className="mt-4 text-3xl leading-tight">Montego Tropical Fusion</h2>
+            <p className="eyebrow text-flavor-tropical">Limited edition</p>
+            <h2 className="mt-4 text-3xl leading-tight">Tropical Me</h2>
             <p className="mt-4 text-sm leading-relaxed text-abyss-800/70">
-              Jamaican mango, coconut, pineapple and papaya — a bright twist on the ritual you
-              already know. Only available while this run lasts.
+              Coconut, Jamaican mango, papaya and pineapple — a bright, enzyme-rich twist on the
+              ritual you already know. Only available while this run lasts.
             </p>
             <Link
-              href={`/products/${montego.slug}`}
-              className="mt-7 inline-flex items-center gap-2 font-semibold text-flavor-montego"
+              href={`/products/${tropical.slug}`}
+              className="mt-7 inline-flex items-center gap-2 font-semibold text-flavor-tropical"
             >
-              <span className="link-underline">Get Montego</span>
+              <span className="link-underline">Get Tropical Me</span>
               <ArrowRight className="size-4" />
             </Link>
             <ProductShot
-              product={montego}
+              product={tropical}
               sizes="240px"
               className="pointer-events-none absolute -right-8 -bottom-10 w-48 rounded-xl sm:w-56"
             />
