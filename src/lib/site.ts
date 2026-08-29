@@ -19,14 +19,33 @@ export const site = {
   },
 } as const;
 
-export const nav = [
+export type NavLink = {
+  label: string;
+  href: string;
+};
+
+export type NavItem = NavLink & {
+  /** Rendered as a dropdown on desktop and an indented group in the mobile menu. */
+  children?: readonly NavLink[];
+};
+
+/* Five top-level items. Everything else hangs off one of them. */
+export const nav: readonly NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "Shop", href: "/products" },
-  { label: "Sea Moss 101", href: "/sea-moss" },
-  { label: "Nature's Wisdom", href: "/natures-wisdom" },
-  { label: "Our Story", href: "/about" },
-  { label: "Journal", href: "/blog" },
+  {
+    label: "About",
+    href: "/about",
+    children: [
+      { label: "Our Story", href: "/about" },
+      { label: "Sea Moss 101", href: "/sea-moss" },
+      { label: "Nature's Wisdom", href: "/natures-wisdom" },
+      { label: "Journal", href: "/blog" },
+    ],
+  },
   { label: "FAQ", href: "/faq" },
-] as const;
+  { label: "Contact", href: "/contact" },
+];
 
 export const announcements = [
   "20% off your first order — code SEAMOSS20",
