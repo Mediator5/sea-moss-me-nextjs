@@ -61,7 +61,7 @@ export default function HomePage() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-[linear-gradient(to_top,rgba(3,51,58,0.78),rgba(3,51,58,0.05)_55%)]"
+                className="absolute inset-0 bg-[linear-gradient(to_top,rgba(49,139,152,0.78),rgba(49,139,152,0.05)_55%)]"
               />
               <div className="absolute inset-x-0 bottom-0 p-8">
                 <p className="font-display text-2xl text-sand-50 italic">
@@ -269,7 +269,7 @@ export default function HomePage() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(3,51,58,0.95)_0%,rgba(3,51,58,0.86)_45%,rgba(3,51,58,0.68)_100%)]"
+                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(49,139,152,0.95)_0%,rgba(49,139,152,0.86)_45%,rgba(49,139,152,0.68)_100%)]"
               />
               <p className="eyebrow text-gold-300">Sea Moss 101</p>
               <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
@@ -301,7 +301,7 @@ export default function HomePage() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(3,51,58,0.95)_0%,rgba(3,51,58,0.86)_45%,rgba(3,51,58,0.68)_100%)]"
+                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(49,139,152,0.95)_0%,rgba(49,139,152,0.86)_45%,rgba(49,139,152,0.68)_100%)]"
               />
               <p className="eyebrow text-gold-300">Nature&apos;s Wisdom</p>
               <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
@@ -361,7 +361,7 @@ export default function HomePage() {
             />
             <div
               aria-hidden
-              className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(3,51,58,0.94)_0%,rgba(3,51,58,0.86)_45%,rgba(3,51,58,0.35)_100%)]"
+              className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(49,139,152,0.94)_0%,rgba(49,139,152,0.86)_45%,rgba(49,139,152,0.35)_100%)]"
             />
             <div className="relative max-w-md">
               <p className="eyebrow text-gold-300">Bundle &amp; save</p>

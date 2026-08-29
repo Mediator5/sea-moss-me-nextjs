@@ -32,7 +32,7 @@ export default function IngredientsPage() {
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(3,51,58,0.96)_0%,rgba(3,51,58,0.9)_50%,rgba(3,51,58,0.7)_100%)]"
+          className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(49,139,152,0.96)_0%,rgba(49,139,152,0.9)_50%,rgba(49,139,152,0.7)_100%)]"
         />
         <div className="container-page relative">
           <p className="eyebrow text-gold-300">Nature&apos;s Wisdom</p>

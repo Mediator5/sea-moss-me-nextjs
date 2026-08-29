@@ -33,7 +33,7 @@ export default function ProductsPage() {
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(3,51,58,0.93),rgba(3,51,58,0.86))]"
+          className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(49,139,152,0.93),rgba(49,139,152,0.86))]"
         />
         <div className="container-page relative text-center">
           <p className="eyebrow text-gold-300">The collection</p>

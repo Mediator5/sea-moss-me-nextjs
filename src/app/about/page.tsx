@@ -83,7 +83,7 @@ export default function AboutPage() {
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(3,51,58,0.95)_0%,rgba(3,51,58,0.88)_45%,rgba(3,51,58,0.6)_100%)]"
+          className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(49,139,152,0.95)_0%,rgba(49,139,152,0.88)_45%,rgba(49,139,152,0.6)_100%)]"
         />
         <div className="container-page relative grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
