@@ -3,16 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section";
-import { StatCounter } from "@/components/stat-counter";
 import { LogoMark } from "@/components/wordmark";
 import { ArrowRight, Leaf, Shield, Spark, Wave } from "@/components/icons";
-import { process } from "@/lib/content";
-import { doctorBird, philosophy } from "@/lib/learn";
+import { process, getPost } from "@/lib/content";
+import { philosophy } from "@/lib/learn";
 
 export const metadata: Metadata = {
   title: "Our story",
   description:
-    "Sea Moss Me was founded on one idea: eat from the earth, to heal from within. The story of our Jamaican sourcing, our standards, and the Doctor Bird on every jar.",
+    "Sea Moss Me was founded on one idea: eat from the earth, to heal from within. Where our sea moss comes from, the standard we hold it to, and the Doctor Bird on every jar.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,57 +19,39 @@ const values = [
   {
     icon: Leaf,
     title: "Wildcrafted or nothing",
-    copy: "We only buy moss cut by hand from open rock. Pool-grown moss is cheaper and we've never once been tempted.",
+    copy: "We only buy moss cut by hand from open rock. Pool-grown moss is cheaper and we have never once been tempted.",
   },
   {
     icon: Shield,
     title: "Nothing hidden",
-    copy: "Every ingredient is on the label in plain words. If you can't pronounce it, it isn't in the jar.",
+    copy: "Every ingredient is on the label in plain words. If you cannot pronounce it, it is not in the jar.",
   },
   {
     icon: Spark,
     title: "Made in small batches",
-    copy: "We make what we can sell fresh. It limits how fast we grow, and that's a trade we're happy with.",
+    copy: "We make what we can sell fresh. It limits how fast we grow, and that is a trade we are happy with.",
   },
   {
     icon: Wave,
     title: "Rooted in Jamaica",
-    copy: "The moss, the fruit and the hands that harvest both come from the same island. That's the whole supply chain.",
+    copy: "The moss, the fruit and the hands that harvest both come from the same island. That is the whole supply chain.",
   },
 ];
 
-const benefits = [
-  {
-    title: "Digestion",
-    copy: "Sea moss mucilage is soothing and prebiotic — it feeds the bacteria your gut already relies on.",
-  },
-  {
-    title: "Everyday energy",
-    copy: "A dense mineral profile fills the gaps a modern diet leaves, without stimulants or a crash.",
-  },
-  {
-    title: "Skin and hair",
-    copy: "Sulphur, zinc and vitamin-rich pairings are why sea moss turns up in skincare as well as smoothies.",
-  },
-  {
-    title: "Immune support",
-    copy: "Especially in blends built around elderberry, beetroot and other pigment-rich fruit.",
-  },
-  {
-    title: "Thyroid function",
-    copy: "Naturally iodine-rich. Enough that if you manage a thyroid condition, you should talk to your doctor first.",
-  },
-  {
-    title: "Recovery",
-    copy: "Magnesium, potassium and trace minerals are the boring backbone of feeling like yourself again.",
-  },
+/** The long-form pieces live on the blog now — About just points at them. */
+const reading = [
+  "the-doctor-bird",
+  "how-our-sea-moss-is-harvested",
+  "what-sea-moss-is-good-for",
 ];
 
 export default function AboutPage() {
+  const posts = reading.map((slug) => getPost(slug)!).filter(Boolean);
+
   return (
     <>
       {/* ---------------- Hero ---------------- */}
-      <section className="relative isolate overflow-hidden bg-reef-500 pt-20 pb-28 text-sand-50">
+      <section className="relative isolate overflow-hidden bg-reef-500 pt-20 pb-24 text-sand-50">
         <Image
           src="/images/origin.jpg"
           alt=""
@@ -83,7 +64,7 @@ export default function AboutPage() {
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(49,139,152,0.95)_0%,rgba(49,139,152,0.88)_45%,rgba(49,139,152,0.6)_100%)]"
+          className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(20,86,95,0.96)_0%,rgba(31,120,132,0.9)_45%,rgba(49,139,152,0.62)_100%)]"
         />
         <div className="container-page relative grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
@@ -100,7 +81,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---------------- Philosophy ---------------- */}
-      <section className="py-20 sm:py-28">
+      <section className="py-20 sm:py-24">
         <div className="container-page grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeading eyebrow="Why we exist" title="Before laboratories, there was the earth" />
           <Reveal delay={90} className="space-y-5 text-[1.0625rem] leading-[1.85] text-abyss-800/85">
@@ -109,148 +90,15 @@ export default function AboutPage() {
             ))}
             <p>
               That belief is rooted in Jamaica — in its people, its traditions, and two symbols we
-              chose to put on every jar: a bird found nowhere else on the planet, and a sea
-              vegetable that has quietly sustained Caribbean households for generations.
+              put on every jar: a bird found nowhere else on the planet, and a sea vegetable that
+              has quietly sustained Caribbean households for generations.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* ---------------- The Doctor Bird ---------------- */}
-      <section
-        id="doctor-bird"
-        className="relative scroll-mt-24 overflow-hidden bg-reef-500 py-20 text-sand-50 sm:py-28"
-      >
-        <div
-          aria-hidden
-          className="animate-drift pointer-events-none absolute -top-40 -right-32 size-[38rem] rounded-full bg-flame-500/10 blur-3xl"
-        />
-        <div className="container-page relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <Reveal className="order-2 lg:order-1">
-            <div className="relative mx-auto max-w-sm rounded-2xl border border-sand-100/12 bg-sand-100/[0.04] p-12 text-center">
-              <LogoMark tone="light" className="mx-auto h-44" />
-              <p className="mt-8 font-display text-xl leading-snug text-sand-50 italic">
-                &ldquo;{doctorBird.taino}&rdquo;
-              </p>
-              <p className="mt-3 text-[11px] tracking-[0.16em] text-sand-100/85 uppercase">
-                Taino tradition
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="order-1 lg:order-2">
-            <SectionHeading
-              tone="light"
-              eyebrow="The bird on every jar"
-              title="The Doctor Bird — found nowhere else on earth"
-            />
-            <Reveal delay={90} className="mt-6 space-y-4 leading-[1.8] text-sand-100/85">
-              {doctorBird.intro.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </Reveal>
-
-            <div className="mt-10 grid gap-px overflow-hidden rounded-xl bg-sand-100/10 sm:grid-cols-2">
-              {doctorBird.facts.map((f, i) => (
-                <Reveal key={f.label} delay={i * 80} className="bg-reef-500 p-6">
-                  <p className="font-display text-3xl text-gold-300">{f.stat}</p>
-                  <p className="mt-1 text-[11px] font-semibold tracking-[0.12em] text-sand-100/85 uppercase">
-                    {f.label}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-sand-100/85">{f.copy}</p>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- Sourcing ---------------- */}
-      <section className="py-20 sm:py-28">
-        <div className="container-page grid gap-16 lg:grid-cols-2 lg:items-center">
-          <Reveal>
-            <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
-              <Image
-                src="/images/ingredients.jpg"
-                alt="Fresh turmeric, ginger, spirulina, moringa, berries and dried sea moss"
-                width={1600}
-                height={1200}
-                sizes="(min-width: 1024px) 46vw, 92vw"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </Reveal>
-
-          <div>
-            <SectionHeading
-              eyebrow="Where it comes from"
-              title="The south coast of Jamaica, by hand"
-              copy="Our moss grows wild on rock in clear, moving water. It is cut by hand at the right size, and the holdfast is left behind so it grows back — the same way it has been harvested here for generations."
-            />
-            <Reveal delay={100}>
-              <p className="mt-5 leading-relaxed text-abyss-800/75">
-                From there it dries in open sun and salt wind, is rinsed clean, soaked in spring
-                water with fresh lime, and blended in batches small enough that one person can watch
-                every one of them. Fruits and roots go in whole, never as syrups or concentrates.
-              </p>
-              <p className="mt-4 leading-relaxed text-abyss-800/75">
-                It takes longer and costs more. It is also the only reason the gel sets firm, tastes
-                clean, and carries the mineral profile people come to sea moss for in the first
-                place.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/sea-moss" className="btn btn-primary">
-                  Read Sea Moss 101 <ArrowRight className="size-4" />
-                </Link>
-                <Link href="/natures-wisdom" className="btn btn-ghost">
-                  Nature&apos;s Wisdom
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- Process ---------------- */}
-      <section id="process" className="scroll-mt-24 bg-reef-500 py-20 text-sand-50 sm:py-28">
-        <div className="container-page">
-          <SectionHeading
-            tone="light"
-            eyebrow="How it's made"
-            title="Four steps, no industrial shortcuts"
-            align="center"
-          />
-          <Reveal className="mt-12 overflow-hidden rounded-2xl">
-            <Image
-              src="/images/lineup.jpg"
-              alt="The four Sea Moss Me flavours lined up against the Jamaican coast"
-              width={2000}
-              height={1125}
-              sizes="(min-width: 1280px) 1200px, 96vw"
-              className="aspect-21/9 w-full object-cover"
-            />
-          </Reveal>
-
-          <ol className="mt-10 grid gap-px overflow-hidden rounded-xl bg-sand-100/10 md:grid-cols-2 lg:grid-cols-4">
-            {process.map((step, i) => (
-              <Reveal key={step.step} as="li" delay={i * 90} className="bg-reef-500 p-8">
-                <span className="font-display text-4xl text-flame-300">{step.step}</span>
-                <h3 className="mt-5 text-xl">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-sand-100/80">{step.copy}</p>
-              </Reveal>
-            ))}
-          </ol>
-          <div className="mt-16 grid grid-cols-2 gap-10 text-center sm:grid-cols-4">
-            <StatCounter value={5} suffix="+" label="Years making it" />
-            <StatCounter value={92} label="Minerals &amp; vitamins" />
-            <StatCounter value={4} label="Flavours" />
-            <StatCounter value={0} label="Fillers, ever" />
-          </div>
-        </div>
-      </section>
-
       {/* ---------------- Values ---------------- */}
-      <section className="py-20 sm:py-28">
+      <section className="bg-sand-100/70 py-20 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="What we stand on"
@@ -262,7 +110,7 @@ export default function AboutPage() {
               <Reveal key={v.title} as="li" delay={i * 80} className="card flex gap-5 p-8">
                 <span
                   className={`grid size-12 shrink-0 place-items-center rounded-full ${
-                    i % 2 === 0 ? "bg-flame-100 text-flame-600" : "bg-reef-100 text-reef-600"
+                    i % 2 === 0 ? "bg-flame-100 text-flame-600" : "bg-reef-100/12 text-reef-600"
                   }`}
                 >
                   <v.icon className="size-6" />
@@ -277,33 +125,97 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ---------------- Benefits ---------------- */}
-      <section id="benefits" className="scroll-mt-24 bg-sand-100/70 py-20 sm:py-28">
+      {/* ---------------- The Doctor Bird ---------------- */}
+      <section
+        id="doctor-bird"
+        className="relative scroll-mt-24 overflow-hidden bg-reef-500 py-20 text-sand-50 sm:py-24"
+      >
+        <div
+          aria-hidden
+          className="animate-drift pointer-events-none absolute -top-40 -right-32 size-[38rem] rounded-full bg-flame-500/10 blur-3xl"
+        />
+        <div className="container-page relative grid items-center gap-14 lg:grid-cols-[0.8fr_1.2fr]">
+          <Reveal className="text-center lg:text-left">
+            <LogoMark tone="light" className="mx-auto h-40 lg:mx-0 lg:h-48" />
+          </Reveal>
+          <div>
+            <SectionHeading
+              tone="light"
+              eyebrow="The bird on every jar"
+              title="The Doctor Bird"
+              copy="A hummingbird found nowhere else on earth but Jamaica — the same island, the same waters as our sea moss. It appears on the nation's currency, its coat of arms and its passport."
+            />
+            <Reveal delay={100}>
+              <Link
+                href="/blog/the-doctor-bird"
+                className="mt-8 inline-flex items-center gap-2 font-semibold text-gold-300"
+              >
+                <span className="link-underline">Read the full story</span>
+                <ArrowRight className="size-4" />
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- Process ---------------- */}
+      <section id="process" className="scroll-mt-24 py-20 sm:py-24">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Why people take it"
-            title="What sea moss is actually good for"
-            copy="Sea moss is a food, not a medicine — and anyone telling you it cures things is selling you something. Here's the honest version of what it supports."
+            eyebrow="How it's made"
+            title="Four steps, no industrial shortcuts"
+            copy="Cut by hand from open rock on the south coast, dried in sun and salt wind, rinsed and soaked in spring water, blended whole in batches one person can watch."
             align="center"
           />
-          <ul className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {benefits.map((b, i) => (
-              <Reveal key={b.title} as="li" delay={(i % 3) * 80} className="card p-7">
-                <h3 className="text-lg">{b.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-abyss-800/70">{b.copy}</p>
+          <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {process.map((step, i) => (
+              <Reveal key={step.step} as="li" delay={i * 90} className="card p-7">
+                <span className="font-display text-4xl text-flame-500">{step.step}</span>
+                <h3 className="mt-4 text-lg">{step.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-abyss-800/70">{step.copy}</p>
               </Reveal>
             ))}
-          </ul>
-          <Reveal className="mx-auto mt-12 max-w-2xl text-center text-xs leading-relaxed text-abyss-800/50">
-            These statements have not been evaluated by the Food and Drug Administration. This
-            product is not intended to diagnose, treat, cure or prevent any disease. If you are
-            pregnant, nursing or managing a medical condition, speak to your doctor first.
+          </ol>
+          <Reveal className="mt-10 text-center">
+            <Link href="/blog/how-our-sea-moss-is-harvested" className="btn btn-ghost">
+              How it&apos;s harvested, in full <ArrowRight className="size-4" />
+            </Link>
           </Reveal>
         </div>
       </section>
 
+      {/* ---------------- Read more ---------------- */}
+      <section className="bg-sand-100/70 py-20 sm:py-24">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Keep reading"
+            title="The longer versions live on the blog"
+            copy="We would rather explain things properly than cram them onto one page."
+            align="center"
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {posts.map((post, i) => (
+              <Reveal key={post.slug} delay={i * 80} className="h-full">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="card group flex h-full flex-col p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+                >
+                  <p className="eyebrow text-flame-600">{post.category}</p>
+                  <h3 className="mt-4 text-xl leading-snug">{post.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-abyss-800/70">{post.excerpt}</p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-reef-600">
+                    Read it
+                    <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ---------------- CTA ---------------- */}
-      <section className="py-20 text-center sm:py-28">
+      <section className="py-20 text-center sm:py-24">
         <div className="container-page">
           <Reveal>
             <h2 className="mx-auto max-w-2xl text-4xl leading-tight sm:text-5xl">

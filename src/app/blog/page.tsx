@@ -6,9 +6,9 @@ import { ArrowRight } from "@/components/icons";
 import { posts } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Journal",
+  title: "Blog",
   description:
-    "Guides, sourcing notes and everyday habits from the Sea Moss Me kitchen — written for people who want the honest version.",
+    "Guides, sourcing notes, our story and everyday habits from the Sea Moss Me kitchen — written for people who want the honest version.",
   alternates: { canonical: "/blog" },
 };
 
@@ -22,7 +22,7 @@ export default function BlogPage() {
     <>
       <section className="border-b border-sand-200 bg-sand-100/60 py-16 sm:py-20">
         <div className="container-page">
-          <p className="eyebrow text-flame-600">From the journal</p>
+          <p className="eyebrow text-flame-600">The blog</p>
           <h1 className="mt-5 max-w-3xl text-5xl leading-[1.04] sm:text-6xl">
             Notes from the kitchen and the coast
           </h1>

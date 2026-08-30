@@ -2,7 +2,7 @@ export const site = {
   name: "Sea Moss Me",
   tagline: "Peak health is true wealth",
   description:
-    "100% certified organic, wildcrafted sea moss gel hand-harvested from Jamaica's clear coastal waters. Up to 92 of the minerals and vitamins the body needs, small-batch, no fillers.",
+    "100% certified organic, wildcrafted sea moss gel hand-harvested from Jamaica's clear coastal waters. A broad spread of trace minerals and vitamins, small-batch, no fillers.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://seamossme.com",
   email: "info@seamossme.com",
   phone: "689-304-0453",
@@ -40,7 +40,7 @@ export const nav: readonly NavItem[] = [
       { label: "Our Story", href: "/about" },
       { label: "Sea Moss 101", href: "/sea-moss" },
       { label: "Nature's Wisdom", href: "/natures-wisdom" },
-      { label: "Journal", href: "/blog" },
+      { label: "Blog", href: "/blog" },
     ],
   },
   { label: "FAQ", href: "/faq" },

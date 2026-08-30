@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 // Self-hosted fonts — no Google Fonts request at build or run time.
 import "@fontsource-variable/inter";
-import "@fontsource-variable/fraunces";
-import "@fontsource-variable/fraunces/standard-italic.css";
+import "@fontsource-variable/playfair-display";
+import "@fontsource-variable/playfair-display/wght-italic.css";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { AnnouncementBar } from "@/components/announcement-bar";

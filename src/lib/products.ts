@@ -67,7 +67,7 @@ export const products: Product[] = [
       "Wildcrafted Jamaican sea moss (Genus Gracilaria), spring water, chlorella, chlorophyll, moringa leaf, spirulina, lime.",
     benefits: [
       { title: "Alkalising", copy: "Chlorophyll-rich greens help balance a diet heavy on processed food." },
-      { title: "Mineral dense", copy: "92 of the minerals and vitamins your body needs, in the form it recognises." },
+      { title: "Mineral dense", copy: "A broad spread of trace minerals and vitamins, in the form your body recognises." },
       { title: "Everyday energy", copy: "Steady, food-based energy — no crash, no stimulants." },
     ],
     badge: "Best seller",

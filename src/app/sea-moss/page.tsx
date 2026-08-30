@@ -139,7 +139,7 @@ export default function SeaMossPage() {
                   { label: "What it is", value: "Red algae (a sea vegetable)" },
                   { label: "Species we use", value: "Gracilaria, wildcrafted" },
                   { label: "Where ours grows", value: "South coast of Jamaica" },
-                  { label: "Commonly cited as carrying", value: "Up to 92 minerals & vitamins" },
+                  { label: "Carries", value: "A broad spread of trace minerals" },
                   { label: "Best known for", value: "Iodine, magnesium, potassium, zinc, iron" },
                   { label: "Daily amount", value: "1–2 tablespoons" },
                   { label: "Keeps for", value: "3–4 weeks refrigerated" },
@@ -196,7 +196,7 @@ export default function SeaMossPage() {
               <div>
                 <h3 className="text-xl">About that mineral count</h3>
                 <p className="mt-3 leading-relaxed text-abyss-800/80">
-                  Sea moss is commonly cited as carrying up to 92 of the minerals and vitamins the
+                  Sea moss is often said to carry up to 92 of the minerals and vitamins the
                   human body needs. It is a genuinely broad profile — but it is not a multivitamin
                   in a jar, and no honest seller should tell you it is. What sea moss offers is a
                   whole food, in a form your body recognises, that fills gaps a processed diet

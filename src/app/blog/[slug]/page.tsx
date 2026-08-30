@@ -59,7 +59,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         <div className="container-page max-w-3xl">
           <nav aria-label="Breadcrumb" className="text-xs text-abyss-800/60">
             <Link href="/blog" className="hover:text-abyss-900">
-              ← Back to the journal
+              ← Back to the blog
             </Link>
           </nav>
 

@@ -1,53 +1,82 @@
 import Link from "next/link";
-import { Hero } from "@/components/hero";
-import { ProductCard } from "@/components/product-card";
-import { Reveal } from "@/components/reveal";
-import { SectionHeading, WaveDivider } from "@/components/section";
-import { StatCounter } from "@/components/stat-counter";
-import { Testimonials } from "@/components/testimonials";
-import { FaqAccordion } from "@/components/faq-accordion";
 import Image from "next/image";
-import { ProductShot } from "@/components/product-shot";
+import { Hero } from "@/components/hero";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section";
+import { Testimonials } from "@/components/testimonials";
 import { LogoMark } from "@/components/wordmark";
-import { ArrowRight, Leaf, Spark, Wave } from "@/components/icons";
-import { faqs, process } from "@/lib/content";
-import { ingredientLibrary } from "@/lib/ingredients";
-import { posts } from "@/lib/content";
-import { products } from "@/lib/products";
+import { ArrowRight, Leaf, Shield, Spark, Wave } from "@/components/icons";
+
+/**
+ * The homepage has one job: say where this comes from, what it is, and what we
+ * promise. No jars, no prices, no ingredient library — every one of those has
+ * its own page, and repeating them here only made the page longer.
+ */
+
+const story = [
+  {
+    icon: Leaf,
+    title: "Wildcrafted, never farmed",
+    copy: "Cut by hand from open rock in moving water. Nothing grown on ropes in a salt tank.",
+  },
+  {
+    icon: Spark,
+    title: "Blended whole",
+    copy: "Fruits and roots go in as themselves — no syrups, no concentrates, no colouring.",
+  },
+  {
+    icon: Wave,
+    title: "Small batches only",
+    copy: "We make what we can sell fresh. It caps how fast we grow, and we are fine with that.",
+  },
+];
+
+const commitments = [
+  {
+    icon: Shield,
+    title: "Everything on the label",
+    copy: "Every ingredient in plain words. If we cannot tell you what it is doing in there, it does not go in.",
+  },
+  {
+    icon: Leaf,
+    title: "One standard, every jar",
+    copy: "The same moss, the same method, the same person watching the batch — whether it is jar four or jar four hundred.",
+  },
+  {
+    icon: Wave,
+    title: "Honest about what it does",
+    copy: "Sea moss is a food, not a cure. We would rather explain it properly than sell you a miracle.",
+  },
+];
+
+const next = [
+  {
+    href: "/sea-moss",
+    eyebrow: "Sea Moss 101",
+    title: "What it is and why the minerals matter",
+    copy: "A sea vegetable with no roots at all, harvested for fourteen thousand years.",
+  },
+  {
+    href: "/natures-wisdom",
+    eyebrow: "Nature's Wisdom",
+    title: "Every fruit, herb and root, explained",
+    copy: "What each one is best for, and which jar it lives in.",
+  },
+  {
+    href: "/products",
+    eyebrow: "The flavours",
+    title: "Four jars, one wildcrafted base",
+    copy: "Pick the one that matches what your body is asking for.",
+  },
+];
 
 export default function HomePage() {
-  const tropical = products.find((p) => p.slug === "tropical-me")!;
-  const featuredIngredients = [
-    "sea-moss",
-    "turmeric",
-    "elderberry",
-    "spirulina",
-    "moringa",
-    "ashwagandha",
-    "pineapple",
-    "beetroot",
-  ]
-    .map((slug) => ingredientLibrary.find((i) => i.slug === slug)!)
-    .filter(Boolean);
-
   return (
     <>
       <Hero />
 
-      {/* ---------------- Stats ---------------- */}
-      <section className="bg-reef-600 py-14 text-sand-50">
-        <div className="container-page grid grid-cols-2 gap-10 text-center sm:grid-cols-4">
-          <StatCounter value={5} suffix="+" label="Years of organic wellness" />
-          <StatCounter value={92} label="Minerals &amp; vitamins" />
-          <StatCounter value={4} label="Small-batch flavours" />
-          <StatCounter value={100} suffix="%" label="Wildcrafted, never farmed" />
-        </div>
-      </section>
-      {/* Reads from the token so it can never drift from the stats band above it */}
-      <WaveDivider flip fill="var(--color-reef-600)" className="-mt-px bg-sand-50" />
-
-      {/* ---------------- Story ---------------- */}
-      <section id="story" className="py-24 sm:py-32">
+      {/* ---------------- Our story ---------------- */}
+      <section id="story" className="py-24 sm:py-28">
         <div className="container-page grid items-center gap-16 lg:grid-cols-2">
           <Reveal className="relative order-2 lg:order-1">
             <div className="relative aspect-4/5 overflow-hidden rounded-2xl sm:aspect-square">
@@ -61,7 +90,7 @@ export default function HomePage() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-[linear-gradient(to_top,rgba(49,139,152,0.78),rgba(49,139,152,0.05)_55%)]"
+                className="absolute inset-0 bg-[linear-gradient(to_top,rgba(20,86,95,0.85),rgba(20,86,95,0.05)_55%)]"
               />
               <div className="absolute inset-x-0 bottom-0 p-8">
                 <p className="font-display text-2xl text-sand-50 italic">
@@ -72,12 +101,6 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="absolute -top-6 -right-6 hidden rounded-xl bg-sand-50 p-5 shadow-[var(--shadow-lift)] sm:block">
-              <Wave className="size-7 text-flame-500" />
-              <p className="mt-3 max-w-[9rem] text-xs leading-relaxed text-abyss-800/70">
-                Harvested by hand on the south coast of Jamaica
-              </p>
-            </div>
           </Reveal>
 
           <div className="order-1 lg:order-2">
@@ -85,31 +108,15 @@ export default function HomePage() {
               eyebrow="Our story"
               title={
                 <>
-                  A family remedy that
-                  <br className="hidden sm:block" /> outgrew the kitchen
+                  A Jamaican tradition,
+                  <br className="hidden sm:block" /> kept intact
                 </>
               }
-              copy="Sea Moss Me started the way most good things do — as something made at home, for people we love. The moss came from the same coast it still comes from. The recipe hasn't changed. What changed is how many jars we make."
+              copy="Sea moss sustained Caribbean households for generations before anyone called it a superfood. It started here the way most good things do — made at home, for people we love, from the same coast it still comes from. What changed is how many jars we make."
             />
             <Reveal delay={120}>
               <ul className="mt-9 space-y-5">
-                {[
-                  {
-                    icon: Leaf,
-                    title: "Wildcrafted, not farmed",
-                    copy: "Cut by hand from open rock, never grown in salt tanks — that's where the mineral density comes from.",
-                  },
-                  {
-                    icon: Spark,
-                    title: "Whole superfoods, blended in",
-                    copy: "Turmeric, elderberry, spirulina and more. Real ingredients you can name, in amounts you can taste.",
-                  },
-                  {
-                    icon: Wave,
-                    title: "Small batches only",
-                    copy: "We make what we can sell fresh. Nothing sits in a warehouse waiting for you.",
-                  },
-                ].map(({ icon: Icon, title, copy }) => (
+                {story.map(({ icon: Icon, title, copy }) => (
                   <li key={title} className="flex gap-4">
                     <span className="mt-0.5 grid size-11 shrink-0 place-items-center rounded-full bg-flame-100 text-flame-600">
                       <Icon className="size-5" />
@@ -133,283 +140,104 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------------- Products ---------------- */}
-      <section id="products" className="bg-sand-100/70 py-24 sm:py-32">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="The flavours"
-            title="Four jars. One wildcrafted base."
-            copy="Every flavour starts with the same hand-harvested Jamaican sea moss — then goes its own way. Pick the one that matches what your body is asking for."
-            align="center"
-          />
-
-          <div className="mt-14 grid gap-7 sm:grid-cols-2 xl:grid-cols-4">
-            {products.map((product, i) => (
-              <Reveal key={product.slug} delay={i * 80} className="h-full">
-                <ProductCard product={product} priority={i < 2} />
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal className="mt-12 text-center">
-            <Link href="/products" className="btn btn-ghost">
-              Compare all flavours <ArrowRight className="size-4" />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ---------------- Process ---------------- */}
-      <section id="process" className="relative overflow-hidden bg-reef-500 py-24 text-sand-50 sm:py-32">
+      {/* ---------------- The Doctor Bird ---------------- */}
+      <section className="relative overflow-hidden bg-reef-500 py-24 text-sand-50 sm:py-28">
         <div
           aria-hidden
-          className="animate-drift pointer-events-none absolute -top-32 -left-32 size-[36rem] rounded-full bg-reef-500/12 blur-3xl"
+          className="animate-drift pointer-events-none absolute -top-40 -right-32 size-[38rem] rounded-full bg-flame-500/10 blur-3xl"
         />
-        <div className="container-page relative">
-          <SectionHeading
-            eyebrow="How it's made"
-            tone="light"
-            title="From rock to jar, four steps"
-            copy="No industrial processing, no gelatine, no thickeners. The whole method fits on one page — which is exactly the point."
-          />
+        <div className="container-page relative grid items-center gap-14 lg:grid-cols-[0.8fr_1.2fr]">
+          <Reveal className="text-center lg:text-left">
+            <LogoMark tone="light" className="mx-auto h-40 lg:mx-0 lg:h-48" />
+          </Reveal>
 
-          <ol className="mt-16 grid gap-px overflow-hidden rounded-xl bg-sand-100/10 md:grid-cols-2 lg:grid-cols-4">
-            {process.map((step, i) => (
-              <Reveal
-                key={step.step}
-                as="li"
-                delay={i * 90}
-                className="bg-reef-500 p-8 transition-colors duration-500 hover:bg-reef-600"
-              >
-                <span className="font-display text-4xl text-flame-300">{step.step}</span>
-                <h3 className="mt-5 text-xl">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-sand-100/80">{step.copy}</p>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* ---------------- Ingredients ---------------- */}
-      <section className="py-24 sm:py-32">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="What's inside"
-            title="Superfoods that actually do something"
-            copy="Every jar is built around real, wildcrafted ingredients — and we can tell you exactly what each one is doing in there."
-            align="center"
-          />
-
-          <Reveal className="mt-14 overflow-hidden rounded-2xl">
-            <Image
-              src="/images/ingredients.jpg"
-              alt="Turmeric, ginger, spirulina, moringa, berries and dried sea moss laid out on a warm surface"
-              width={1600}
-              height={1200}
-              sizes="(min-width: 1280px) 1200px, 96vw"
-              className="aspect-16/9 w-full object-cover"
+          <div>
+            <SectionHeading
+              tone="light"
+              eyebrow="The bird on every jar"
+              title="Meet the Doctor Bird"
+              copy="The hummingbird on our label is found nowhere else on earth but Jamaica — the same island, the same coastline our sea moss is cut from. It weighs less than six grams and beats its wings around eighty times a second."
             />
-          </Reveal>
-
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredIngredients.map((ing, i) => (
-              <Reveal
-                key={ing.slug}
-                as="li"
-                delay={(i % 4) * 70}
-                className="group relative h-full overflow-hidden rounded-lg border border-sand-200 bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+            <Reveal delay={110}>
+              <p className="mt-6 max-w-2xl leading-[1.8] text-sand-100/85">
+                Small, precise, and unmistakably itself. Nothing wasted, nothing added, everything
+                working. That is the standard we hold our jars to, and it is why the bird is on
+                every one of them.
+              </p>
+              <Link
+                href="/blog/the-doctor-bird"
+                className="mt-8 inline-flex items-center gap-2 font-semibold text-gold-300"
               >
-                <span
-                  className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
-                  style={{ backgroundColor: ing.color }}
-                />
-                <span
-                  className="grid size-10 place-items-center rounded-full text-white"
-                  style={{ backgroundColor: ing.color }}
-                >
-                  <Leaf className="size-5" />
-                </span>
-                <h3 className="mt-5 text-lg">{ing.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-abyss-800/70">{ing.summary}</p>
-                <p className="mt-4 text-[11px] font-semibold tracking-[0.1em] uppercase" style={{ color: ing.color }}>
-                  {ing.tags[0]}
-                </p>
-              </Reveal>
-            ))}
-          </ul>
-
-          <Reveal className="mt-12 text-center">
-            <Link href="/natures-wisdom" className="btn btn-ghost">
-              Explore Nature&apos;s Wisdom <ArrowRight className="size-4" />
-            </Link>
-          </Reveal>
+                <span className="link-underline">Read its story</span>
+                <ArrowRight className="size-4" />
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* ---------------- Learn ---------------- */}
-      <section className="bg-sand-100/70 pb-24 sm:pb-32">
-        <div className="container-page pt-24 sm:pt-32">
-          <SectionHeading
-            eyebrow="Know what you're taking"
-            title="We'd rather explain it than hype it"
-            copy="Sea moss is a food, not a miracle. Here's everything we know about it, written the way we'd want it written for us."
-            align="center"
-          />
-
-          <div className="mt-14 grid gap-7 lg:grid-cols-2">
-            <Reveal className="group relative isolate flex min-h-80 flex-col justify-end overflow-hidden rounded-2xl p-9 text-sand-50 sm:p-11">
-              <Image
-                src="/images/origin.jpg"
-                alt=""
-                aria-hidden
-                width={1600}
-                height={1067}
-                sizes="(min-width: 1024px) 46vw, 92vw"
-                className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-              />
-              <div
-                aria-hidden
-                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(49,139,152,0.95)_0%,rgba(49,139,152,0.86)_45%,rgba(49,139,152,0.68)_100%)]"
-              />
-              <p className="eyebrow text-gold-300">Sea Moss 101</p>
-              <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
-                What sea moss is, and why its minerals matter
-              </h3>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-sand-100/90">
-                A sea vegetable with no roots at all, harvested for 14,000 years. What it carries,
-                what a shortfall feels like, and how to tell wildcrafted from pool-grown.
+      {/* ---------------- What sea moss is ---------------- */}
+      <section className="py-24 sm:py-28">
+        <div className="container-page grid items-center gap-16 lg:grid-cols-2">
+          <div>
+            <SectionHeading
+              eyebrow="What sea moss is"
+              title="A sea vegetable, not a supplement"
+              copy="Sea moss is an algae that grows on open rock in warm, shallow water. It has no roots and takes everything it needs straight from the sea."
+            />
+            <Reveal delay={110}>
+              <p className="mt-6 leading-[1.8] text-abyss-800/80">
+                Ours is cut by hand from the rock, sun-dried on the shore, then soaked and blended
+                whole — so nothing is stripped out along the way. People have been harvesting it
+                this way for something like fourteen thousand years, which is rather longer than it
+                has been fashionable.
               </p>
-              <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-gold-300">
-                Read the explainer
-                <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
-              <Link href="/sea-moss" className="absolute inset-0" aria-label="Read Sea Moss 101" />
+              <Link href="/sea-moss" className="btn btn-ghost mt-8">
+                Read Sea Moss 101 <ArrowRight className="size-4" />
+              </Link>
             </Reveal>
+          </div>
 
-            <Reveal
-              delay={120}
-              className="group relative isolate flex min-h-80 flex-col justify-end overflow-hidden rounded-2xl p-9 text-sand-50 sm:p-11"
-            >
+          <Reveal delay={120} className="order-first lg:order-last">
+            <div className="overflow-hidden rounded-2xl">
               <Image
                 src="/images/ingredients.jpg"
-                alt=""
-                aria-hidden
+                alt="Dried sea moss with turmeric, ginger, moringa and berries on a warm surface"
                 width={1600}
                 height={1200}
                 sizes="(min-width: 1024px) 46vw, 92vw"
-                className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                className="aspect-4/3 w-full object-cover"
               />
-              <div
-                aria-hidden
-                className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(49,139,152,0.95)_0%,rgba(49,139,152,0.86)_45%,rgba(49,139,152,0.68)_100%)]"
-              />
-              <p className="eyebrow text-gold-300">Nature&apos;s Wisdom</p>
-              <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">
-                {ingredientLibrary.length} ingredients, each one explained
-              </h3>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-sand-100/90">
-                Fruits, herbs and roots — what each is best for, the compounds behind the claim, and
-                which jar it lives in. Filter it by what you&apos;re actually trying to fix.
-              </p>
-              <span className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-gold-300">
-                Open the library
-                <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
-              <Link
-                href="/natures-wisdom"
-                className="absolute inset-0"
-                aria-label="Explore Nature&apos;s Wisdom"
-              />
-            </Reveal>
-          </div>
-
-          {/* Doctor Bird teaser */}
-          <Reveal delay={80} className="mt-7 overflow-hidden rounded-2xl bg-reef-500 text-sand-50">
-            <div className="grid items-center gap-10 p-9 sm:p-12 lg:grid-cols-[auto_1fr_auto]">
-              <LogoMark tone="light" className="mx-auto h-24 lg:mx-0" />
-              <div>
-                <p className="eyebrow text-gold-300">The bird on every jar</p>
-                <h3 className="mt-3 text-2xl leading-snug sm:text-3xl">
-                  Why there&apos;s a hummingbird on our label
-                </h3>
-                <p className="mt-3 max-w-xl text-sm leading-relaxed text-sand-100/85">
-                  The Doctor Bird is found nowhere on earth but Jamaica — the same island, the same
-                  waters as our sea moss. It weighs less than six grams and beats its wings 80 times
-                  a second.
-                </p>
-              </div>
-              <Link href="/about#doctor-bird" className="btn btn-gold shrink-0">
-                Read its story <ArrowRight className="size-4" />
-              </Link>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ---------------- Bundle + limited edition ---------------- */}
-      <section className="pb-24 sm:pb-32">
-        <div className="container-page grid gap-7 lg:grid-cols-[1.1fr_0.9fr]">
-          <Reveal className="relative isolate overflow-hidden rounded-2xl p-10 text-sand-50 sm:p-14">
-            <Image
-              src="/images/showcase.jpg"
-              alt=""
-              aria-hidden
-              width={2000}
-              height={1125}
-              sizes="(min-width: 1024px) 60vw, 96vw"
-              className="absolute inset-0 -z-10 h-full w-full object-cover"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(49,139,152,0.94)_0%,rgba(49,139,152,0.86)_45%,rgba(49,139,152,0.35)_100%)]"
-            />
-            <div className="relative max-w-md">
-              <p className="eyebrow text-gold-300">Bundle &amp; save</p>
-              <h2 className="mt-4 text-4xl leading-tight sm:text-5xl">
-                Buy 3 jars, get 10% off and free shipping
-              </h2>
-              <p className="mt-5 leading-relaxed text-sand-100/85">
-                Mix and match any flavours you like. Most people run one green and one gold at a
-                time — and keep a Purple in the door of the fridge for winter.
-              </p>
-              <Link href="/products" className="btn btn-gold mt-9">
-                Build your bundle <ArrowRight className="size-4" />
-              </Link>
-            </div>
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -right-16 -bottom-20 hidden size-80 rounded-full border border-sand-100/20 sm:block"
-            />
-          </Reveal>
-
-          <Reveal
-            delay={120}
-            className="relative overflow-hidden rounded-2xl border border-sand-200 bg-white p-10 sm:p-12"
-          >
-            <p className="eyebrow text-flavor-tropical">Limited edition</p>
-            <h2 className="mt-4 text-3xl leading-tight">Tropical Me</h2>
-            <p className="mt-4 text-sm leading-relaxed text-abyss-800/70">
-              Coconut, Jamaican mango, papaya and pineapple — a bright, enzyme-rich twist on the
-              ritual you already know. Only available while this run lasts.
-            </p>
-            <Link
-              href={`/products/${tropical.slug}`}
-              className="mt-7 inline-flex items-center gap-2 font-semibold text-flavor-tropical"
-            >
-              <span className="link-underline">Get Tropical Me</span>
-              <ArrowRight className="size-4" />
-            </Link>
-            <ProductShot
-              product={tropical}
-              sizes="240px"
-              className="pointer-events-none absolute -right-8 -bottom-10 w-48 rounded-xl sm:w-56"
-            />
-          </Reveal>
+      {/* ---------------- Our aim ---------------- */}
+      <section className="bg-sand-100/70 py-24 sm:py-28">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Our aim"
+            title="Our commitment to you"
+            copy="Small-batch production, traceable ingredients, and a standard of quality we do not compromise on."
+            align="center"
+          />
+          <ul className="mt-14 grid gap-6 md:grid-cols-3">
+            {commitments.map(({ icon: Icon, title, copy }, i) => (
+              <Reveal key={title} as="li" delay={i * 80} className="card p-8">
+                <span className="grid size-12 place-items-center rounded-full bg-reef-100/12 text-reef-600">
+                  <Icon className="size-6" />
+                </span>
+                <h3 className="mt-6 text-xl">{title}</h3>
+                <p className="mt-2.5 leading-relaxed text-abyss-800/70">{copy}</p>
+              </Reveal>
+            ))}
+          </ul>
         </div>
       </section>
 
       {/* ---------------- Testimonials ---------------- */}
-      <section className="bg-sand-100/70 py-24 sm:py-32">
+      <section className="py-24 sm:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="From the fridge door"
@@ -422,86 +250,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------------- FAQ ---------------- */}
-      <section id="faq" className="py-24 sm:py-32">
-        <div className="container-page grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
-          <SectionHeading
-            eyebrow="Questions, answered"
-            title="The things people ask before their first jar"
-            copy="Still unsure about something? Email us — a real person replies, usually the same day."
-          >
-            <Link href="/faq" className="btn btn-ghost mt-8">
-              See all questions
-            </Link>
-          </SectionHeading>
-
-          <Reveal delay={100}>
-            <FaqAccordion items={faqs.slice(0, 5)} />
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ---------------- Journal ---------------- */}
-      <section className="bg-sand-100/70 py-24 sm:py-32">
-        <div className="container-page">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading eyebrow="From the journal" title="Reading for the curious" />
-            <Reveal>
-              <Link href="/blog" className="btn btn-ghost">
-                All posts <ArrowRight className="size-4" />
-              </Link>
-            </Reveal>
-          </div>
-
-          <div className="mt-12 grid gap-7 md:grid-cols-3">
-            {posts.map((post, i) => (
-              <Reveal key={post.slug} as="article" delay={i * 90} className="card group p-7">
-                <p className="eyebrow text-flame-600">{post.category}</p>
-                <h3 className="mt-4 text-xl leading-snug">
-                  <Link href={`/blog/${post.slug}`} className="link-underline">
-                    {post.title}
-                  </Link>
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-abyss-800/70">{post.excerpt}</p>
-                <p className="mt-6 text-xs text-abyss-800/45">
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}{" "}
-                  · {post.readingTime}
-                </p>
+      {/* ---------------- Where to go next ---------------- */}
+      <section className="bg-sand-100/70 pb-24 sm:pb-28">
+        <div className="container-page pt-24 sm:pt-28">
+          <SectionHeading eyebrow="Where to go next" title="Take it one step deeper" align="center" />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {next.map((n, i) => (
+              <Reveal key={n.href} delay={i * 80} className="h-full">
+                <Link
+                  href={n.href}
+                  className="card group flex h-full flex-col p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+                >
+                  <p className="eyebrow text-flame-600">{n.eyebrow}</p>
+                  <h3 className="mt-4 text-xl leading-snug">{n.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-abyss-800/70">{n.copy}</p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-semibold text-reef-600">
+                    Open
+                    <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </Link>
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ---------------- Final CTA ---------------- */}
-      <section className="relative overflow-hidden bg-reef-500 py-24 text-center text-sand-50 sm:py-32">
-        <div
-          aria-hidden
-          className="animate-drift pointer-events-none absolute inset-x-0 top-0 mx-auto size-[40rem] rounded-full bg-[radial-gradient(circle,rgba(213,160,60,0.18),transparent_65%)] blur-2xl"
-        />
-        <div className="container-page relative">
-          <Reveal>
-            <p className="eyebrow text-gold-300">Ready when you are</p>
-            <h2 className="mx-auto mt-5 max-w-3xl text-4xl leading-[1.06] sm:text-6xl">
-              Start with one jar. Your body will tell you the rest.
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl leading-relaxed text-sand-100/85">
-              Use code <strong className="text-gold-300">SEAMOSS20</strong> for 20% off your first
-              order. Ships cold-packed from Jamaica, worldwide.
-            </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Link href="/products" className="btn btn-gold">
-                Shop now <ArrowRight className="size-4" />
-              </Link>
-              <Link href="/contact" className="btn btn-ghost-light">
-                Talk to us first
-              </Link>
-            </div>
-          </Reveal>
         </div>
       </section>
     </>

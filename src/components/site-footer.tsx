@@ -19,7 +19,7 @@ const columns = [
       { label: "Nature's Wisdom", href: "/natures-wisdom" },
       { label: "Our story", href: "/about" },
       { label: "How it's made", href: "/about#process" },
-      { label: "Journal", href: "/blog" },
+      { label: "Blog", href: "/blog" },
       { label: "FAQ", href: "/faq" },
     ],
   },

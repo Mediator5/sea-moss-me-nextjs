@@ -112,6 +112,124 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "the-doctor-bird",
+    title: "The Doctor Bird: Why There's a Hummingbird on Every Jar",
+    date: "2026-08-24",
+    readingTime: "4 min read",
+    category: "Our story",
+    excerpt:
+      "A bird found nowhere else on earth but Jamaica, on a jar of sea moss cut from the same coastline. The reason it is there is not decoration.",
+    body: [
+      {
+        type: "p",
+        text: "Every Sea Moss Me jar carries a small illustration: a hummingbird with a long, elegant tail, encircled by sea moss and water. Two of nature's provisions, drawn together, because that is how they are meant to work.",
+      },
+      {
+        type: "p",
+        text: "The bird is the Doctor Bird, and like our sea moss it is found nowhere else in the world but Jamaica. Both are native to the same island, shaped by the same waters, and unavailable in this form anywhere else. We consider that rarity central to their value rather than incidental to it.",
+      },
+      { type: "h2", text: "A small bird with a large place" },
+      {
+        type: "p",
+        text: "In Jamaica the Doctor Bird has long held a place of quiet distinction. It appears on the nation's currency, its coat of arms and its passport — a lasting symbol of something small in size but significant in meaning. Early Taino inhabitants called it the God Bird, believing it carried the spirits of the dead.",
+      },
+      { type: "h2", text: "What it actually is" },
+      {
+        type: "ul",
+        items: [
+          "Its full name is the Red-billed Streamertail — one of 28 bird species endemic to Jamaica.",
+          "It weighs under six grams, lighter than a AAA battery, and beats its wings up to 80 times a second.",
+          "It eats roughly half its own body weight in nectar every day just to fuel hovering flight.",
+          "Its nest is about the size of a bottle cap — plant down stitched together with spider silk.",
+        ],
+      },
+      { type: "h2", text: "Why it is on the label" },
+      {
+        type: "p",
+        text: "Nothing wasted, nothing added, everything working. A bird that runs at that efficiency is a fair standard to hold a jar to, and a fair reminder that size is not the same as significance. We chose it because its story mirrors ours: rare, deeply rooted in Jamaica, and quietly significant in a way that has little to do with scale.",
+      },
+    ],
+  },
+  {
+    slug: "how-our-sea-moss-is-harvested",
+    title: "The South Coast, By Hand: How Our Sea Moss Is Harvested",
+    date: "2026-08-17",
+    readingTime: "5 min read",
+    category: "Sourcing",
+    excerpt:
+      "From open rock to sealed jar, the whole method — and why the slow, expensive version is the only one that produces gel worth eating.",
+    body: [
+      {
+        type: "p",
+        text: "Our moss grows wild on rock in clear, moving water off the south coast of Jamaica. Nobody plants it and nobody feeds it. It takes what it needs straight from the sea, which is precisely why the water it grows in decides how good it turns out.",
+      },
+      { type: "h2", text: "Cut, not harvested wholesale" },
+      {
+        type: "p",
+        text: "It is cut by hand at the right size, and the holdfast — the small anchor gripping the rock — is left behind so the plant grows back. That is how it has been taken here for generations, and it is the difference between a harvest and a strip-mine. Pool-grown moss skips all of this: it is fed salt in a tank, comes out pale and uniform, and carries a fraction of the mineral load.",
+      },
+      { type: "h2", text: "Sun, salt wind, spring water" },
+      {
+        type: "p",
+        text: "From the rock it dries in open sun and salt wind on the shore. Then it is rinsed clean — properly clean, which is the step most sellers rush and the reason so much sea moss gel tastes of the ocean floor — and soaked in spring water with fresh lime.",
+      },
+      { type: "h2", text: "Blended in batches one person can watch" },
+      {
+        type: "p",
+        text: "The soaked moss is blended whole, while it is still warm, and the fruits and roots go in as themselves. Never syrups, never concentrates, never colouring. Batches stay small enough that one person can watch every one of them from start to finish.",
+      },
+      {
+        type: "p",
+        text: "It takes longer and it costs more. It is also the only reason the gel sets firm, tastes clean, and carries the mineral profile people came to sea moss for in the first place.",
+      },
+    ],
+  },
+  {
+    slug: "what-sea-moss-is-good-for",
+    title: "What Sea Moss Is Actually Good For",
+    date: "2026-08-10",
+    readingTime: "5 min read",
+    category: "Wellness",
+    excerpt:
+      "The honest version. Sea moss is a food, not a medicine — here is what it genuinely supports, and where the claims run ahead of the evidence.",
+    body: [
+      {
+        type: "p",
+        text: "Anyone telling you sea moss cures things is selling you something. It is a whole food with an unusually broad mineral profile, and that is a real and useful thing to be. Here is what that actually supports, area by area.",
+      },
+      { type: "h2", text: "Thyroid" },
+      {
+        type: "p",
+        text: "Sea moss is naturally high in iodine, which the thyroid cannot make its hormones without. This is also the one genuine caution on the list: if you manage a thyroid condition, speak to your doctor before adding it, because more iodine is not automatically better.",
+      },
+      { type: "h2", text: "Digestion" },
+      {
+        type: "p",
+        text: "The mucilage that makes sea moss gel thick is soft, soothing fibre. It is prebiotic — it feeds the bacteria your gut already relies on rather than adding new ones, which is why it pairs well with kefir or yoghurt rather than replacing them.",
+      },
+      { type: "h2", text: "Immune support" },
+      {
+        type: "p",
+        text: "Trace minerals plus, in our fruit-forward blends, vitamins A and C. Pigment-rich fruits like elderberry and beetroot are doing as much work here as the moss itself.",
+      },
+      { type: "h2", text: "Skin and hair" },
+      {
+        type: "p",
+        text: "Sulphur and zinc are both part of building collagen, which is why sea moss turns up in skincare as often as it does in smoothies.",
+      },
+      { type: "h2", text: "Joints and energy" },
+      {
+        type: "p",
+        text: "Trace minerals are what connective tissue draws on, and iron and B vitamins support normal energy production. Not a stimulant, and not a fast effect — most people notice something in the second or third week rather than the second or third day.",
+      },
+      { type: "h2", text: "The honest caveat" },
+      {
+        type: "p",
+        text: "Everything above is support, not treatment. These statements have not been evaluated by the Food and Drug Administration, and none of this is intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing or managing a medical condition, speak to your doctor first.",
+      },
+    ],
+  },
+  {
     slug: "ultimate-guide-to-sea-moss",
     title: "The Ultimate Guide to Sea Moss: Why It's the Superfood Your Body Needs",
     date: "2026-07-27",
