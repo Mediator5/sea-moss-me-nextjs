@@ -44,7 +44,7 @@ export function orderText(ref: string, d: OrderDetails, totals: CartTotals) {
     totals.discount > 0
       ? `  Bundle discount −${formatPrice(totals.discount)}  (${BUNDLE.discountPct}% on ${totals.jars} jars)`
       : null,
-    `  Shipping        ${totals.shipping === 0 ? "Free" : formatPrice(totals.shipping)}`,
+    `  Delivery        ${totals.shipping === 0 ? "Free" : formatPrice(totals.shipping)}`,
     `  TOTAL           ${formatPrice(totals.total)}`,
     "",
     "CUSTOMER",
@@ -115,7 +115,7 @@ export function orderHtml(ref: string, d: OrderDetails, totals: CartTotals) {
               ? row(`Bundle discount (${BUNDLE.discountPct}%)`, `− ${formatPrice(totals.discount)}`)
               : ""
           }
-          ${row("Shipping", totals.shipping === 0 ? "Free" : formatPrice(totals.shipping))}
+          ${row("Delivery", totals.shipping === 0 ? "Free" : formatPrice(totals.shipping))}
           ${row("Total", formatPrice(totals.total), true)}
         </table>
 
@@ -166,9 +166,9 @@ export function customerAckText(ref: string, d: OrderDetails, totals: CartTotals
     `  Total (estimated)  ${formatPrice(totals.total)}`,
     "",
     "WHAT HAPPENS NEXT",
-    "  We'll reply within one business day to confirm availability, delivery",
-    "  timing to your address, and how you'd like to pay. Your jars are blended",
-    "  fresh once that's settled, and every order ships cold-packed.",
+    "  We'll reply within one business day to confirm availability, a delivery",
+    "  day that suits you, and how you'd like to pay. Your jars are blended",
+    "  fresh once that's settled, and delivered to you chilled.",
     "",
     "If anything above looks wrong, just reply to this email and we'll fix it.",
     "",
@@ -218,9 +218,9 @@ export function customerAckHtml(ref: string, d: OrderDetails, totals: CartTotals
 
         <h3 style="margin:24px 0 8px;color:#05454c;font-size:16px">What happens next</h3>
         <p style="margin:0">
-          We'll reply within one business day to confirm availability, delivery timing to your
-          address, and how you'd like to pay. Your jars are blended fresh once that's settled,
-          and every order ships cold-packed.
+          We'll reply within one business day to confirm availability, a delivery day that suits
+          you, and how you'd like to pay. Your jars are blended fresh once that's settled, and
+          delivered to you chilled.
         </p>
 
         <p style="margin:22px 0 0;color:#5b6f74;font-size:14px">

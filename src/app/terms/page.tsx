@@ -19,19 +19,20 @@ export default function TermsPage() {
           heading: "Orders and payment",
           body: (
             <p>
-              An order is confirmed once payment clears through Stripe. Prices are shown in US
-              dollars and exclude any import duties your country may charge. We may cancel and refund
-              an order if a product is unavailable or if we suspect fraud.
+              Placing an order is a request, not a completed sale — a person confirms availability and
+              the delivery day with you before any payment is taken. Prices are shown in US dollars.
+              We may cancel and refund an order if a product is unavailable or if we suspect fraud.
             </p>
           ),
         },
         {
-          heading: "Shipping and delivery",
+          heading: "Delivery",
           body: (
             <p>
-              Orders are made fresh and dispatched within 1–2 business days. Delivery estimates are
-              estimates, not guarantees — once a parcel is with the carrier, its timing is outside our
-              control. Any order of three jars or more ships free.
+              We deliver locally, in Orlando and the surrounding Central Florida area, and do not
+              post orders at present. Nothing is blended until your order is confirmed, and we agree
+              the delivery day with you when we reply. Delivery is $8.95; any order of three jars or
+              more is delivered free.
             </p>
           ),
         },

@@ -114,7 +114,7 @@ export function ProductPurchasePanel({ product }: { product: Product }) {
       </div>
 
       <p className="mt-4 text-center text-xs text-abyss-800/55">
-        Free shipping and 10% off on any 3 jars · Ships cold-packed within 1–2 business days
+        Free delivery and 10% off on any 3 jars · Blended fresh, delivered chilled
       </p>
     </div>
   );

@@ -72,17 +72,18 @@ export async function POST(req: Request) {
       })),
       ...(coupon ? { discounts: [{ coupon: coupon.id }] } : { allow_promotion_codes: true }),
       shipping_address_collection: {
-        allowed_countries: ["US", "CA", "GB", "JM", "IE", "AU", "NZ", "DE", "FR", "NL", "NG", "ZA"],
+        // Local delivery only — Orlando and the surrounding Central Florida area.
+        allowed_countries: ["US"],
       },
       shipping_options: [
         {
           shipping_rate_data: {
             type: "fixed_amount",
-            display_name: totals.freeShipping ? "Free shipping (bundle)" : "Standard shipping",
+            display_name: totals.freeShipping ? "Free local delivery (bundle)" : "Local delivery",
             fixed_amount: { amount: totals.shipping, currency: "usd" },
             delivery_estimate: {
-              minimum: { unit: "business_day", value: 2 },
-              maximum: { unit: "business_day", value: 7 },
+              minimum: { unit: "business_day", value: 1 },
+              maximum: { unit: "business_day", value: 3 },
             },
           },
         },

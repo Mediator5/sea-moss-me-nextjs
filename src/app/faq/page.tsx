@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "How to take sea moss gel, how we source it, how long it keeps, what shipping costs and everything else people ask before their first jar.",
+    "How to take sea moss gel, how we source it, how long it keeps, where we deliver and everything else people ask before their first jar.",
   alternates: { canonical: "/faq" },
 };
 

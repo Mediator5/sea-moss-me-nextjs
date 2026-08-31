@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Questions about flavours, allergies, shipping or wholesale? Email, call, or send us a message — a real person replies within a business day.",
+    "Questions about flavours, allergies, delivery or wholesale? Email, call, or send us a message — a real person replies within a business day.",
   alternates: { canonical: "/contact" },
 };
 
@@ -19,7 +19,7 @@ export default function ContactPage() {
           <p className="eyebrow text-flame-600">Get in touch</p>
           <h1 className="mt-5 text-5xl leading-[1.05]">Talk to a person</h1>
           <p className="mt-6 leading-relaxed text-abyss-800/70">
-            Wholesale, allergies, a delayed delivery, or you just want to know which jar to start
+            Wholesale, allergies, a delivery question, or you just want to know which jar to start
             with — send it over. We answer everything within one business day.
           </p>
 
@@ -41,7 +41,7 @@ export default function ContactPage() {
               </dd>
             </div>
             <div>
-              <dt className="eyebrow text-abyss-800/50">Shipping from</dt>
+              <dt className="eyebrow text-abyss-800/50">Delivery area</dt>
               <dd className="mt-1.5 text-base">{site.address}</dd>
             </div>
             <div>

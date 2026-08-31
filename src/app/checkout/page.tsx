@@ -141,7 +141,7 @@ export default function CheckoutPage() {
           </h1>
           <p className="mt-5 max-w-xl leading-relaxed text-abyss-800/70">
             Your jars are already listed below — you just need to tell us who you are and where
-            you&apos;d like them. We&apos;ll reply within one business day to confirm delivery and
+            you&apos;d like them. We&apos;ll reply within one business day to arrange your delivery and
             payment. <strong className="text-abyss-900">Nothing is charged now.</strong>
           </p>
 
@@ -390,7 +390,7 @@ export default function CheckoutPage() {
                     />
                   )}
                   <Row
-                    label="Shipping"
+                    label="Delivery"
                     value={totals.shipping === 0 ? "Free" : formatPrice(totals.shipping)}
                     accent={totals.shipping === 0}
                   />
@@ -406,10 +406,10 @@ export default function CheckoutPage() {
                 <ul className="space-y-2.5 border-t border-sand-200 bg-sand-100/50 px-7 py-5 text-xs text-abyss-800/70">
                   <li className="flex items-center gap-2">
                     <Shield className="size-4 shrink-0 text-reef-600" /> Confirmed by a person before
-                    anything ships
+                    we blend anything
                   </li>
                   <li className="flex items-center gap-2">
-                    <Truck className="size-4 shrink-0 text-reef-600" /> Cold-packed, tracked delivery
+                    <Truck className="size-4 shrink-0 text-reef-600" /> Local delivery, kept chilled
                   </li>
                   <li className="flex items-center gap-2">
                     <Leaf className="size-4 shrink-0 text-reef-600" /> Blended fresh once you confirm

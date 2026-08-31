@@ -11,15 +11,15 @@ export const faqs = [
   },
   {
     q: "How long does an order take to arrive?",
-    a: "Orders are made fresh and leave us within 1–2 business days. Domestic delivery typically lands in 2–5 business days; international varies by destination and you'll get tracking either way. Every jar ships cold-packed.",
+    a: "Nothing is blended until you confirm, so we arrange the delivery day with you directly when we reply — usually within one business day of your order. Jars are kept chilled and handed over fresh, which is the advantage of delivering locally rather than posting anything.",
   },
   {
-    q: "Do you ship internationally?",
-    a: "Yes. We ship worldwide from Jamaica. Shipping is calculated at checkout, and any bundle of three jars or more ships free.",
+    q: "Where do you deliver?",
+    a: "Local delivery only for now — Orlando and the surrounding Central Florida area. The moss is still wildcrafted in Jamaica; the gel is blended and delivered here. Delivery is $8.95, free on any order of three jars or more. If you are outside the area, write to us and we will let you know when that changes.",
   },
   {
     q: "Are there allergens or ingredients I should know about?",
-    a: "Each flavour's full ingredient list is on its product page. Everything is vegan, gluten-free, dairy-free and free from added sugar, fillers and preservatives. If you have specific allergies, add a note at checkout and we'll confirm before anything ships.",
+    a: "Each flavour's full ingredient list is on its product page. Everything is vegan, gluten-free, dairy-free and free from added sugar, fillers and preservatives. If you have specific allergies, add a note with your order and we'll confirm before we blend anything.",
   },
   {
     q: "How long does one jar last?",

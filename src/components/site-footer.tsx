@@ -27,7 +27,7 @@ const columns = [
     title: "Support",
     links: [
       { label: "Contact us", href: "/contact" },
-      { label: "Shipping & delivery", href: "/faq#shipping" },
+      { label: "Delivery", href: "/faq#shipping" },
       { label: "Privacy policy", href: "/privacy" },
       { label: "Terms of service", href: "/terms" },
     ],

@@ -7,7 +7,7 @@ export const site = {
   email: "info@seamossme.com",
   phone: "689-304-0453",
   phoneHref: "+16893040453",
-  address: "Shipped worldwide from Jamaica",
+  address: "Local delivery — Orlando & Central Florida",
   social: {
     instagram: "https://instagram.com/",
     facebook: "https://facebook.com/",
@@ -49,7 +49,7 @@ export const nav: readonly NavItem[] = [
 
 export const announcements = [
   "20% off your first order — code SEAMOSS20",
-  "Buy 3 jars, get free shipping",
+  "Buy 3 jars, get free local delivery",
   "100% organic · Wildcrafted in Jamaica",
   "Small-batch made · No fillers, ever",
 ] as const;

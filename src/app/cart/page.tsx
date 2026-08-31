@@ -33,7 +33,7 @@ export default function CartPage() {
                 <p className="mb-6 rounded-md border border-gold-400/40 bg-gold-200/40 px-5 py-4 text-sm">
                   <Truck className="mr-2 inline size-4 -translate-y-px" />
                   Add <strong>{totals.jarsToBundle}</strong> more{" "}
-                  {totals.jarsToBundle === 1 ? "jar" : "jars"} to unlock free shipping and{" "}
+                  {totals.jarsToBundle === 1 ? "jar" : "jars"} to unlock free delivery and{" "}
                   {BUNDLE.discountPct}% off your order.
                 </p>
               )}
@@ -136,7 +136,7 @@ export default function CartPage() {
                     />
                   )}
                   <Row
-                    label="Shipping"
+                    label="Delivery"
                     value={totals.shipping === 0 ? "Free" : formatPrice(totals.shipping)}
                     accent={totals.shipping === 0 && totals.jars > 0}
                   />
@@ -148,7 +148,7 @@ export default function CartPage() {
                   </span>
                 </div>
                 <p className="mt-2 text-xs text-abyss-800/50">
-                  Taxes and any duties calculated at checkout.
+                  Taxes calculated at checkout.
                 </p>
 
                 <div className="mt-6">
@@ -160,7 +160,7 @@ export default function CartPage() {
                     <Shield className="size-4 text-reef-600" /> Secure payment via Stripe
                   </li>
                   <li className="flex items-center gap-2">
-                    <Truck className="size-4 text-reef-600" /> Cold-packed, tracked delivery
+                    <Truck className="size-4 text-reef-600" /> Kept chilled, delivered by hand
                   </li>
                 </ul>
               </div>

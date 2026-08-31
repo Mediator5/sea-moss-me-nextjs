@@ -65,13 +65,13 @@ export function CartDrawer() {
                 <div className="mb-5 rounded-md border border-gold-400/40 bg-gold-200/40 px-4 py-3 text-xs leading-relaxed text-abyss-900">
                   <Truck className="mr-1.5 inline size-4 -translate-y-px" />
                   Add <strong>{totals.jarsToBundle}</strong> more{" "}
-                  {totals.jarsToBundle === 1 ? "jar" : "jars"} for free shipping and{" "}
+                  {totals.jarsToBundle === 1 ? "jar" : "jars"} for free delivery and{" "}
                   {BUNDLE.discountPct}% off.
                 </div>
               )}
               {totals.freeShipping && (
                 <div className="mb-5 rounded-md border border-reef-400/40 bg-reef-100 px-4 py-3 text-xs font-medium text-reef-600">
-                  Bundle unlocked — free shipping and {BUNDLE.discountPct}% off applied.
+                  Bundle unlocked — free delivery and {BUNDLE.discountPct}% off applied.
                 </div>
               )}
 
@@ -134,7 +134,7 @@ export function CartDrawer() {
                 />
               )}
               <Row
-                label="Shipping"
+                label="Delivery"
                 value={totals.shipping === 0 ? "Free" : formatPrice(totals.shipping)}
                 accent={totals.shipping === 0}
               />

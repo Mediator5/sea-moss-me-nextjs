@@ -42,10 +42,10 @@ export default function ProductsPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-xl leading-relaxed text-sand-100/85">
             Same wildcrafted Jamaican base, four different jobs. Every jar is made to order in small
-            batches and ships cold-packed.
+            batches and delivered chilled.
           </p>
           <ul className="mt-9 flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm text-sand-100/80">
-            {["Vegan & gluten-free", "No added sugar", "No fillers or gelatine", "3 jars ship free"].map(
+            {["Vegan & gluten-free", "No added sugar", "No fillers or gelatine", "Free delivery on 3 jars"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-2">
                   <Check className="size-4 text-gold-300" /> {item}

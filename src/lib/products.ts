@@ -178,11 +178,11 @@ export const findSize = (sizeId: string) => {
 
 /** Bundle rules — mirrored on the server before checkout. */
 export const BUNDLE = {
-  /** Jars needed to unlock free shipping + the bundle discount. */
+  /** Jars needed to unlock free local delivery + the bundle discount. */
   threshold: 3,
   /** Percentage off the subtotal once the threshold is met. */
   discountPct: 10,
-  /** Flat shipping in cents below the threshold. */
+  /** Flat local-delivery fee in cents below the threshold. */
   shipping: 895,
 } as const;
 

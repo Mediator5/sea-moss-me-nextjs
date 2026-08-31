@@ -13,14 +13,14 @@ export default function PrivacyPage() {
     <LegalPage
       title="Privacy policy"
       updated="August 2026"
-      intro={`We collect the least we can get away with: what we need to make your order, ship it, and answer you when you write in. This page explains exactly what that means.`}
+      intro={`We collect the least we can get away with: what we need to make your order, deliver it, and answer you when you write in. This page explains exactly what that means.`}
       sections={[
         {
           heading: "What we collect",
           body: (
             <>
               <p>
-                When you place an order: your name, email, phone number, shipping address and any
+                When you place an order: your name, email, phone number, delivery address and any
                 notes you add. Payment card details are entered directly with Stripe and never touch
                 our servers.
               </p>
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
           heading: "Why we collect it",
           body: (
             <p>
-              To take payment, ship your order, tell you where it is, answer your questions, and —
+              To take payment, blend and deliver your order, answer your questions, and —
               only if you asked for it — send you occasional email. Nothing else.
             </p>
           ),
@@ -48,8 +48,9 @@ export default function PrivacyPage() {
           heading: "Who we share it with",
           body: (
             <p>
-              Our payment processor (Stripe), our shipping carriers, and our email provider. Each of
-              them only receives the part they need to do their job. We never sell or rent your
+              Our payment processor (Stripe) and our email provider. Each of them only receives the
+              part they need to do their job — we deliver orders ourselves, so no carrier ever sees
+              your address. We never sell or rent your
               details to anyone.
             </p>
           ),

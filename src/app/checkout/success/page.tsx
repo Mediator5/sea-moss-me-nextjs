@@ -61,7 +61,7 @@ function Confirmation() {
             <ol className="mt-5 space-y-4 text-sm leading-relaxed text-abyss-800/75">
               <li>
                 <strong className="text-abyss-900">1. We reply within one business day.</strong> A
-                real person confirms availability, the delivery cost and timing to your address, and
+                real person confirms availability, the delivery cost and a day that suits you, and
                 how you&apos;d like to pay.
               </li>
               <li>
@@ -69,8 +69,9 @@ function Confirmation() {
                 until your order is confirmed — that&apos;s the whole point of small batches.
               </li>
               <li>
-                <strong className="text-abyss-900">3. It ships cold-packed.</strong> You&apos;ll get
-                tracking as soon as it leaves us. Straight into the fridge on arrival.
+                <strong className="text-abyss-900">3. We deliver it to you.</strong> Kept chilled
+                on the way, and we let you know when we&apos;re on our way. Straight into the
+                fridge when it arrives.
               </li>
             </ol>
           </div>
