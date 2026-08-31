@@ -66,16 +66,19 @@ export function IngredientExplorer() {
   return (
     <div>
       {/* ---------------- Controls ---------------- */}
-      <div className="sticky top-20 z-40 -mx-5 border-y border-sand-200 bg-sand-50/95 px-5 py-4 backdrop-blur-xl md:-mx-8 md:px-8">
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="flex flex-wrap gap-1.5">
+      {/* Static on phones — a sticky bar this tall eats the whole viewport and
+          leaves nothing to scroll. Sticky from md up, where it costs one row. */}
+      <div className="relative z-40 -mx-5 border-y border-sand-200 bg-sand-50/95 px-5 py-4 backdrop-blur-xl md:sticky md:top-20 md:-mx-8 md:px-8">
+        <div className="flex flex-col gap-3 md:gap-4">
+          <div className="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
+            {/* One swipeable row on phones, wrapping chips from md up */}
+            <div className="scroll-strip -mx-5 flex gap-1.5 overflow-x-auto px-5 md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
               {groups.map((g) => (
                 <button
                   key={g.value}
                   onClick={() => setGroup(g.value)}
                   aria-pressed={group === g.value}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                  className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition ${
                     group === g.value
                       ? "bg-reef-600 text-sand-50"
                       : "border border-sand-300 text-abyss-800/80 hover:border-abyss-900/40"
@@ -86,7 +89,7 @@ export function IngredientExplorer() {
               ))}
             </div>
 
-            <div className="ms-auto flex items-center gap-3">
+            <div className="md:ms-auto">
               <label htmlFor="ingredient-search" className="sr-only">
                 Search ingredients
               </label>
@@ -96,13 +99,13 @@ export function IngredientExplorer() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search — sleep, turmeric, digestion…"
-                className="w-56 rounded-full border border-sand-300 bg-white px-4 py-2 text-sm outline-none transition focus:border-reef-500 sm:w-64"
+                className="w-full rounded-full border border-sand-300 bg-white px-4 py-2 text-sm outline-none transition focus:border-reef-500 md:w-64"
               />
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="mr-1 text-xs font-semibold tracking-[0.12em] text-abyss-800/45 uppercase">
+          <div className="scroll-strip -mx-5 flex items-center gap-1.5 overflow-x-auto px-5 md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
+            <span className="mr-1 shrink-0 text-xs font-semibold tracking-[0.12em] text-abyss-800/45 uppercase">
               What for
             </span>
             {benefitTags.map((t) => (
@@ -110,7 +113,7 @@ export function IngredientExplorer() {
                 key={t}
                 onClick={() => setTag(tag === t ? null : t)}
                 aria-pressed={tag === t}
-                className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
+                className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition ${
                   tag === t
                     ? "bg-flame-600 text-sand-50"
                     : "border border-sand-300 text-abyss-800/70 hover:border-flame-500/50 hover:text-abyss-900"
@@ -126,7 +129,7 @@ export function IngredientExplorer() {
                   setTag(null);
                   setQuery("");
                 }}
-                className="ml-1 inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold text-flame-600 hover:underline"
+                className="ml-1 inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold text-flame-600 hover:underline"
               >
                 <Close className="size-3" /> Clear
               </button>
@@ -164,7 +167,7 @@ export function IngredientExplorer() {
                   <li
                     key={ing.slug}
                     id={ing.slug}
-                    className="card flex h-full scroll-mt-44 flex-col overflow-hidden"
+                    className="card flex h-full scroll-mt-24 flex-col overflow-hidden md:scroll-mt-44"
                   >
                     <span
                       aria-hidden

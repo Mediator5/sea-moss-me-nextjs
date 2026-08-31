@@ -99,6 +99,11 @@
   }
 
   body {
+    /* No layout on this site scrolls sideways — this stops a stray wide child
+       from making the whole page pannable on a phone. `clip` rather than
+       `hidden`: hidden would make body a scroll container and break the
+       sticky header. */
+    overflow-x: clip;
     background-color: var(--color-sand-50);
     color: var(--color-abyss-900);
     font-family: var(--font-sans);
@@ -144,6 +149,17 @@
     .container-page {
       padding-inline: 2rem;
     }
+  }
+
+  /* Horizontal swipe strips (filter chips on phones) — scrollable, no visible bar. */
+  .scroll-strip {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior-x: contain;
+  }
+
+  .scroll-strip::-webkit-scrollbar {
+    display: none;
   }
 
   .eyebrow {

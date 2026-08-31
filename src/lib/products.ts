@@ -25,7 +25,10 @@ export type Product = {
   bestFor: string;
   taste: string;
   sizes: ProductSize[];
-  /** Product photograph — studio shot on white, lives in /public/images/products */
+  /** Product photograph — studio shot on white, lives in /public/images/products.
+   * Filenames carry a suffix so a reshoot lands on a fresh URL: Next's image
+   * optimiser caches by URL for four hours and will happily keep serving the
+   * old jar if you overwrite a file in place. */
   image: string;
   accent: string;
   accentSoft: string;
@@ -74,7 +77,7 @@ export const products: Product[] = [
     bestFor: "Energy · Skin · Vitality",
     taste: "Fresh and grassy, with a clean lime finish",
     sizes: SIZES(3000, "alkaline-me"),
-    image: "/images/products/alkaline-me.jpg",
+    image: "/images/products/alkaline-me-jar.jpg",
     accent: "#1f5e3c",
     accentSoft: "#e7f1e8",
     gradient: ["#123f2a", "#3f8a5f"],
@@ -101,7 +104,7 @@ export const products: Product[] = [
     bestFor: "Circulation · Immunity · Recovery",
     taste: "Berry-forward and tart, like a dark fruit compote",
     sizes: SIZES(3000, "beets-and-berry-me"),
-    image: "/images/products/beets-and-berry-me.jpg",
+    image: "/images/products/beets-and-berry-me-jar.jpg",
     accent: "#7a2540",
     accentSoft: "#f7e7ec",
     gradient: ["#4c1428", "#a44766"],
@@ -128,7 +131,7 @@ export const products: Product[] = [
     bestFor: "Sleep · Calm · Inflammation",
     taste: "Warm and spiced, with a bright citrus finish",
     sizes: SIZES(3000, "golden-me"),
-    image: "/images/products/golden-me.jpg",
+    image: "/images/products/golden-me-jar.jpg",
     accent: "#c98a1e",
     accentSoft: "#fbf0d9",
     gradient: ["#8a5a12", "#e8c268"],
@@ -156,7 +159,7 @@ export const products: Product[] = [
     bestFor: "Digestion · Hydration · Gut Health",
     taste: "Bright, sweet, unmistakably tropical",
     sizes: SIZES(3000, "tropical-me"),
-    image: "/images/products/tropical-me.jpg",
+    image: "/images/products/tropical-me-jar.jpg",
     accent: "#d9812a",
     accentSoft: "#fcecd9",
     gradient: ["#a3550f", "#eda85f"],
