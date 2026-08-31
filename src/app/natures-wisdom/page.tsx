@@ -40,9 +40,10 @@ export default function IngredientsPage() {
             Every ingredient, and exactly why it&apos;s in there
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-sand-100/85">
-            We don&apos;t put anything in a jar we can&apos;t explain. This is the whole library —
-            the fruits and roots already in our blends, the herbs we formulate from, and the ones
-            still in development. Filter it by what you&apos;re actually trying to fix.
+            We don&apos;t put anything in a jar we can&apos;t explain. This is the whole library,
+            grouped into superfoods, fruits, berries, and herbs &amp; roots — what each one is best
+            for, and the compound behind the claim. Filter it by what you&apos;re actually trying to
+            fix.
           </p>
 
           <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-4">

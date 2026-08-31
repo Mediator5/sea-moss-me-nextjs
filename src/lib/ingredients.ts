@@ -10,7 +10,7 @@
  * rather than a current jar, and is labelled that way on the site.
  */
 
-export type IngredientGroup = "fruit" | "herb" | "green";
+export type IngredientGroup = "superfood" | "fruit" | "berry" | "herb";
 
 export type BenefitTag =
   | "Digestion"
@@ -45,51 +45,70 @@ export type Ingredient = {
 
 export const ingredientLibrary: Ingredient[] = [
   /* ------------------------------------------------------------------ */
-  /* The foundation                                                      */
+  /* Superfoods                                                          */
   /* ------------------------------------------------------------------ */
   {
-    slug: "sea-moss",
-    name: "Sea Moss",
-    group: "green",
-    summary: "The wildcrafted Jamaican foundation of every jar we make.",
-    bestFor: "Everyone — this is the base every other ingredient is folded into.",
+    slug: "black-seed-oil",
+    name: "Black Seed Oil",
+    group: "superfood",
+    summary:
+      "Nigella sativa — carried by thymoquinone, its signature compound.",
+    bestFor:
+      "Shoppers seeking broad immune, skin and anti-inflammatory support.",
     benefits: [
       {
-        term: "Mineral-dense",
-        copy: "Naturally rich across a wide range of essential minerals, absorbed straight from clean seawater.",
+        term: "Thymoquinone",
+        copy: "The key antioxidant and anti-inflammatory compound in black seed.",
       },
       {
-        term: "Thyroid & metabolic support",
-        copy: "Its natural iodine content is the reason sea moss has long been valued for metabolic function.",
+        term: "Immune balance",
+        copy: "Supports overall immune system function rather than simply stimulating it.",
       },
       {
-        term: "Gut & digestive support",
-        copy: "The gel-like mucilage that makes sea moss set is also what makes it soothing to the digestive tract.",
+        term: "Traditional use",
+        copy: "Long used to support skin conditions and clearer-looking skin.",
       },
       {
-        term: "Caribbean heritage",
-        copy: "Used across generations of Caribbean households long before it was a wellness trend.",
+        term: "Blood sugar support",
+        copy: "Studied for its role in healthy blood sugar regulation.",
       },
     ],
-    tags: ["Minerals", "Digestion", "Energy"],
-    inJars: [
-      "alkaline-me",
-      "beets-and-berry-me",
-      "golden-me",
-      "tropical-me",
-    ],
-    color: "#0f5b6c",
+    tags: ["Immunity", "Skin & hair", "Joints & inflammation"],
+    inJars: [],
+    color: "#2f2f38",
   },
-
-  /* ------------------------------------------------------------------ */
-  /* Greens & algae — Alkaline Me                                         */
-  /* ------------------------------------------------------------------ */
+  {
+    slug: "chlorella",
+    name: "Chlorella",
+    group: "superfood",
+    summary: "A freshwater algae with a cell wall that binds to heavy metals.",
+    bestFor: "Shoppers interested in gentle, everyday detox support.",
+    benefits: [
+      {
+        term: "Binding capacity",
+        copy: "Its tough cell wall is the reason chlorella is studied for binding to heavy metals.",
+      },
+      {
+        term: "Nutrient density",
+        copy: "Carries chlorophyll, iron, magnesium and B vitamins in a single whole food.",
+      },
+      {
+        term: "Digestive support",
+        copy: "Traditionally used to support regularity and healthy gut bacteria.",
+      },
+    ],
+    tags: ["Detox & liver", "Digestion", "Minerals"],
+    inJars: ["alkaline-me"],
+    color: "#256b4f",
+  },
   {
     slug: "chlorophyll",
     name: "Chlorophyll",
-    group: "green",
-    summary: "The green pigment that gives plants their colour — and Alkaline Me its depth.",
-    bestFor: "Anyone eating a diet heavy on processed food and light on greens.",
+    group: "superfood",
+    summary:
+      "The green pigment that gives plants their colour — and Alkaline Me its depth.",
+    bestFor:
+      "Anyone eating a diet heavy on processed food and light on greens.",
     benefits: [
       {
         term: "Alkalising",
@@ -111,9 +130,11 @@ export const ingredientLibrary: Ingredient[] = [
   {
     slug: "moringa",
     name: "Moringa",
-    group: "green",
-    summary: "The 'miracle tree' leaf — one of the most nutrient-dense greens on earth.",
-    bestFor: "Shoppers wanting steady, food-based energy rather than stimulants.",
+    group: "superfood",
+    summary:
+      "The 'miracle tree' leaf — one of the most nutrient-dense greens on earth.",
+    bestFor:
+      "Shoppers wanting steady, food-based energy rather than stimulants.",
     benefits: [
       {
         term: "Vitamin-rich",
@@ -137,10 +158,40 @@ export const ingredientLibrary: Ingredient[] = [
     color: "#3f8a5f",
   },
   {
+    slug: "sea-moss",
+    name: "Sea Moss",
+    group: "superfood",
+    summary: "The wildcrafted Jamaican foundation of every jar we make.",
+    bestFor:
+      "Everyone — this is the base every other ingredient is folded into.",
+    benefits: [
+      {
+        term: "Mineral-dense",
+        copy: "Naturally rich across a wide range of essential minerals, absorbed straight from clean seawater.",
+      },
+      {
+        term: "Thyroid & metabolic support",
+        copy: "Its natural iodine content is the reason sea moss has long been valued for metabolic function.",
+      },
+      {
+        term: "Gut & digestive support",
+        copy: "The gel-like mucilage that makes sea moss set is also what makes it soothing to the digestive tract.",
+      },
+      {
+        term: "Caribbean heritage",
+        copy: "Used across generations of Caribbean households long before it was a wellness trend.",
+      },
+    ],
+    tags: ["Minerals", "Digestion", "Energy"],
+    inJars: ["alkaline-me", "beets-and-berry-me", "golden-me", "tropical-me"],
+    color: "#0f5b6c",
+  },
+  {
     slug: "spirulina",
     name: "Spirulina",
-    group: "green",
-    summary: "A blue-green algae that is roughly 60% complete plant protein by weight.",
+    group: "superfood",
+    summary:
+      "A blue-green algae that is roughly 60% complete plant protein by weight.",
     bestFor: "Active customers and anyone building a plant-forward diet.",
     benefits: [
       {
@@ -160,61 +211,37 @@ export const ingredientLibrary: Ingredient[] = [
     inJars: ["alkaline-me"],
     color: "#12667a",
   },
-  {
-    slug: "chlorella",
-    name: "Chlorella",
-    group: "green",
-    summary: "A freshwater algae with a cell wall that binds to heavy metals.",
-    bestFor: "Shoppers interested in gentle, everyday detox support.",
-    benefits: [
-      {
-        term: "Binding capacity",
-        copy: "Its tough cell wall is the reason chlorella is studied for binding to heavy metals.",
-      },
-      {
-        term: "Nutrient density",
-        copy: "Carries chlorophyll, iron, magnesium and B vitamins in a single whole food.",
-      },
-      {
-        term: "Digestive support",
-        copy: "Traditionally used to support regularity and healthy gut bacteria.",
-      },
-    ],
-    tags: ["Detox & liver", "Digestion", "Minerals"],
-    inJars: ["alkaline-me"],
-    color: "#256b4f",
-  },
 
   /* ------------------------------------------------------------------ */
-  /* Fruits — Beets and Berry Me                                          */
+  /* Fruits                                                              */
   /* ------------------------------------------------------------------ */
   {
-    slug: "elderberry",
-    name: "Elderberry",
+    slug: "acai",
+    name: "Acai",
     group: "fruit",
-    summary: "The most recognised immune-support berry on the shelf, and the oldest.",
-    bestFor: "Immune-focused shoppers, especially through cold and flu season.",
+    summary: "Among the highest antioxidant levels measured in any fruit.",
+    bestFor: "Superfood shoppers and antioxidant-focused customers.",
     benefits: [
       {
-        term: "Vitamin C & flavonoids",
-        copy: "A well-established combination for supporting normal immune function.",
+        term: "Anthocyanins",
+        copy: "The deep purple pigment responsible for acai's antioxidant reputation.",
       },
       {
-        term: "Antioxidants",
-        copy: "Studied for anti-inflammatory and antiviral properties.",
+        term: "Healthy fats",
+        copy: "Unusual for a berry, and helpful for absorbing fat-soluble nutrients.",
       },
       {
-        term: "Traditional use",
-        copy: "Used for centuries in herbal immune preparations across Europe and the Caribbean.",
+        term: "Fibre",
+        copy: "Supports digestion and a healthy gut environment.",
       },
       {
-        term: "Seasonal staple",
-        copy: "The berry most people already reach for when the weather turns.",
+        term: "Established superfruit",
+        copy: "Strong existing recognition — most customers already know why they want it.",
       },
     ],
-    tags: ["Immunity"],
-    inJars: ["beets-and-berry-me"],
-    color: "#4c1428",
+    tags: ["Immunity", "Digestion", "Heart & circulation"],
+    inJars: [],
+    color: "#3d1a4a",
   },
   {
     slug: "beetroot",
@@ -231,7 +258,10 @@ export const ingredientLibrary: Ingredient[] = [
         term: "Folate",
         copy: "Supports cell function and the metabolism that turns food into energy.",
       },
-      { term: "Fibre", copy: "Contributes to digestive health and regularity." },
+      {
+        term: "Fibre",
+        copy: "Contributes to digestive health and regularity.",
+      },
       {
         term: "Stamina support",
         copy: "Commonly taken ahead of physical activity for exactly this reason.",
@@ -242,13 +272,70 @@ export const ingredientLibrary: Ingredient[] = [
     color: "#7a2540",
   },
   {
+    slug: "coconut",
+    name: "Coconut",
+    group: "fruit",
+    summary: "Nature's electrolyte drink, in fruit form.",
+    bestFor: "Active and fitness-minded customers seeking natural hydration.",
+    benefits: [
+      {
+        term: "Potassium & manganese",
+        copy: "Natural electrolyte replenishment after heat or exertion.",
+      },
+      {
+        term: "MCTs",
+        copy: "Medium-chain triglycerides, used by the body for quick, clean energy.",
+      },
+      {
+        term: "Digestive comfort",
+        copy: "Traditionally used across the Caribbean to settle an unhappy gut.",
+      },
+      { term: "Naturally hydrating", copy: "Supports healthy fluid balance." },
+    ],
+    tags: ["Energy", "Digestion", "Minerals"],
+    inJars: ["tropical-me"],
+    color: "#c9b48a",
+  },
+  {
+    slug: "cucumber",
+    name: "Cucumber",
+    group: "fruit",
+    summary: "High water content, and the gentlest daily hydration there is.",
+    bestFor:
+      "Anyone who struggles to drink enough water, and hot-climate hydration.",
+    benefits: [
+      {
+        term: "Around 95% water",
+        copy: "Hydration that arrives with minerals attached rather than on its own.",
+      },
+      {
+        term: "Silica",
+        copy: "A trace mineral connective tissue, skin and hair all draw on.",
+      },
+      {
+        term: "Very low sugar",
+        copy: "Adds body to a blend without adding sweetness.",
+      },
+      {
+        term: "Cooling",
+        copy: "Traditionally taken in heat, and it earns the reputation.",
+      },
+    ],
+    tags: ["Skin & hair", "Minerals", "Digestion"],
+    inJars: [],
+    color: "#4f8f5a",
+  },
+  {
     slug: "dragonfruit",
     name: "Dragonfruit",
     group: "fruit",
     summary: "A light, low-calorie fruit carrying prebiotic fibre.",
     bestFor: "Trend-forward shoppers wanting an everyday, easy-going option.",
     benefits: [
-      { term: "Vitamin C", copy: "A light, easy source of everyday immune support." },
+      {
+        term: "Vitamin C",
+        copy: "A light, easy source of everyday immune support.",
+      },
       {
         term: "Prebiotic fibre",
         copy: "Feeds the healthy bacteria already living in your gut.",
@@ -263,61 +350,35 @@ export const ingredientLibrary: Ingredient[] = [
     inJars: ["beets-and-berry-me"],
     color: "#a44766",
   },
-
   {
-    slug: "blueberry",
-    name: "Blueberry",
+    slug: "lemon",
+    name: "Lemon",
     group: "fruit",
-    summary: "The berry most associated with memory and focus, and deservedly so.",
-    bestFor: "Brain-health and heart-health-focused shoppers.",
+    summary: "The bright citrus lift that makes a warming blend easy to drink.",
+    bestFor:
+      "Anyone who wants vitamin C and a cleaner finish on a spiced blend.",
     benefits: [
       {
-        term: "Anthocyanins",
-        copy: "One of the highest antioxidant levels of any common fruit.",
+        term: "Vitamin C",
+        copy: "A dependable everyday source, supporting immunity and collagen formation.",
       },
       {
-        term: "Vitamin C & K",
-        copy: "Supports immune function and bone health.",
+        term: "Citrus flavonoids",
+        copy: "Antioxidant compounds long associated with circulation and vessel health.",
       },
-      { term: "Fibre", copy: "Supports gut and digestive health." },
       {
-        term: "Cognitive support",
-        copy: "Widely recognised for supporting memory and focus.",
+        term: "Digestive lift",
+        copy: "Traditionally taken warm in the morning to wake the digestive system up.",
+      },
+      {
+        term: "Balances the blend",
+        copy: "Cuts the earthiness of turmeric and ginger so the jar stays drinkable.",
       },
     ],
-    tags: ["Focus & mood", "Heart & circulation", "Immunity"],
-    inJars: ["beets-and-berry-me"],
-    color: "#3f4a8a",
+    tags: ["Immunity", "Digestion", "Skin & hair"],
+    inJars: ["golden-me"],
+    color: "#d8a521",
   },
-  {
-    slug: "raspberry",
-    name: "Raspberry",
-    group: "fruit",
-    summary: "One of the highest-fibre, lowest-glycemic fruits you can eat.",
-    bestFor: "Blood-sugar-conscious shoppers and everyday antioxidant seekers.",
-    benefits: [
-      {
-        term: "Fibre",
-        copy: "One of the highest fibre contents of any common fruit.",
-      },
-      {
-        term: "Vitamin C & manganese",
-        copy: "Supports immunity and healthy skin.",
-      },
-      {
-        term: "Ellagic acid & anthocyanins",
-        copy: "Antioxidant compounds that help fight oxidative stress.",
-      },
-      { term: "Low glycemic", copy: "A lower-sugar fruit option." },
-    ],
-    tags: ["Digestion", "Immunity", "Skin & hair"],
-    inJars: ["beets-and-berry-me"],
-    color: "#a82f4a",
-  },
-
-  /* ------------------------------------------------------------------ */
-  /* Fruits — Tropical Me                                                 */
-  /* ------------------------------------------------------------------ */
   {
     slug: "mango",
     name: "Mango",
@@ -344,29 +405,32 @@ export const ingredientLibrary: Ingredient[] = [
     color: "#d9812a",
   },
   {
-    slug: "coconut",
-    name: "Coconut",
+    slug: "papaya",
+    name: "Papaya",
     group: "fruit",
-    summary: "Nature's electrolyte drink, in fruit form.",
-    bestFor: "Active and fitness-minded customers seeking natural hydration.",
+    summary: "Gentle enough for every day, with more vitamin C than an orange.",
+    bestFor: "Digestive-health shoppers wanting something mild and daily.",
     benefits: [
       {
-        term: "Potassium & manganese",
-        copy: "Natural electrolyte replenishment after heat or exertion.",
+        term: "Papain",
+        copy: "A digestive enzyme that eases the breakdown of protein.",
       },
       {
-        term: "MCTs",
-        copy: "Medium-chain triglycerides, used by the body for quick, clean energy.",
+        term: "Vitamin C",
+        copy: "Often higher per serving than an orange.",
       },
       {
-        term: "Digestive comfort",
-        copy: "Traditionally used across the Caribbean to settle an unhappy gut.",
+        term: "Skin support",
+        copy: "Its antioxidant profile is why papaya turns up in skincare as often as smoothies.",
       },
-      { term: "Naturally hydrating", copy: "Supports healthy fluid balance." },
+      {
+        term: "Gentle on the stomach",
+        copy: "One of the mildest fruits you can take daily.",
+      },
     ],
-    tags: ["Energy", "Digestion", "Minerals"],
+    tags: ["Digestion", "Skin & hair", "Immunity"],
     inJars: ["tropical-me"],
-    color: "#c9b48a",
+    color: "#ea7c50",
   },
   {
     slug: "pineapple",
@@ -397,93 +461,291 @@ export const ingredientLibrary: Ingredient[] = [
     color: "#d68f26",
   },
   {
-    slug: "papaya",
-    name: "Papaya",
+    slug: "soursop",
+    name: "Soursop",
     group: "fruit",
-    summary: "Gentle enough for every day, with more vitamin C than an orange.",
-    bestFor: "Digestive-health shoppers wanting something mild and daily.",
+    pipeline: true,
+    summary: "A Caribbean favourite you won't find in most wellness brands.",
+    bestFor:
+      "Caribbean-heritage shoppers seeking something authentic and less common.",
     benefits: [
       {
-        term: "Papain",
-        copy: "A digestive enzyme that eases the breakdown of protein.",
-      },
-      {
         term: "Vitamin C",
-        copy: "Often higher per serving than an orange.",
+        copy: "A single fruit can provide well over a full day's recommended amount.",
       },
       {
-        term: "Skin support",
-        copy: "Its antioxidant profile is why papaya turns up in skincare as often as smoothies.",
+        term: "Potassium & magnesium",
+        copy: "Supports healthy blood pressure and muscle function.",
       },
+      { term: "Fibre", copy: "Supports digestion and gut health." },
       {
-        term: "Gentle on the stomach",
-        copy: "One of the mildest fruits you can take daily.",
+        term: "A real differentiator",
+        copy: "A distinctive tropical fruit most wellness brands simply don't carry.",
       },
     ],
-    tags: ["Digestion", "Skin & hair", "Immunity"],
-    inJars: ["tropical-me"],
-    color: "#ea7c50",
+    tags: ["Immunity", "Heart & circulation", "Digestion"],
+    inJars: [],
+    color: "#4a7a3f",
+  },
+  {
+    slug: "watermelon",
+    name: "Watermelon",
+    group: "fruit",
+    summary:
+      "Over 90% water, and the best natural source of citrulline there is.",
+    bestFor: "Rehydration after heat or exercise.",
+    benefits: [
+      {
+        term: "Citrulline",
+        copy: "An amino acid the body converts to arginine, which supports blood flow.",
+      },
+      {
+        term: "Over 90% water",
+        copy: "Deep hydration, with potassium and magnesium carried along with it.",
+      },
+      {
+        term: "Lycopene",
+        copy: "The red pigment, and a well-studied antioxidant.",
+      },
+      {
+        term: "Vitamins A & C",
+        copy: "Both in useful amounts for skin and immune function.",
+      },
+    ],
+    tags: ["Heart & circulation", "Skin & hair", "Energy"],
+    inJars: [],
+    color: "#d94f63",
   },
 
   /* ------------------------------------------------------------------ */
-  /* Herbs & roots — Golden Me                                            */
+  /* Berries                                                             */
   /* ------------------------------------------------------------------ */
   {
-    slug: "turmeric",
-    name: "Turmeric",
-    group: "herb",
-    summary: "The cornerstone anti-inflammatory spice, carried by curcumin.",
-    bestFor: "Joint-health and inflammation-focused shoppers.",
+    slug: "bilberry",
+    name: "Bilberry",
+    group: "berry",
+    summary:
+      "Among the richest antioxidant sources of any berry, and a traditional eye tonic.",
+    bestFor: "Shoppers focused on eye health and antioxidant support.",
     benefits: [
       {
-        term: "Curcumin",
-        copy: "Turmeric's primary compound, widely studied for anti-inflammatory effects.",
-      },
-      {
-        term: "Joint comfort",
-        copy: "Used to support mobility and ease everyday stiffness.",
-      },
-      {
-        term: "Heart & liver support",
-        copy: "Linked in research to healthy circulation and liver function.",
+        term: "Anthocyanins",
+        copy: "Among the richest antioxidant sources of any berry.",
       },
       {
         term: "Traditional use",
-        copy: "A cornerstone of South Asian and Caribbean herbal medicine alike.",
+        copy: "Long valued for supporting eye and vision health.",
+      },
+      {
+        term: "Circulatory support",
+        copy: "Supports healthy blood flow.",
+      },
+      {
+        term: "Mood & cognitive support",
+        copy: "Early research suggests benefits for mood and mental clarity.",
       },
     ],
-    tags: ["Joints & inflammation", "Heart & circulation", "Detox & liver"],
-    inJars: ["golden-me"],
-    color: "#c98a1e",
+    tags: ["Heart & circulation", "Focus & mood", "Immunity"],
+    inJars: [],
+    color: "#3a3a6b",
   },
   {
-    slug: "ginger",
-    name: "Ginger",
-    group: "herb",
-    summary: "The oldest remedy there is for an unhappy stomach.",
-    bestFor: "Shoppers seeking digestive comfort and warming everyday support.",
+    slug: "blueberry",
+    name: "Blueberry",
+    group: "berry",
+    summary:
+      "The berry most associated with memory and focus, and deservedly so.",
+    bestFor: "Brain-health and heart-health-focused shoppers.",
     benefits: [
       {
-        term: "Gingerol",
-        copy: "The compound behind ginger's anti-inflammatory and antioxidant activity.",
+        term: "Anthocyanins",
+        copy: "One of the highest antioxidant levels of any common fruit.",
       },
       {
-        term: "Digestive support",
-        copy: "Eases nausea, bloating and general digestive discomfort.",
+        term: "Vitamin C & K",
+        copy: "Supports immune function and bone health.",
+      },
+      { term: "Fibre", copy: "Supports gut and digestive health." },
+      {
+        term: "Cognitive support",
+        copy: "Widely recognised for supporting memory and focus.",
+      },
+    ],
+    tags: ["Focus & mood", "Heart & circulation", "Immunity"],
+    inJars: ["beets-and-berry-me"],
+    color: "#3f4a8a",
+  },
+  {
+    slug: "elderberry",
+    name: "Elderberry",
+    group: "berry",
+    summary:
+      "The most recognised immune-support berry on the shelf, and the oldest.",
+    bestFor: "Immune-focused shoppers, especially through cold and flu season.",
+    benefits: [
+      {
+        term: "Vitamin C & flavonoids",
+        copy: "A well-established combination for supporting normal immune function.",
       },
       {
-        term: "Blood sugar support",
-        copy: "Studies link regular ginger intake to healthier blood sugar levels.",
+        term: "Antioxidants",
+        copy: "Studied for anti-inflammatory and antiviral properties.",
       },
       {
         term: "Traditional use",
-        copy: "A long-standing household remedy through cold and flu season.",
+        copy: "Used for centuries in herbal immune preparations across Europe and the Caribbean.",
+      },
+      {
+        term: "Seasonal staple",
+        copy: "The berry most people already reach for when the weather turns.",
       },
     ],
-    tags: ["Digestion", "Joints & inflammation", "Immunity"],
-    inJars: ["golden-me"],
-    color: "#e5af52",
+    tags: ["Immunity"],
+    inJars: ["beets-and-berry-me"],
+    color: "#4c1428",
   },
+  {
+    slug: "goji-berry",
+    name: "Goji Berry",
+    group: "berry",
+    summary:
+      "Antioxidant-dense, and used for eye and immune support for centuries.",
+    bestFor: "Eye health, immune support and everyday antioxidant load.",
+    benefits: [
+      {
+        term: "Zeaxanthin",
+        copy: "A carotenoid that concentrates in the retina — the reason for the eye reputation.",
+      },
+      {
+        term: "Polysaccharides",
+        copy: "The compounds behind its long use as an immune tonic.",
+      },
+      {
+        term: "Complete protein",
+        copy: "Unusual for a berry — it carries all the essential amino acids.",
+      },
+      {
+        term: "Iron and vitamin C together",
+        copy: "The pairing that helps the iron actually get absorbed.",
+      },
+    ],
+    tags: ["Immunity", "Focus & mood", "Skin & hair"],
+    inJars: [],
+    color: "#c2452a",
+  },
+  {
+    slug: "hawthorn-berry",
+    name: "Hawthorn Berry",
+    group: "berry",
+    summary: "A traditional heart tonic, and one of the better-studied ones.",
+    bestFor: "Circulation and long-term heart support.",
+    benefits: [
+      {
+        term: "Oligomeric procyanidins",
+        copy: "Flavonoids associated with vessel tone and healthy blood flow.",
+      },
+      {
+        term: "Traditional heart tonic",
+        copy: "Used in European and Chinese herbal practice for the same purpose for centuries.",
+      },
+      {
+        term: "Antioxidant",
+        copy: "Deeply pigmented, and the pigment is the active part.",
+      },
+      {
+        term: "Gentle",
+        copy: "Slow-acting rather than stimulating — a daily herb, not an acute one.",
+      },
+    ],
+    tags: ["Heart & circulation", "Immunity"],
+    inJars: [],
+    caution:
+      "If you take medication for blood pressure or a heart condition, check with your doctor before adding hawthorn.",
+    color: "#8e2f3a",
+  },
+  {
+    slug: "raspberry",
+    name: "Raspberry",
+    group: "berry",
+    summary: "One of the highest-fibre, lowest-glycemic fruits you can eat.",
+    bestFor: "Blood-sugar-conscious shoppers and everyday antioxidant seekers.",
+    benefits: [
+      {
+        term: "Fibre",
+        copy: "One of the highest fibre contents of any common fruit.",
+      },
+      {
+        term: "Vitamin C & manganese",
+        copy: "Supports immunity and healthy skin.",
+      },
+      {
+        term: "Ellagic acid & anthocyanins",
+        copy: "Antioxidant compounds that help fight oxidative stress.",
+      },
+      { term: "Low glycemic", copy: "A lower-sugar fruit option." },
+    ],
+    tags: ["Digestion", "Immunity", "Skin & hair"],
+    inJars: ["beets-and-berry-me"],
+    color: "#a82f4a",
+  },
+  {
+    slug: "schisandra-berry",
+    name: "Schisandra Berry",
+    group: "berry",
+    summary: "An adaptogen prized for liver support and plain resilience.",
+    bestFor: "Stress, stamina and liver support.",
+    benefits: [
+      {
+        term: "Lignans",
+        copy: "The compounds behind its long-standing reputation for liver support.",
+      },
+      {
+        term: "Adaptogen",
+        copy: "Helps the body hold its line under sustained stress rather than spiking energy.",
+      },
+      {
+        term: "The five-flavour berry",
+        copy: "Sweet, sour, salty, bitter and pungent all at once — the name is literal.",
+      },
+      {
+        term: "Endurance",
+        copy: "Traditionally taken for physical and mental stamina over long stretches.",
+      },
+    ],
+    tags: ["Detox & liver", "Focus & mood", "Energy"],
+    inJars: [],
+    color: "#a3324c",
+  },
+  {
+    slug: "strawberry",
+    name: "Strawberry",
+    group: "berry",
+    pipeline: true,
+    summary:
+      "A full day's vitamin C in a single serving, and universally loved.",
+    bestFor: "Broad, universal appeal — skin and immune-focused customers.",
+    benefits: [
+      {
+        term: "Vitamin C",
+        copy: "One serving can meet a full day's recommended amount.",
+      },
+      {
+        term: "Manganese",
+        copy: "Supports bone health and blood sugar regulation.",
+      },
+      {
+        term: "Ellagic acid & flavonoids",
+        copy: "Antioxidant compounds linked to heart health.",
+      },
+    ],
+    tags: ["Immunity", "Skin & hair", "Heart & circulation"],
+    inJars: [],
+    color: "#c2334a",
+  },
+
+  /* ------------------------------------------------------------------ */
+  /* Herbs & Roots                                                       */
+  /* ------------------------------------------------------------------ */
   {
     slug: "ashwagandha",
     name: "Ashwagandha",
@@ -513,62 +775,6 @@ export const ingredientLibrary: Ingredient[] = [
     color: "#b0791d",
   },
   {
-    slug: "lemon",
-    name: "Lemon",
-    group: "fruit",
-    summary: "The bright citrus lift that makes a warming blend easy to drink.",
-    bestFor: "Anyone who wants vitamin C and a cleaner finish on a spiced blend.",
-    benefits: [
-      {
-        term: "Vitamin C",
-        copy: "A dependable everyday source, supporting immunity and collagen formation.",
-      },
-      {
-        term: "Citrus flavonoids",
-        copy: "Antioxidant compounds long associated with circulation and vessel health.",
-      },
-      {
-        term: "Digestive lift",
-        copy: "Traditionally taken warm in the morning to wake the digestive system up.",
-      },
-      {
-        term: "Balances the blend",
-        copy: "Cuts the earthiness of turmeric and ginger so the jar stays drinkable.",
-      },
-    ],
-    tags: ["Immunity", "Digestion", "Skin & hair"],
-    inJars: ["golden-me"],
-    color: "#d8a521",
-  },
-
-  /* ------------------------------------------------------------------ */
-  /* Wider herbal library                                                */
-  {
-    slug: "acai",
-    name: "Acai",
-    group: "fruit",
-    summary: "Among the highest antioxidant levels measured in any fruit.",
-    bestFor: "Superfood shoppers and antioxidant-focused customers.",
-    benefits: [
-      {
-        term: "Anthocyanins",
-        copy: "The deep purple pigment responsible for acai's antioxidant reputation.",
-      },
-      {
-        term: "Healthy fats",
-        copy: "Unusual for a berry, and helpful for absorbing fat-soluble nutrients.",
-      },
-      { term: "Fibre", copy: "Supports digestion and a healthy gut environment." },
-      {
-        term: "Established superfruit",
-        copy: "Strong existing recognition — most customers already know why they want it.",
-      },
-    ],
-    tags: ["Immunity", "Digestion", "Heart & circulation"],
-    inJars: [],
-    color: "#3d1a4a",
-  },
-  {
     slug: "black-pepper",
     name: "Black Pepper",
     group: "herb",
@@ -591,250 +797,6 @@ export const ingredientLibrary: Ingredient[] = [
     tags: ["Digestion", "Joints & inflammation"],
     inJars: [],
     color: "#5a4632",
-  },
-  {
-    slug: "cinnamon",
-    name: "Cinnamon",
-    group: "herb",
-    summary: "Warming, faintly sweet, and one of the most antioxidant-dense spices measured.",
-    bestFor: "Blood-sugar-conscious shoppers who want warmth without sugar.",
-    benefits: [
-      {
-        term: "Blood sugar support",
-        copy: "One of the most researched spices for supporting healthy blood sugar levels.",
-      },
-      {
-        term: "Antioxidant density",
-        copy: "Consistently ranks among the highest-scoring spices for antioxidant capacity.",
-      },
-      {
-        term: "Natural sweetness",
-        copy: "Adds perceived sweetness to the Golden Me jar without a gram of added sugar.",
-      },
-    ],
-    tags: ["Digestion", "Heart & circulation"],
-    inJars: [],
-    color: "#8a5a12",
-  },
-  /* ------------------------------------------------------------------ */
-  {
-    slug: "cloves",
-    name: "Cloves",
-    group: "herb",
-    summary: "One of the highest-scoring spices on earth for antioxidant capacity.",
-    bestFor: "Shoppers seeking oral health, digestive and antioxidant support.",
-    benefits: [
-      {
-        term: "Eugenol",
-        copy: "A potent antioxidant compound and the source of clove's distinctive warmth.",
-      },
-      {
-        term: "Traditional use",
-        copy: "Long used to ease tooth and gum discomfort — the original dental remedy.",
-      },
-      {
-        term: "Blood sugar support",
-        copy: "Early research suggests a role in healthy blood sugar regulation.",
-      },
-      {
-        term: "Antimicrobial properties",
-        copy: "Traditionally valued for its natural antibacterial qualities.",
-      },
-    ],
-    tags: ["Digestion", "Immunity"],
-    inJars: [],
-    color: "#6b4423",
-  },
-  {
-    slug: "nettle",
-    name: "Nettle",
-    group: "herb",
-    summary: "A genuinely mineral-rich green, and a traditional allergy remedy.",
-    bestFor: "Seasonal allergy sufferers and shoppers seeking natural mineral support.",
-    benefits: [
-      {
-        term: "Rich in minerals",
-        copy: "A natural source of iron, calcium and other trace minerals.",
-      },
-      {
-        term: "Traditional use",
-        copy: "Long used to ease seasonal allergy symptoms.",
-      },
-      {
-        term: "Gentle diuretic",
-        copy: "Supports the body's own natural detox processes.",
-      },
-      {
-        term: "Blood sugar support",
-        copy: "Traditionally used to help maintain healthy blood sugar levels.",
-      },
-    ],
-    tags: ["Minerals", "Detox & liver", "Immunity"],
-    inJars: [],
-    color: "#2f6b3f",
-  },
-  {
-    slug: "lemon-balm",
-    name: "Lemon Balm",
-    group: "herb",
-    summary: "A calming member of the mint family, often paired with valerian.",
-    bestFor: "Shoppers seeking calm, better sleep and digestive ease.",
-    benefits: [
-      {
-        term: "Calming properties",
-        copy: "Traditionally used to ease stress and occasional anxiety.",
-      },
-      {
-        term: "Sleep support",
-        copy: "Often paired with valerian to support restful sleep.",
-      },
-      {
-        term: "Digestive comfort",
-        copy: "May help relieve bloating and indigestion.",
-      },
-      {
-        term: "Mood & focus",
-        copy: "Early research suggests support for memory and mood.",
-      },
-    ],
-    tags: ["Calm & sleep", "Focus & mood", "Digestion"],
-    inJars: [],
-    color: "#5c8a4a",
-  },
-  {
-    slug: "valerian",
-    name: "Valerian",
-    group: "herb",
-    summary: "The most recognised herb for sleep onset — strictly an evening ingredient.",
-    bestFor: "Shoppers specifically seeking nighttime sleep support.",
-    benefits: [
-      {
-        term: "Sleep support",
-        copy: "One of the most recognised herbs for supporting sleep onset and quality.",
-      },
-      {
-        term: "Valerenic acid",
-        copy: "The calming compound behind valerian's ability to ease restlessness.",
-      },
-      {
-        term: "Menstrual comfort",
-        copy: "Traditionally used to ease PMS and menstrual discomfort.",
-      },
-    ],
-    tags: ["Calm & sleep"],
-    inJars: [],
-    caution:
-      "Evening use only — valerian's sedative effect makes it a nighttime-formula ingredient, never a daytime one.",
-    color: "#4a5a6b",
-  },
-  {
-    slug: "dandelion",
-    name: "Dandelion",
-    group: "herb",
-    summary: "The classic liver tonic, and far more nutritious than its reputation suggests.",
-    bestFor: "Shoppers interested in liver support and gentle everyday detox.",
-    benefits: [
-      {
-        term: "Nutrient-dense",
-        copy: "A strong natural source of vitamins A, C and K.",
-      },
-      {
-        term: "Traditional liver tonic",
-        copy: "Long used to support liver and digestive function.",
-      },
-      {
-        term: "Natural diuretic",
-        copy: "Supports the body's gentle detox processes.",
-      },
-      {
-        term: "Rich in antioxidants",
-        copy: "Contributes to overall cellular protection.",
-      },
-    ],
-    tags: ["Detox & liver", "Digestion", "Minerals"],
-    inJars: [],
-    color: "#8a9a2f",
-  },
-  {
-    slug: "mullein",
-    name: "Mullein",
-    group: "herb",
-    summary: "A centuries-old remedy for coughs and irritated airways.",
-    bestFor: "Shoppers seeking respiratory and throat comfort.",
-    benefits: [
-      {
-        term: "Saponins & mucilage",
-        copy: "Traditionally used to soothe airways and support mucus clearance.",
-      },
-      { term: "Flavonoids", copy: "Provide antioxidant support." },
-      {
-        term: "Traditional use",
-        copy: "A centuries-old remedy for coughs and throat irritation.",
-      },
-      {
-        term: "Gentle profile",
-        copy: "Well tolerated across a wide range of everyday users.",
-      },
-    ],
-    tags: ["Immunity", "Calm & sleep"],
-    inJars: [],
-    color: "#a8925c",
-  },
-  {
-    slug: "black-seed-oil",
-    name: "Black Seed Oil",
-    group: "herb",
-    summary: "Nigella sativa — carried by thymoquinone, its signature compound.",
-    bestFor: "Shoppers seeking broad immune, skin and anti-inflammatory support.",
-    benefits: [
-      {
-        term: "Thymoquinone",
-        copy: "The key antioxidant and anti-inflammatory compound in black seed.",
-      },
-      {
-        term: "Immune balance",
-        copy: "Supports overall immune system function rather than simply stimulating it.",
-      },
-      {
-        term: "Traditional use",
-        copy: "Long used to support skin conditions and clearer-looking skin.",
-      },
-      {
-        term: "Blood sugar support",
-        copy: "Studied for its role in healthy blood sugar regulation.",
-      },
-    ],
-    tags: ["Immunity", "Skin & hair", "Joints & inflammation"],
-    inJars: [],
-    color: "#2f2f38",
-  },
-  {
-    slug: "lavender",
-    name: "Lavender",
-    group: "herb",
-    summary: "Calm in plant form — and gentler on digestion than most people expect.",
-    bestFor: "Shoppers seeking calm, better sleep and stress relief.",
-    benefits: [
-      {
-        term: "Calming aromatic compounds",
-        copy: "Support relaxation and ease physical tension.",
-      },
-      {
-        term: "Traditional use",
-        copy: "Long used to ease anxiety and promote restful sleep.",
-      },
-      {
-        term: "Antioxidant & anti-inflammatory",
-        copy: "Contributes to overall wellness support.",
-      },
-      {
-        term: "Digestive comfort",
-        copy: "May help ease occasional bloating and indigestion.",
-      },
-    ],
-    tags: ["Calm & sleep", "Focus & mood", "Digestion"],
-    inJars: [],
-    color: "#7b6ba8",
   },
   {
     slug: "chamomile",
@@ -865,32 +827,282 @@ export const ingredientLibrary: Ingredient[] = [
     color: "#d9c26b",
   },
   {
-    slug: "bilberry",
-    name: "Bilberry",
+    slug: "cinnamon",
+    name: "Cinnamon",
     group: "herb",
-    summary: "Among the richest antioxidant sources of any berry, and a traditional eye tonic.",
-    bestFor: "Shoppers focused on eye health and antioxidant support.",
+    summary:
+      "Warming, faintly sweet, and one of the most antioxidant-dense spices measured.",
+    bestFor: "Blood-sugar-conscious shoppers who want warmth without sugar.",
     benefits: [
       {
-        term: "Anthocyanins",
-        copy: "Among the richest antioxidant sources of any berry.",
+        term: "Blood sugar support",
+        copy: "One of the most researched spices for supporting healthy blood sugar levels.",
+      },
+      {
+        term: "Antioxidant density",
+        copy: "Consistently ranks among the highest-scoring spices for antioxidant capacity.",
+      },
+      {
+        term: "Natural sweetness",
+        copy: "Adds perceived sweetness to the Golden Me jar without a gram of added sugar.",
+      },
+    ],
+    tags: ["Digestion", "Heart & circulation"],
+    inJars: [],
+    color: "#8a5a12",
+  },
+  {
+    slug: "cloves",
+    name: "Cloves",
+    group: "herb",
+    summary:
+      "One of the highest-scoring spices on earth for antioxidant capacity.",
+    bestFor: "Shoppers seeking oral health, digestive and antioxidant support.",
+    benefits: [
+      {
+        term: "Eugenol",
+        copy: "A potent antioxidant compound and the source of clove's distinctive warmth.",
       },
       {
         term: "Traditional use",
-        copy: "Long valued for supporting eye and vision health.",
+        copy: "Long used to ease tooth and gum discomfort — the original dental remedy.",
       },
       {
-        term: "Circulatory support",
-        copy: "Supports healthy blood flow.",
+        term: "Blood sugar support",
+        copy: "Early research suggests a role in healthy blood sugar regulation.",
       },
       {
-        term: "Mood & cognitive support",
-        copy: "Early research suggests benefits for mood and mental clarity.",
+        term: "Antimicrobial properties",
+        copy: "Traditionally valued for its natural antibacterial qualities.",
       },
     ],
-    tags: ["Heart & circulation", "Focus & mood", "Immunity"],
+    tags: ["Digestion", "Immunity"],
     inJars: [],
-    color: "#3a3a6b",
+    color: "#6b4423",
+  },
+  {
+    slug: "dandelion",
+    name: "Dandelion",
+    group: "herb",
+    summary:
+      "The classic liver tonic, and far more nutritious than its reputation suggests.",
+    bestFor: "Shoppers interested in liver support and gentle everyday detox.",
+    benefits: [
+      {
+        term: "Nutrient-dense",
+        copy: "A strong natural source of vitamins A, C and K.",
+      },
+      {
+        term: "Traditional liver tonic",
+        copy: "Long used to support liver and digestive function.",
+      },
+      {
+        term: "Natural diuretic",
+        copy: "Supports the body's gentle detox processes.",
+      },
+      {
+        term: "Rich in antioxidants",
+        copy: "Contributes to overall cellular protection.",
+      },
+    ],
+    tags: ["Detox & liver", "Digestion", "Minerals"],
+    inJars: [],
+    color: "#8a9a2f",
+  },
+  {
+    slug: "ginger",
+    name: "Ginger",
+    group: "herb",
+    summary: "The oldest remedy there is for an unhappy stomach.",
+    bestFor: "Shoppers seeking digestive comfort and warming everyday support.",
+    benefits: [
+      {
+        term: "Gingerol",
+        copy: "The compound behind ginger's anti-inflammatory and antioxidant activity.",
+      },
+      {
+        term: "Digestive support",
+        copy: "Eases nausea, bloating and general digestive discomfort.",
+      },
+      {
+        term: "Blood sugar support",
+        copy: "Studies link regular ginger intake to healthier blood sugar levels.",
+      },
+      {
+        term: "Traditional use",
+        copy: "A long-standing household remedy through cold and flu season.",
+      },
+    ],
+    tags: ["Digestion", "Joints & inflammation", "Immunity"],
+    inJars: ["golden-me"],
+    color: "#e5af52",
+  },
+  {
+    slug: "hibiscus",
+    name: "Hibiscus",
+    group: "herb",
+    summary:
+      "Tart, deep red, and one of the best-studied herbs for blood pressure.",
+    bestFor: "Heart-health and antioxidant-focused shoppers.",
+    benefits: [
+      {
+        term: "Antioxidants & vitamin C",
+        copy: "Supports overall cellular protection.",
+      },
+      {
+        term: "Traditional use",
+        copy: "Long used to support healthy blood pressure.",
+      },
+      {
+        term: "Metabolic support",
+        copy: "Studied for benefits to healthy blood sugar and lipid levels.",
+      },
+    ],
+    tags: ["Heart & circulation", "Immunity"],
+    inJars: [],
+    caution:
+      "Not recommended during pregnancy — its blood-pressure-lowering effect warrants caution for that group.",
+    color: "#a8243f",
+  },
+  {
+    slug: "lavender",
+    name: "Lavender",
+    group: "herb",
+    summary:
+      "Calm in plant form — and gentler on digestion than most people expect.",
+    bestFor: "Shoppers seeking calm, better sleep and stress relief.",
+    benefits: [
+      {
+        term: "Calming aromatic compounds",
+        copy: "Support relaxation and ease physical tension.",
+      },
+      {
+        term: "Traditional use",
+        copy: "Long used to ease anxiety and promote restful sleep.",
+      },
+      {
+        term: "Antioxidant & anti-inflammatory",
+        copy: "Contributes to overall wellness support.",
+      },
+      {
+        term: "Digestive comfort",
+        copy: "May help ease occasional bloating and indigestion.",
+      },
+    ],
+    tags: ["Calm & sleep", "Focus & mood", "Digestion"],
+    inJars: [],
+    color: "#7b6ba8",
+  },
+  {
+    slug: "lemon-balm",
+    name: "Lemon Balm",
+    group: "herb",
+    summary: "A calming member of the mint family, often paired with valerian.",
+    bestFor: "Shoppers seeking calm, better sleep and digestive ease.",
+    benefits: [
+      {
+        term: "Calming properties",
+        copy: "Traditionally used to ease stress and occasional anxiety.",
+      },
+      {
+        term: "Sleep support",
+        copy: "Often paired with valerian to support restful sleep.",
+      },
+      {
+        term: "Digestive comfort",
+        copy: "May help relieve bloating and indigestion.",
+      },
+      {
+        term: "Mood & focus",
+        copy: "Early research suggests support for memory and mood.",
+      },
+    ],
+    tags: ["Calm & sleep", "Focus & mood", "Digestion"],
+    inJars: [],
+    color: "#5c8a4a",
+  },
+  {
+    slug: "marshmallow-root",
+    name: "Marshmallow Root",
+    group: "herb",
+    summary: "Mucilage-rich root that soothes gut and throat lining alike.",
+    bestFor: "Irritated digestion, and dry or sore throats.",
+    benefits: [
+      {
+        term: "Mucilage",
+        copy: "The same soothing, gel-forming fibre that makes sea moss what it is.",
+      },
+      {
+        term: "Gut lining",
+        copy: "Traditionally taken to coat and calm an irritated digestive tract.",
+      },
+      {
+        term: "Throat and chest",
+        copy: "A long-standing remedy for dry coughs and raw throats.",
+      },
+      {
+        term: "Very gentle",
+        copy: "One of the mildest herbs in the library — it soothes rather than acts.",
+      },
+    ],
+    tags: ["Digestion", "Calm & sleep"],
+    inJars: [],
+    color: "#a8865c",
+  },
+  {
+    slug: "mullein",
+    name: "Mullein",
+    group: "herb",
+    summary: "A centuries-old remedy for coughs and irritated airways.",
+    bestFor: "Shoppers seeking respiratory and throat comfort.",
+    benefits: [
+      {
+        term: "Saponins & mucilage",
+        copy: "Traditionally used to soothe airways and support mucus clearance.",
+      },
+      { term: "Flavonoids", copy: "Provide antioxidant support." },
+      {
+        term: "Traditional use",
+        copy: "A centuries-old remedy for coughs and throat irritation.",
+      },
+      {
+        term: "Gentle profile",
+        copy: "Well tolerated across a wide range of everyday users.",
+      },
+    ],
+    tags: ["Immunity", "Calm & sleep"],
+    inJars: [],
+    color: "#a8925c",
+  },
+  {
+    slug: "nettle",
+    name: "Nettle",
+    group: "herb",
+    summary:
+      "A genuinely mineral-rich green, and a traditional allergy remedy.",
+    bestFor:
+      "Seasonal allergy sufferers and shoppers seeking natural mineral support.",
+    benefits: [
+      {
+        term: "Rich in minerals",
+        copy: "A natural source of iron, calcium and other trace minerals.",
+      },
+      {
+        term: "Traditional use",
+        copy: "Long used to ease seasonal allergy symptoms.",
+      },
+      {
+        term: "Gentle diuretic",
+        copy: "Supports the body's own natural detox processes.",
+      },
+      {
+        term: "Blood sugar support",
+        copy: "Traditionally used to help maintain healthy blood sugar levels.",
+      },
+    ],
+    tags: ["Minerals", "Detox & liver", "Immunity"],
+    inJars: [],
+    color: "#2f6b3f",
   },
   {
     slug: "raspberry-leaf",
@@ -919,36 +1131,11 @@ export const ingredientLibrary: Ingredient[] = [
     color: "#7a5a6b",
   },
   {
-    slug: "hibiscus",
-    name: "Hibiscus",
-    group: "herb",
-    summary: "Tart, deep red, and one of the best-studied herbs for blood pressure.",
-    bestFor: "Heart-health and antioxidant-focused shoppers.",
-    benefits: [
-      {
-        term: "Antioxidants & vitamin C",
-        copy: "Supports overall cellular protection.",
-      },
-      {
-        term: "Traditional use",
-        copy: "Long used to support healthy blood pressure.",
-      },
-      {
-        term: "Metabolic support",
-        copy: "Studied for benefits to healthy blood sugar and lipid levels.",
-      },
-    ],
-    tags: ["Heart & circulation", "Immunity"],
-    inJars: [],
-    caution:
-      "Not recommended during pregnancy — its blood-pressure-lowering effect warrants caution for that group.",
-    color: "#a8243f",
-  },
-  {
     slug: "rosehips",
     name: "Rosehips",
     group: "herb",
-    summary: "Up to twenty times more vitamin C than oranges, weight for weight.",
+    summary:
+      "Up to twenty times more vitamin C than oranges, weight for weight.",
     bestFor: "Shoppers seeking immune support and joint comfort.",
     benefits: [
       {
@@ -972,60 +1159,89 @@ export const ingredientLibrary: Ingredient[] = [
     inJars: [],
     color: "#c2472f",
   },
-
-  /* ------------------------------------------------------------------ */
-  /* In development                                                      */
-  /* ------------------------------------------------------------------ */
   {
-    slug: "strawberry",
-    name: "Strawberry",
-    group: "fruit",
-    pipeline: true,
-    summary: "A full day's vitamin C in a single serving, and universally loved.",
-    bestFor: "Broad, universal appeal — skin and immune-focused customers.",
+    slug: "spearmint",
+    name: "Spearmint",
+    group: "herb",
+    summary:
+      "A gentle digestive herb that also cleans up the finish of a blend.",
+    bestFor: "Bloating, and anyone who finds peppermint too sharp.",
     benefits: [
       {
-        term: "Vitamin C",
-        copy: "One serving can meet a full day's recommended amount.",
+        term: "Carvone",
+        copy: "The compound behind the flavour, and behind the antispasmodic effect.",
       },
       {
-        term: "Manganese",
-        copy: "Supports bone health and blood sugar regulation.",
+        term: "Softer than peppermint",
+        copy: "Far less menthol, so it settles the stomach without the burn.",
       },
       {
-        term: "Ellagic acid & flavonoids",
-        copy: "Antioxidant compounds linked to heart health.",
+        term: "Bloating and wind",
+        copy: "One of the oldest and most reliable remedies for both.",
+      },
+      {
+        term: "Cleans the finish",
+        copy: "It lifts an earthy blend without taking it over.",
       },
     ],
-    tags: ["Immunity", "Skin & hair", "Heart & circulation"],
+    tags: ["Digestion", "Calm & sleep"],
     inJars: [],
-    color: "#c2334a",
+    color: "#3f8f74",
   },
   {
-    slug: "soursop",
-    name: "Soursop",
-    group: "fruit",
-    pipeline: true,
-    summary: "A Caribbean favourite you won't find in most wellness brands.",
-    bestFor: "Caribbean-heritage shoppers seeking something authentic and less common.",
+    slug: "turmeric",
+    name: "Turmeric",
+    group: "herb",
+    summary: "The cornerstone anti-inflammatory spice, carried by curcumin.",
+    bestFor: "Joint-health and inflammation-focused shoppers.",
     benefits: [
       {
-        term: "Vitamin C",
-        copy: "A single fruit can provide well over a full day's recommended amount.",
+        term: "Curcumin",
+        copy: "Turmeric's primary compound, widely studied for anti-inflammatory effects.",
       },
       {
-        term: "Potassium & magnesium",
-        copy: "Supports healthy blood pressure and muscle function.",
+        term: "Joint comfort",
+        copy: "Used to support mobility and ease everyday stiffness.",
       },
-      { term: "Fibre", copy: "Supports digestion and gut health." },
       {
-        term: "A real differentiator",
-        copy: "A distinctive tropical fruit most wellness brands simply don't carry.",
+        term: "Heart & liver support",
+        copy: "Linked in research to healthy circulation and liver function.",
+      },
+      {
+        term: "Traditional use",
+        copy: "A cornerstone of South Asian and Caribbean herbal medicine alike.",
       },
     ],
-    tags: ["Immunity", "Heart & circulation", "Digestion"],
+    tags: ["Joints & inflammation", "Heart & circulation", "Detox & liver"],
+    inJars: ["golden-me"],
+    color: "#c98a1e",
+  },
+  {
+    slug: "valerian",
+    name: "Valerian",
+    group: "herb",
+    summary:
+      "The most recognised herb for sleep onset — strictly an evening ingredient.",
+    bestFor: "Shoppers specifically seeking nighttime sleep support.",
+    benefits: [
+      {
+        term: "Sleep support",
+        copy: "One of the most recognised herbs for supporting sleep onset and quality.",
+      },
+      {
+        term: "Valerenic acid",
+        copy: "The calming compound behind valerian's ability to ease restlessness.",
+      },
+      {
+        term: "Menstrual comfort",
+        copy: "Traditionally used to ease PMS and menstrual discomfort.",
+      },
+    ],
+    tags: ["Calm & sleep"],
     inJars: [],
-    color: "#4a7a3f",
+    caution:
+      "Evening use only — valerian's sedative effect makes it a nighttime-formula ingredient, never a daytime one.",
+    color: "#4a5a6b",
   },
 ];
 
@@ -1042,11 +1258,27 @@ export const benefitTags: BenefitTag[] = [
   "Minerals",
 ];
 
+/** Display order matters — the library is rendered group by group in this order. */
 export const groupLabels: Record<IngredientGroup, string> = {
+  superfood: "Superfoods",
   fruit: "Fruits",
-  herb: "Herbs & roots",
-  green: "Greens & sea vegetables",
+  berry: "Berries",
+  herb: "Herbs & Roots",
 };
+
+export const groupOrder: IngredientGroup[] = [
+  "superfood",
+  "fruit",
+  "berry",
+  "herb",
+];
+
+/** The library grouped for display, in group order, alphabetical within each group. */
+export const ingredientsByGroup = groupOrder.map((group) => ({
+  group,
+  label: groupLabels[group],
+  items: ingredientLibrary.filter((i) => i.group === group),
+}));
 
 export const getIngredient = (slug: string) =>
   ingredientLibrary.find((i) => i.slug === slug);

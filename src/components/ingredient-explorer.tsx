@@ -5,8 +5,10 @@ import { useMemo, useState } from "react";
 import {
   benefitTags,
   groupLabels,
+  groupOrder,
   ingredientLibrary,
   type BenefitTag,
+  type Ingredient,
   type IngredientGroup,
 } from "@/lib/ingredients";
 import { getProduct } from "@/lib/products";
@@ -30,17 +32,33 @@ export function IngredientExplorer() {
         ing.summary.toLowerCase().includes(q) ||
         ing.bestFor.toLowerCase().includes(q) ||
         ing.benefits.some(
-          (b) => b.term.toLowerCase().includes(q) || b.copy.toLowerCase().includes(q),
+          (b) =>
+            b.term.toLowerCase().includes(q) ||
+            b.copy.toLowerCase().includes(q),
         )
       );
     });
   }, [group, tag, query]);
 
+  /** Results split into the four library sections, in order, empty ones dropped. */
+  const sections = useMemo(
+    () =>
+      groupOrder
+        .map((g) => ({
+          group: g,
+          label: groupLabels[g],
+          items: results.filter((i) => i.group === g),
+        }))
+        .filter((sec) => sec.items.length > 0),
+    [results],
+  );
+
   const groups: { value: GroupFilter; label: string }[] = [
     { value: "all", label: "Everything" },
-    { value: "fruit", label: groupLabels.fruit },
-    { value: "herb", label: groupLabels.herb },
-    { value: "green", label: groupLabels.green },
+    ...groupOrder.map((g) => ({
+      value: g as GroupFilter,
+      label: groupLabels[g],
+    })),
   ];
 
   const filtersActive = group !== "all" || tag !== null || query !== "";
@@ -131,91 +149,128 @@ export function IngredientExplorer() {
           </p>
         </div>
       ) : (
-        <ul className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {results.map((ing) => (
-            <li
-              key={ing.slug}
-              id={ing.slug}
-              className="card flex h-full scroll-mt-44 flex-col overflow-hidden"
-            >
-              <span
-                aria-hidden
-                className="h-1 w-full shrink-0"
-                style={{ backgroundColor: ing.color }}
-              />
-              <div className="flex flex-1 flex-col p-6">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <h3 className="text-2xl leading-tight">{ing.name}</h3>
-                    <p className="mt-1 text-[11px] font-semibold tracking-[0.12em] uppercase" style={{ color: ing.color }}>
-                      {groupLabels[ing.group]}
-                      {ing.pipeline && " · In development"}
-                    </p>
-                  </div>
-                  <span
-                    className="grid size-10 shrink-0 place-items-center rounded-full"
-                    style={{ backgroundColor: `${ing.color}1a`, color: ing.color }}
-                  >
-                    <Leaf className="size-5" />
-                  </span>
-                </div>
-
-                <p className="mt-4 text-sm leading-relaxed text-abyss-900/85">{ing.summary}</p>
-
-                <p className="mt-4 rounded-md bg-sand-100/80 px-4 py-3 text-xs leading-relaxed text-abyss-800/75">
-                  <span className="font-semibold text-abyss-900">Best for: </span>
-                  {ing.bestFor}
+        <div className="mt-6 space-y-14">
+          {sections.map((section) => (
+            <section key={section.group}>
+              <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-sand-300 pb-3">
+                <h2 className="text-3xl leading-tight">{section.label}</h2>
+                <p className="text-xs tracking-[0.12em] text-abyss-800/50 uppercase">
+                  {section.items.length}{" "}
+                  {section.items.length === 1 ? "ingredient" : "ingredients"}
                 </p>
-
-                <ul className="mt-5 space-y-3">
-                  {ing.benefits.map((b) => (
-                    <li key={b.term} className="flex gap-2.5 text-sm leading-relaxed">
-                      <Check className="mt-0.5 size-4 shrink-0" style={{ color: ing.color }} />
-                      <span className="text-abyss-800/80">
-                        <strong className="font-semibold text-abyss-900">{b.term}</strong> — {b.copy}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                {ing.caution && (
-                  <p className="mt-5 rounded-md border border-gold-400/40 bg-gold-200/30 px-4 py-3 text-xs leading-relaxed text-abyss-900">
-                    <strong className="font-semibold">Good to know: </strong>
-                    {ing.caution}
-                  </p>
-                )}
-
-                <div className="mt-auto pt-6">
-                  {ing.inJars.length > 0 ? (
-                    <div className="flex flex-wrap items-center gap-2 border-t border-sand-200 pt-5 text-xs">
-                      <span className="text-abyss-800/50">In:</span>
-                      {ing.inJars.map((slug) => {
-                        const product = getProduct(slug);
-                        if (!product) return null;
-                        return (
-                          <Link
-                            key={slug}
-                            href={`/products/${slug}`}
-                            className="rounded-full border px-2.5 py-1 font-medium transition hover:bg-sand-100"
-                            style={{ borderColor: `${product.accent}55`, color: product.accent }}
-                          >
-                            {product.name}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <p className="border-t border-sand-200 pt-5 text-xs text-abyss-800/50">
-                      {ing.pipeline
-                        ? "In development — coming to a future blend."
-                        : "Part of our wider formulation library, not currently in a jar."}
-                    </p>
-                  )}
-                </div>
               </div>
-            </li>
+              <ul className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                {section.items.map((ing: Ingredient) => (
+                  <li
+                    key={ing.slug}
+                    id={ing.slug}
+                    className="card flex h-full scroll-mt-44 flex-col overflow-hidden"
+                  >
+                    <span
+                      aria-hidden
+                      className="h-1 w-full shrink-0"
+                      style={{ backgroundColor: ing.color }}
+                    />
+                    <div className="flex flex-1 flex-col p-6">
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <h3 className="text-2xl leading-tight">{ing.name}</h3>
+                          <p
+                            className="mt-1 text-[11px] font-semibold tracking-[0.12em] uppercase"
+                            style={{ color: ing.color }}
+                          >
+                            {groupLabels[ing.group]}
+                            {ing.pipeline && " · In development"}
+                          </p>
+                        </div>
+                        <span
+                          className="grid size-10 shrink-0 place-items-center rounded-full"
+                          style={{
+                            backgroundColor: `${ing.color}1a`,
+                            color: ing.color,
+                          }}
+                        >
+                          <Leaf className="size-5" />
+                        </span>
+                      </div>
+
+                      <p className="mt-4 text-sm leading-relaxed text-abyss-900/85">
+                        {ing.summary}
+                      </p>
+
+                      <p className="mt-4 rounded-md bg-sand-100/80 px-4 py-3 text-xs leading-relaxed text-abyss-800/75">
+                        <span className="font-semibold text-abyss-900">
+                          Best for:{" "}
+                        </span>
+                        {ing.bestFor}
+                      </p>
+
+                      <ul className="mt-5 space-y-3">
+                        {ing.benefits.map((b) => (
+                          <li
+                            key={b.term}
+                            className="flex gap-2.5 text-sm leading-relaxed"
+                          >
+                            <Check
+                              className="mt-0.5 size-4 shrink-0"
+                              style={{ color: ing.color }}
+                            />
+                            <span className="text-abyss-800/80">
+                              <strong className="font-semibold text-abyss-900">
+                                {b.term}
+                              </strong>{" "}
+                              — {b.copy}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {ing.caution && (
+                        <p className="mt-5 rounded-md border border-gold-400/40 bg-gold-200/30 px-4 py-3 text-xs leading-relaxed text-abyss-900">
+                          <strong className="font-semibold">
+                            Good to know:{" "}
+                          </strong>
+                          {ing.caution}
+                        </p>
+                      )}
+
+                      <div className="mt-auto pt-6">
+                        {ing.inJars.length > 0 ? (
+                          <div className="flex flex-wrap items-center gap-2 border-t border-sand-200 pt-5 text-xs">
+                            <span className="text-abyss-800/50">In:</span>
+                            {ing.inJars.map((slug) => {
+                              const product = getProduct(slug);
+                              if (!product) return null;
+                              return (
+                                <Link
+                                  key={slug}
+                                  href={`/products/${slug}`}
+                                  className="rounded-full border px-2.5 py-1 font-medium transition hover:bg-sand-100"
+                                  style={{
+                                    borderColor: `${product.accent}55`,
+                                    color: product.accent,
+                                  }}
+                                >
+                                  {product.name}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        ) : (
+                          <p className="border-t border-sand-200 pt-5 text-xs text-abyss-800/50">
+                            {ing.pipeline
+                              ? "In development — coming to a future blend."
+                              : "Part of our wider formulation library, not currently in a jar."}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
