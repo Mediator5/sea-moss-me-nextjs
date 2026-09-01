@@ -570,7 +570,7 @@ index 0bbc103..cebddbf 100644
 -              Use code <strong className="text-gold-300">SEAMOSS20</strong> for 20% off your first
 +            <p className="mx-auto mt-6 max-w-xl leading-relaxed text-abyss-950/90">
 +              Use code <strong className="text-flame-800">SEAMOSS20</strong> for 20% off your first
-               order. Ships cold-packed from Jamaica, worldwide.
+               order. Ships cold-packed.
              </p>
              <div className="mt-10 flex flex-wrap justify-center gap-4">
 -              <Link href="/products" className="btn btn-gold">

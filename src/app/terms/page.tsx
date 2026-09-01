@@ -30,7 +30,7 @@ export default function TermsPage() {
           body: (
             <p>
               We deliver locally in Broward and Dade County — these are the only places we deliver
-              to, and we do not ship worldwide from Jamaica. Nothing is blended until your order is
+              to. Nothing is blended until your order is
               confirmed, and we agree the delivery day with you when we reply. Delivery is $8.95; any
               order of three jars or more is delivered free.
             </p>

@@ -15,7 +15,7 @@ export const faqs = [
   },
   {
     q: "Where do you deliver?",
-    a: "Local delivery only — Broward and Dade County. These are the only places we deliver to — we do not ship worldwide. The moss is still wildcrafted in Jamaica; the gel is blended and delivered here. Delivery is $8.95, free on any order of three jars or more. If you are outside the area, write to us and we will let you know when that changes.",
+    a: "Local delivery only — Broward and Dade County. These are the only places we deliver to. The moss is still wildcrafted in Jamaica; the gel is blended and delivered here. Delivery is $8.95, free on any order of three jars or more. If you are outside the area, write to us and we will let you know when that changes.",
   },
   {
     q: "Are there allergens or ingredients I should know about?",
