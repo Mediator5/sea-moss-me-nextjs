@@ -29,10 +29,10 @@ export default function TermsPage() {
           heading: "Delivery",
           body: (
             <p>
-              We deliver locally, in Orlando and the surrounding Central Florida area, and do not
-              post orders at present. Nothing is blended until your order is confirmed, and we agree
-              the delivery day with you when we reply. Delivery is $8.95; any order of three jars or
-              more is delivered free.
+              We deliver locally in Broward and Dade County — these are the only places we deliver
+              to, and we do not ship worldwide from Jamaica. Nothing is blended until your order is
+              confirmed, and we agree the delivery day with you when we reply. Delivery is $8.95; any
+              order of three jars or more is delivered free.
             </p>
           ),
         },

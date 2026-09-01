@@ -72,7 +72,7 @@ export async function POST(req: Request) {
       })),
       ...(coupon ? { discounts: [{ coupon: coupon.id }] } : { allow_promotion_codes: true }),
       shipping_address_collection: {
-        // Local delivery only — Orlando and the surrounding Central Florida area.
+        // Local delivery only — Broward and Dade County.
         allowed_countries: ["US"],
       },
       shipping_options: [

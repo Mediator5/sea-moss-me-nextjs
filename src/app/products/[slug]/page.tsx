@@ -33,7 +33,7 @@ export async function generateMetadata({
 
 const guarantees = [
   { icon: Leaf, text: "100% certified organic, wildcrafted in Jamaica" },
-  { icon: Truck, text: "Local delivery — Orlando & Central Florida" },
+  { icon: Truck, text: "Local delivery — Broward & Dade County" },
   { icon: Shield, text: "No fillers, gelatine, sugar or preservatives" },
 ];
 

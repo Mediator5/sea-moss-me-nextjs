@@ -7,7 +7,7 @@ export const site = {
   email: "info@seamossme.com",
   phone: "689-304-0453",
   phoneHref: "+16893040453",
-  address: "Local delivery — Orlando & Central Florida",
+  address: "Local delivery — Broward & Dade County",
   social: {
     instagram: "https://instagram.com/",
     facebook: "https://facebook.com/",
