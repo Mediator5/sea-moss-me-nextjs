@@ -4,7 +4,10 @@ import { ArrowRight } from "./icons";
 
 /**
  * The homepage hero. Teal backdrop over the coastline photograph, with the
- * headline and standfirst set in light tones.
+ * headline and standfirst set in light tones. The sea in the photograph moves:
+ * a second copy of the image is run through an SVG ripple filter and masked to
+ * the water only (public/images/hero-water-mask.svg), so the jar, moss, rock
+ * and headland stay perfectly still. Hidden for visitors who prefer reduced motion.
  */
 export function Hero() {
   return (
@@ -17,6 +20,50 @@ export function Hero() {
         priority
         sizes="100vw"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_center]"
+      />
+      {/* moving water — same image, same crop, rippled and masked to the sea */}
+      <svg aria-hidden className="pointer-events-none absolute size-0">
+        <defs>
+          <filter
+            id="hero-water"
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            colorInterpolationFilters="sRGB"
+          >
+            <feTurbulence type="fractalNoise" baseFrequency="0.006 0.045" numOctaves={2} seed={4}>
+              <animate
+                attributeName="baseFrequency"
+                dur="14s"
+                values="0.006 0.045;0.008 0.058;0.006 0.045"
+                repeatCount="indefinite"
+              />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale={18} xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+      </svg>
+      <Image
+        src="/images/hero.jpg"
+        alt=""
+        aria-hidden
+        loading="eager"
+        width={2000}
+        height={1125}
+        sizes="100vw"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_center] motion-reduce:hidden"
+        style={{
+          filter: "url(#hero-water)",
+          maskImage: "url(/images/hero-water-mask.svg)",
+          WebkitMaskImage: "url(/images/hero-water-mask.svg)",
+          maskSize: "cover",
+          WebkitMaskSize: "cover",
+          maskPosition: "70% center",
+          WebkitMaskPosition: "70% center",
+          maskRepeat: "no-repeat",
+          WebkitMaskRepeat: "no-repeat",
+        }}
       />
       {/* teal scrim so the photograph reads softly behind the text */}
       <div
@@ -32,7 +79,7 @@ export function Hero() {
           </p>
 
           <h1 className="mt-6 text-balance font-display text-[clamp(2.125rem,10vw,3rem)] leading-[1.06] uppercase [text-shadow:0_2px_14px_rgba(8,42,48,0.45)] sm:mt-7 sm:text-6xl sm:leading-[1.02] md:[text-shadow:0_3px_20px_rgba(8,42,48,0.42)] lg:text-[4.25rem]">
-            Peak health is{" "}
+            <span className="text-flame-500">Peak health is</span>{" "}
             <br className="hidden sm:inline" />
             <span className="text-gold-400">true wealth</span>.
           </h1>

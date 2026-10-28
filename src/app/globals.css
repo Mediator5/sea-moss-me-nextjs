@@ -12,7 +12,8 @@
      Palette shared with the logo artwork:
        Deep Petrol Teal  #05454c   the wordmark
        Teal              #318b98   the water in the mark
-       Sunrise Coral     #f26b4f   the bird in the mark
+       Sunrise Coral     #ff6f3c   the bird in the mark, pushed a little
+                                     more orange and more vivid on screen
        Saffron Yellow    #f7bb3f   the sea moss wreath
        Warm Sand         #ddc5ac   from the brand board
      Each brand colour sits at the -500 step. Darker steps exist so text
@@ -55,16 +56,19 @@
   --color-gold-300: #fbd88c;
   --color-gold-200: #fdecc4;
 
-  /* Sunrise Coral — taken from the bird in the logo. Accents, badges, highlights. */
-  --color-flame-700: #a93b23;
-  --color-flame-600: #c44328;
-  /* Button fill: the brightest coral that still carries white text at AA (4.54:1). */
-  --color-flame-550: #d1462b;
-  --color-flame-500: #f26b4f;
-  --color-flame-400: #f79076;
-  /* Large display numerals on a teal panel — clears the 3:1 large-text bar. */
-  --color-flame-300: #fbb3a0;
-  --color-flame-100: #fde7e0;
+  /* Sunrise Coral — from the bird in the logo, warmed toward orange and
+     fully saturated so it reads brighter on screen. Accents, badges, highlights.
+     (Previous, pinker scale: 700 #a93b23 · 600 #c44328 · 550 #d1462b ·
+     500 #f26b4f · 400 #f79076 · 300 #fbb3a0 · 100 #fde7e0.) */
+  --color-flame-700: #a8350b;
+  --color-flame-600: #c73f0d;
+  /* Button fill: the brightest coral that still carries white text at AA (4.57:1). */
+  --color-flame-550: #d2450e;
+  --color-flame-500: #ff6f3c;
+  --color-flame-400: #ff9466;
+  /* Large display numerals on a teal panel. */
+  --color-flame-300: #ffb894;
+  --color-flame-100: #ffe6da;
 
   /* Flavour accents — taken from the jars themselves, not the brand board */
   --color-flavor-berry: #7a2540;
@@ -209,17 +213,17 @@
      ------------------------------------------------------------------ */
   /* Coral with white text. flame-550 is as bright as the coral can go while
      white still clears AA (4.54:1) — brighter than that and the label starts
-     to grey out. The full-strength #f26b4f lives in display type instead,
+     to grey out. The full-strength #ff6f3c lives in display type instead,
      where it has no text sitting on top of it. */
   .btn-primary {
     background-color: var(--color-flame-550);
     color: #fff;
-    box-shadow: 0 14px 30px -14px rgba(209, 70, 43, 0.9);
+    box-shadow: 0 14px 30px -14px rgba(210, 69, 14, 0.9);
   }
 
   .btn-primary:hover {
     background-color: var(--color-flame-600);
-    box-shadow: 0 20px 38px -14px rgba(196, 67, 40, 0.95);
+    box-shadow: 0 20px 38px -14px rgba(199, 63, 13, 0.95);
   }
 
   .btn-seaglass {

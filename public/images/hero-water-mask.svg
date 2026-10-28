@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1125" viewBox="0 0 2000 1125">
+  <!-- Alpha mask for the moving-water layer in the homepage hero. Drawn in the
+       same 2000×1125 space as hero.jpg: white = the open sea, so only the water
+       ripples while the horizon, headland, moss, jar and rock stay still. -->
+  <defs>
+    <filter id="feather" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur stdDeviation="10" />
+    </filter>
+  </defs>
+  <path filter="url(#feather)" fill="#fff"
+    d="M0 508 L985 506 L1085 512 L1095 580 L1320 590 L1320 606 L1250 622 L1100 624 L1040 616 L995 600 L962 584 L935 606 L895 632 L872 690 L862 780 L690 782 L630 826 L400 872 L200 908 L0 942 Z" />
+</svg>

@@ -16,18 +16,18 @@ import { ArrowRight, Leaf, Shield, Spark, Wave } from "@/components/icons";
 const story = [
   {
     icon: Leaf,
-    title: "Wildcrafted, never farmed",
-    copy: "Cut by hand from open rock in moving water. Nothing grown on ropes in a salt tank.",
+    title: "Wild-harvested from the open sea",
+    copy: "Hand-cut from the rocks along Jamaica's coast, where it grows naturally in clean, moving ocean water — never farmed on ropes or raised in pools.",
   },
   {
     icon: Spark,
-    title: "Blended whole",
-    copy: "Fruits and roots go in as themselves — no syrups, no concentrates, no colouring.",
+    title: "Whole, real ingredients",
+    copy: "Every jar is blended from whole sea moss and real fruits and roots — never syrups, concentrates or added colouring.",
   },
   {
     icon: Wave,
-    title: "Small batches only",
-    copy: "We make what we can sell fresh. It caps how fast we grow, and we are fine with that.",
+    title: "Made fresh in small batches",
+    copy: "We make only what we can deliver fresh. Smaller batches mean closer attention to every jar — a standard we choose over faster growth.",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function HomePage() {
                   <br className="hidden sm:block" /> kept intact
                 </>
               }
-              copy="Sea moss sustained Caribbean households for generations before anyone called it a superfood. It started here the way most good things do — made at home, for people we love, from the same coast it still comes from. What changed is how many jars we make."
+              copy="Long before the world called it a superfood, sea moss was a staple in Caribbean homes. Sea Moss Me grew out of that same tradition — prepared by hand for family, with sea moss from the same Jamaican coastline it still comes from today. We now make it for far more people, but the source, the method and the standard have not changed."
             />
             <Reveal delay={120}>
               <ul className="mt-9 space-y-5">
