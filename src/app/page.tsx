@@ -1,37 +1,18 @@
 import Link from "next/link";
-import Image from "next/image";
+import { FlavourShowcase } from "@/components/flavour-showcase";
 import { Hero } from "@/components/hero";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section";
 import { StatsPanel } from "@/components/stats-panel";
 import { Testimonials } from "@/components/testimonials";
-import { LogoMark } from "@/components/wordmark";
-import { ArrowRight, Leaf, Shield, Spark, Wave } from "@/components/icons";
+import { ArrowRight, Leaf, Shield, Wave } from "@/components/icons";
 import { ingredientLibrary } from "@/lib/ingredients";
 
 /**
- * The homepage has one job: say where this comes from, what it is, and what we
- * promise. No jars, no prices, no ingredient library — every one of those has
- * its own page, and repeating them here only made the page longer.
+ * The homepage: the hero, the four flavours straight underneath, then the
+ * numbers, our commitments and what customers say. The brand story, the
+ * Doctor Bird and the sea moss explainer live on their own pages.
  */
-
-const story = [
-  {
-    icon: Leaf,
-    title: "Wild-harvested in Jamaica",
-    copy: "Hand-picked from the rocks along Jamaica's coastline, where it grows naturally in clean, mineral-rich seawater. Never farmed, never pool-grown.",
-  },
-  {
-    icon: Spark,
-    title: "Whole food, nothing added",
-    copy: "We blend whole sea moss with real fruits, herbs and roots. No syrups, no concentrates, no artificial colours — just ingredients you can recognise.",
-  },
-  {
-    icon: Wave,
-    title: "Fresh, small-batch quality",
-    copy: "Every batch is made in small quantities and carefully watched from start to finish, so each jar reaches you fresh and at its best.",
-  },
-];
 
 const commitments = [
   {
@@ -77,143 +58,8 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* ---------------- Our story ---------------- */}
-      <section id="story" className="py-24 sm:py-28">
-        <div className="container-page grid items-center gap-16 lg:grid-cols-2">
-          <Reveal className="relative order-2 lg:order-1">
-            <div className="relative aspect-4/5 overflow-hidden rounded-2xl sm:aspect-square">
-              <Image
-                src="/images/origin.jpg"
-                alt="Hands lifting wildcrafted sea moss from clear water on the Jamaican coast"
-                width={1600}
-                height={1067}
-                sizes="(min-width: 1024px) 46vw, 92vw"
-                className="h-full w-full object-cover"
-              />
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-[linear-gradient(to_top,rgba(20,86,95,0.85),rgba(20,86,95,0.05)_55%)]"
-              />
-              <div className="absolute inset-x-0 bottom-0 p-8">
-                <p className="font-display text-2xl text-sand-50 italic">
-                  &ldquo;Real ingredients. No shortcuts.&rdquo;
-                </p>
-                <p className="mt-2 text-xs tracking-[0.16em] text-sand-100/85 uppercase">
-                  Our family standard since day one
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="order-1 lg:order-2">
-            <SectionHeading
-              eyebrow="Our story"
-              title={
-                <>
-                  A Jamaican tradition,
-                  <br className="hidden sm:block" /> kept intact
-                </>
-              }
-              copy="Long before the world called it a superfood, sea moss was a staple in Caribbean homes. Sea Moss Me grew out of that same tradition — prepared by hand for family, with sea moss from the same Jamaican coastline it still comes from today. We now make it for far more people, but the source, the method and the standard have not changed."
-            />
-            <Reveal delay={120}>
-              <ul className="mt-9 space-y-5">
-                {story.map(({ icon: Icon, title, copy }) => (
-                  <li key={title} className="flex gap-4">
-                    <span className="mt-0.5 grid size-11 shrink-0 place-items-center rounded-full bg-flame-100 text-flame-600">
-                      <Icon className="size-5" />
-                    </span>
-                    <div>
-                      <p className="font-semibold">{title}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-abyss-800/70">{copy}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/about"
-                className="mt-9 inline-flex items-center gap-2 font-semibold text-reef-600"
-              >
-                <span className="link-underline">Read our full story</span>
-                <ArrowRight className="size-4" />
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- The Doctor Bird ---------------- */}
-      <section className="relative overflow-hidden bg-reef-500 py-24 text-sand-50 sm:py-28">
-        <div
-          aria-hidden
-          className="animate-drift pointer-events-none absolute -top-40 -right-32 size-[38rem] rounded-full bg-flame-500/10 blur-3xl"
-        />
-        <div className="container-page relative grid items-center gap-14 lg:grid-cols-[0.8fr_1.2fr]">
-          <Reveal className="text-center lg:text-left">
-            <LogoMark tone="light" className="mx-auto h-40 lg:mx-0 lg:h-48" />
-          </Reveal>
-
-          <div>
-            <SectionHeading
-              tone="light"
-              eyebrow="The bird on every jar"
-              title="Meet the Doctor Bird"
-              copy="The hummingbird on our label is found nowhere else on earth but Jamaica — the same island, the same coastline our sea moss is cut from. It weighs less than six grams and beats its wings around eighty times a second."
-            />
-            <Reveal delay={110}>
-              <p className="mt-6 max-w-2xl leading-[1.8] text-sand-100/85">
-                Small, precise, and unmistakably itself. Nothing wasted, nothing added, everything
-                working. That is the standard we hold our jars to, and it is why the bird is on
-                every one of them.
-              </p>
-              <Link
-                href="/blog/the-doctor-bird"
-                className="mt-8 inline-flex items-center gap-2 font-semibold text-gold-300"
-              >
-                <span className="link-underline">Read its story</span>
-                <ArrowRight className="size-4" />
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- What sea moss is ---------------- */}
-      <section className="py-24 sm:py-28">
-        <div className="container-page grid items-center gap-16 lg:grid-cols-2">
-          <div>
-            <SectionHeading
-              eyebrow="What sea moss is"
-              title="A whole food from the sea"
-              copy="Sea moss is a nutrient-dense sea vegetable that grows wild on coastal rocks in warm, clear Caribbean water. With no roots, it draws its minerals directly from the ocean around it."
-            />
-            <Reveal delay={110}>
-              <p className="mt-6 leading-[1.8] text-abyss-800/80">
-                Ours is hand-cut from the rock, dried naturally in the sun, then soaked and blended
-                whole — so you get everything the sea put into it, with nothing stripped away.
-                It&apos;s a tradition Caribbean families have trusted for generations, and one
-                people have practised for thousands of years.
-              </p>
-              <Link href="/sea-moss" className="btn btn-ghost mt-8">
-                Read Sea Moss 101 <ArrowRight className="size-4" />
-              </Link>
-            </Reveal>
-          </div>
-
-          <Reveal delay={120} className="order-first lg:order-last">
-            <div className="overflow-hidden rounded-2xl">
-              <Image
-                src="/images/ingredients.jpg"
-                alt="Dried sea moss with turmeric, ginger, moringa and berries on a warm surface"
-                width={1600}
-                height={1200}
-                sizes="(min-width: 1024px) 46vw, 92vw"
-                className="aspect-4/3 w-full object-cover"
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      {/* ---------------- The flavours ---------------- */}
+      <FlavourShowcase />
 
       {/* ---------------- By the numbers ---------------- */}
       <StatsPanel ingredientCount={ingredientLibrary.length} />
