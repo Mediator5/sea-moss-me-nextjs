@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroWater } from "./hero-water";
 import { ArrowRight } from "./icons";
 
 /**
  * The homepage hero. Teal backdrop over the coastline photograph, with the
- * headline and standfirst set in light tones. The sea in the photograph moves:
- * a second copy of the image is run through an SVG ripple filter and masked to
- * the water only (public/images/hero-water-mask.svg), so the jar, moss, rock
- * and headland stay perfectly still. Hidden for visitors who prefer reduced motion.
+ * headline and standfirst set in light tones. The sea in the photograph flows:
+ * <HeroWater> draws animated water over the photo (and its moving light again
+ * above the scrim), masked to the sea only (public/images/hero-water-mask.png),
+ * so the jar, moss, rock and headland stay perfectly still. Skipped for
+ * visitors who prefer reduced motion.
  */
 export function Hero() {
   return (
@@ -21,55 +23,15 @@ export function Hero() {
         sizes="100vw"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_center]"
       />
-      {/* moving water — same image, same crop, rippled and masked to the sea */}
-      <svg aria-hidden className="pointer-events-none absolute size-0">
-        <defs>
-          <filter
-            id="hero-water"
-            x="0"
-            y="0"
-            width="100%"
-            height="100%"
-            colorInterpolationFilters="sRGB"
-          >
-            <feTurbulence type="fractalNoise" baseFrequency="0.006 0.045" numOctaves={2} seed={4}>
-              <animate
-                attributeName="baseFrequency"
-                dur="14s"
-                values="0.006 0.045;0.008 0.058;0.006 0.045"
-                repeatCount="indefinite"
-              />
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" scale={18} xChannelSelector="R" yChannelSelector="G" />
-          </filter>
-        </defs>
-      </svg>
-      <Image
-        src="/images/hero.jpg"
-        alt=""
-        aria-hidden
-        loading="eager"
-        width={2000}
-        height={1125}
-        sizes="100vw"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_center] motion-reduce:hidden"
-        style={{
-          filter: "url(#hero-water)",
-          maskImage: "url(/images/hero-water-mask.svg)",
-          WebkitMaskImage: "url(/images/hero-water-mask.svg)",
-          maskSize: "cover",
-          WebkitMaskSize: "cover",
-          maskPosition: "70% center",
-          WebkitMaskPosition: "70% center",
-          maskRepeat: "no-repeat",
-          WebkitMaskRepeat: "no-repeat",
-        }}
-      />
+      {/* moving water — redraws only the sea, transparent everywhere else */}
+      <HeroWater layer="water" className="absolute inset-0 -z-10 h-full w-full" />
       {/* teal scrim so the photograph reads softly behind the text */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(20,84,93,0.96)_0%,rgba(23,97,107,0.92)_38%,rgba(30,116,127,0.78)_62%,rgba(38,128,140,0.5)_82%,rgba(49,139,152,0.28)_100%)] md:bg-[linear-gradient(100deg,rgba(20,84,93,0.94)_0%,rgba(23,97,107,0.9)_30%,rgba(30,116,127,0.74)_52%,rgba(38,128,140,0.42)_70%,transparent_88%)]"
       />
+      {/* light on the water — above the scrim so the movement shows through it */}
+      <HeroWater layer="light" className="absolute inset-0 -z-10 h-full w-full" />
 
       <div className="container-page relative grid min-h-[32rem] items-center py-16 sm:min-h-[34rem] sm:py-24 lg:min-h-[38rem]">
         <div className="max-w-xl">
