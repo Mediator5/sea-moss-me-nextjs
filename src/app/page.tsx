@@ -3,9 +3,11 @@ import Image from "next/image";
 import { Hero } from "@/components/hero";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section";
+import { StatsPanel } from "@/components/stats-panel";
 import { Testimonials } from "@/components/testimonials";
 import { LogoMark } from "@/components/wordmark";
 import { ArrowRight, Leaf, Shield, Spark, Wave } from "@/components/icons";
+import { ingredientLibrary } from "@/lib/ingredients";
 
 /**
  * The homepage has one job: say where this comes from, what it is, and what we
@@ -16,36 +18,36 @@ import { ArrowRight, Leaf, Shield, Spark, Wave } from "@/components/icons";
 const story = [
   {
     icon: Leaf,
-    title: "Wild-harvested from the open sea",
-    copy: "Hand-cut from the rocks along Jamaica's coast, where it grows naturally in clean, moving ocean water — never farmed on ropes or raised in pools.",
+    title: "Wild-harvested in Jamaica",
+    copy: "Hand-picked from the rocks along Jamaica's coastline, where it grows naturally in clean, mineral-rich seawater. Never farmed, never pool-grown.",
   },
   {
     icon: Spark,
-    title: "Whole, real ingredients",
-    copy: "Every jar is blended from whole sea moss and real fruits and roots — never syrups, concentrates or added colouring.",
+    title: "Whole food, nothing added",
+    copy: "We blend whole sea moss with real fruits, herbs and roots. No syrups, no concentrates, no artificial colours — just ingredients you can recognise.",
   },
   {
     icon: Wave,
-    title: "Made fresh in small batches",
-    copy: "We make only what we can deliver fresh. Smaller batches mean closer attention to every jar — a standard we choose over faster growth.",
+    title: "Fresh, small-batch quality",
+    copy: "Every batch is made in small quantities and carefully watched from start to finish, so each jar reaches you fresh and at its best.",
   },
 ];
 
 const commitments = [
   {
     icon: Shield,
-    title: "Everything on the label",
-    copy: "Every ingredient in plain words. If we cannot tell you what it is doing in there, it does not go in.",
+    title: "Full transparency",
+    copy: "Every ingredient is listed in plain language on the label. If it doesn't have a clear purpose, it doesn't go in the jar.",
   },
   {
     icon: Leaf,
-    title: "One standard, every jar",
-    copy: "The same moss, the same method, the same person watching the batch — whether it is jar four or jar four hundred.",
+    title: "Consistent quality",
+    copy: "The same wildcrafted moss, the same careful method and the same attention to detail in every single jar, no matter how many we make.",
   },
   {
     icon: Wave,
-    title: "Honest about what it does",
-    copy: "Sea moss is a food, not a cure. We would rather explain it properly than sell you a miracle.",
+    title: "Honest guidance",
+    copy: "Sea moss is a nourishing whole food, not a cure-all. We'll always give you clear, honest information so you can choose what's right for you.",
   },
 ];
 
@@ -182,15 +184,15 @@ export default function HomePage() {
           <div>
             <SectionHeading
               eyebrow="What sea moss is"
-              title="A sea vegetable, not a supplement"
-              copy="Sea moss is an algae that grows on open rock in warm, shallow water. It has no roots and takes everything it needs straight from the sea."
+              title="A whole food from the sea"
+              copy="Sea moss is a nutrient-dense sea vegetable that grows wild on coastal rocks in warm, clear Caribbean water. With no roots, it draws its minerals directly from the ocean around it."
             />
             <Reveal delay={110}>
               <p className="mt-6 leading-[1.8] text-abyss-800/80">
-                Ours is cut by hand from the rock, sun-dried on the shore, then soaked and blended
-                whole — so nothing is stripped out along the way. People have been harvesting it
-                this way for something like fourteen thousand years, which is rather longer than it
-                has been fashionable.
+                Ours is hand-cut from the rock, dried naturally in the sun, then soaked and blended
+                whole — so you get everything the sea put into it, with nothing stripped away.
+                It&apos;s a tradition Caribbean families have trusted for generations, and one
+                people have practised for thousands of years.
               </p>
               <Link href="/sea-moss" className="btn btn-ghost mt-8">
                 Read Sea Moss 101 <ArrowRight className="size-4" />
@@ -213,23 +215,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ---------------- By the numbers ---------------- */}
+      <StatsPanel ingredientCount={ingredientLibrary.length} />
+
       {/* ---------------- Our aim ---------------- */}
-      <section className="bg-sand-100/70 py-24 sm:py-28">
+      {/* Coral ground with deep-teal cards. The coral runs from flame-600 to
+          flame-550 so white text keeps AA contrast; the brighter flame-500
+          glows in from the corners, away from the text. */}
+      <section className="relative isolate overflow-hidden bg-[linear-gradient(135deg,var(--color-flame-600)_0%,var(--color-flame-550)_100%)] py-24 text-white sm:py-28">
+        <div
+          aria-hidden
+          className="animate-drift pointer-events-none absolute -top-48 -right-40 -z-10 size-[36rem] rounded-full bg-flame-500/70 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="animate-drift pointer-events-none absolute -bottom-56 -left-40 -z-10 size-[34rem] rounded-full bg-gold-500/35 blur-3xl [animation-delay:-9s]"
+        />
         <div className="container-page">
-          <SectionHeading
-            eyebrow="Our aim"
-            title="Our commitment to you"
-            copy="Small-batch production, traceable ingredients, and a standard of quality we do not compromise on."
-            align="center"
-          />
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow text-white/85">Our aim</p>
+            <h2 className="mt-4 text-4xl leading-[1.08] sm:text-5xl">Our commitment to you</h2>
+            <p className="mt-5 text-base leading-relaxed text-white/90 sm:text-lg">
+              Small-batch production, traceable ingredients, and a standard of quality we do not
+              compromise on.
+            </p>
+          </Reveal>
           <ul className="mt-14 grid gap-6 md:grid-cols-3">
             {commitments.map(({ icon: Icon, title, copy }, i) => (
-              <Reveal key={title} as="li" delay={i * 80} className="card p-8">
-                <span className="grid size-12 place-items-center rounded-full bg-reef-100/12 text-reef-600">
+              <Reveal
+                key={title}
+                as="li"
+                delay={i * 80}
+                className="rounded-[var(--radius-lg)] border border-white/15 bg-[linear-gradient(160deg,var(--color-abyss-700)_0%,var(--color-abyss-800)_100%)] p-8 shadow-[0_28px_60px_-24px_rgba(3,51,58,0.7)] transition-transform duration-500 hover:-translate-y-1"
+              >
+                <span className="grid size-12 place-items-center rounded-full bg-flame-500 text-white shadow-[0_10px_24px_-8px_rgba(255,111,60,0.9)]">
                   <Icon className="size-6" />
                 </span>
-                <h3 className="mt-6 text-xl">{title}</h3>
-                <p className="mt-2.5 leading-relaxed text-abyss-800/70">{copy}</p>
+                <h3 className="mt-6 text-xl text-white">{title}</h3>
+                <p className="mt-2.5 leading-relaxed text-sand-100/85">{copy}</p>
               </Reveal>
             ))}
           </ul>

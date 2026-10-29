@@ -69,12 +69,12 @@ export default function SeaMossPage() {
         <div className="container-page relative">
           <p className="eyebrow text-gold-300">Sea Moss 101</p>
           <h1 className="mt-5 max-w-3xl text-5xl leading-[1.04] sm:text-6xl">
-            The honest explainer on sea moss
+            Sea moss, clearly explained
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-sand-100/85">
-            Sea moss has had a strange decade. For most of its history it was an unglamorous
-            Caribbean pantry staple. Then it hit the internet and became a miracle. The truth is
-            somewhere more useful than either version — and it takes about eight minutes to explain.
+            Everything you need to know about sea moss — what it is, why its minerals matter, how
+            wildcrafted compares with pool-grown, and how to make it part of your day. Friendly,
+            straightforward answers with no hype, in about an eight-minute read.
           </p>
 
           <nav aria-label="On this page" className="mt-10 flex flex-wrap gap-2">
