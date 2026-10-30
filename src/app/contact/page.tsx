@@ -16,16 +16,16 @@ export default function ContactPage() {
     <section className="py-16 sm:py-24">
       <div className="container-page grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
-          <p className="eyebrow text-flame-600">Get in touch</p>
+          <p className="eyebrow text-white">Get in touch</p>
           <h1 className="mt-5 text-5xl leading-[1.05]">Talk to a person</h1>
-          <p className="mt-6 leading-relaxed text-abyss-800/70">
+          <p className="mt-6 leading-relaxed text-white">
             Wholesale, allergies, a delivery question, or you just want to know which jar to start
             with — send it over. We answer everything within one business day.
           </p>
 
-          <dl className="mt-10 space-y-6 border-t border-sand-200 pt-8 text-sm">
+          <dl className="mt-10 space-y-6 border-t border-white/30 pt-8 text-sm">
             <div>
-              <dt className="eyebrow text-abyss-800/50">Email</dt>
+              <dt className="eyebrow text-white">Email</dt>
               <dd className="mt-1.5">
                 <a href={`mailto:${site.email}`} className="link-underline text-base font-medium">
                   {site.email}
@@ -33,7 +33,7 @@ export default function ContactPage() {
               </dd>
             </div>
             <div>
-              <dt className="eyebrow text-abyss-800/50">Phone</dt>
+              <dt className="eyebrow text-white">Phone</dt>
               <dd className="mt-1.5">
                 <a href={`tel:${site.phoneHref}`} className="link-underline text-base font-medium">
                   {site.phone}
@@ -41,16 +41,16 @@ export default function ContactPage() {
               </dd>
             </div>
             <div>
-              <dt className="eyebrow text-abyss-800/50">Delivery area</dt>
+              <dt className="eyebrow text-white">Delivery area</dt>
               <dd className="mt-1.5 text-base">{site.address}</dd>
             </div>
             <div>
-              <dt className="eyebrow text-abyss-800/50">Response time</dt>
+              <dt className="eyebrow text-white">Response time</dt>
               <dd className="mt-1.5 text-base">Within 1 business day</dd>
             </div>
           </dl>
 
-          <div className="mt-10 rounded-lg border border-sand-200 bg-sand-100/60 p-6">
+          <div className="card mt-10 p-6">
             <p className="text-sm font-semibold">Restock alerts</p>
             <p className="mt-1.5 mb-4 text-xs leading-relaxed text-abyss-800/65">
               Tropical Me sells out. Get told when the next batch lands.

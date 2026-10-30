@@ -3,8 +3,8 @@
 /* ============================================================
    Sea Moss Me — design tokens
    Brand palette taken from the Sea Moss Me brand board:
-   Teal and saffron yellow, with sunrise coral as the accent,
-   on warm sand — all anchored by deep petrol teal.
+   Teal and saffron yellow with sunrise coral — coral-orange is now the
+   page ground, with deep petrol teal panels and white cards on top.
    ============================================================ */
 
 @theme {
@@ -108,8 +108,11 @@
        `hidden`: hidden would make body a scroll container and break the
        sticky header. */
     overflow-x: clip;
-    background-color: var(--color-sand-50);
-    color: var(--color-abyss-900);
+    /* Orange is the site's ground (it replaced the old warm-sand beige).
+       flame-600 carries white text at AA (5.07:1). Anything with dark text —
+       white cards, inputs, the cart drawer — sets its own colour. */
+    background-color: var(--color-flame-600);
+    color: #fff;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -135,7 +138,8 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-reef-500);
+    /* currentColor: white on orange and teal, dark inside white cards. */
+    outline: 2px solid currentColor;
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -256,6 +260,17 @@
     background-color: var(--color-gold-400);
   }
 
+  /* White button for use on orange, where the coral primary would vanish. */
+  .btn-light {
+    background-color: #fff;
+    color: var(--color-flame-700);
+    box-shadow: 0 14px 30px -14px rgba(90, 22, 2, 0.7);
+  }
+
+  .btn-light:hover {
+    background-color: var(--color-flame-100);
+  }
+
   .btn-ghost {
     border: 1px solid color-mix(in oklab, var(--color-abyss-900) 22%, transparent);
     color: var(--color-abyss-900);
@@ -268,8 +283,8 @@
   }
 
   .btn-ghost-light {
-    border: 1px solid rgba(248, 243, 233, 0.28);
-    color: var(--color-sand-100);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: #fff;
     background-color: transparent;
   }
 
@@ -278,11 +293,31 @@
     background-color: rgba(248, 243, 233, 0.08);
   }
 
+  /* White card on the orange ground. Sets its own dark text colour, so
+     everything inside keeps reading as before. */
   .card {
     background-color: white;
-    border: 1px solid var(--color-sand-200);
+    color: var(--color-abyss-900);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 2px 4px rgba(120, 32, 4, 0.08), 0 24px 50px -24px rgba(90, 22, 2, 0.55);
+  }
+
+  /* Orange section grounds. `surface-coral` is the featured gradient (the
+     "Our commitment" look); `surface-coral-alt` is a slightly brighter flat
+     orange used to separate one orange section from the next. Both keep white
+     text at AA. */
+  .surface-coral {
+    background:
+      radial-gradient(60rem 36rem at 100% 0%, rgba(255, 111, 60, 0.55), transparent 60%),
+      radial-gradient(50rem 30rem at 0% 100%, rgba(247, 187, 63, 0.22), transparent 60%),
+      linear-gradient(135deg, var(--color-flame-600) 0%, var(--color-flame-550) 100%);
+    color: #fff;
+  }
+
+  .surface-coral-alt {
+    background-color: var(--color-flame-550);
+    color: #fff;
   }
 
   .link-underline {

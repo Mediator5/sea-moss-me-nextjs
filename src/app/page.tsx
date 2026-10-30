@@ -120,7 +120,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------------- Where to go next ---------------- */}
-      <section className="bg-sand-100/70 pb-24 sm:pb-28">
+      <section className="surface-coral-alt pb-24 sm:pb-28">
         <div className="container-page pt-24 sm:pt-28">
           <SectionHeading eyebrow="Where to go next" title="Take it one step deeper" align="center" />
           <div className="mt-12 grid gap-6 md:grid-cols-3">

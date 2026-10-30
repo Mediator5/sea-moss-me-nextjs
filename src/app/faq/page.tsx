@@ -31,15 +31,15 @@ export default function FaqPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="border-b border-sand-200 bg-sand-100/60 py-16 sm:py-20">
+      <section className="surface-coral-alt border-b border-white/20 py-16 sm:py-20">
         <div className="container-page">
-          <p className="eyebrow text-flame-600">Questions, answered</p>
+          <p className="eyebrow text-white">Questions, answered</p>
           <h1 className="mt-5 max-w-3xl text-5xl leading-[1.04] sm:text-6xl">
             Everything people ask before their first jar
           </h1>
-          <p className="mt-6 max-w-xl leading-relaxed text-abyss-800/70">
+          <p className="mt-6 max-w-xl leading-relaxed text-white">
             If your question isn&apos;t here,{" "}
-            <a href={`mailto:${site.email}`} className="link-underline font-semibold text-reef-600">
+            <a href={`mailto:${site.email}`} className="font-semibold text-white underline underline-offset-4">
               email us
             </a>{" "}
             — a real person replies, usually the same day.

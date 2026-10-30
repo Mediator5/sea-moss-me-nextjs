@@ -99,7 +99,7 @@ export default function SeaMossPage() {
               eyebrow="First principles"
               title="A sea vegetable with no roots at all"
             />
-            <Reveal delay={90} className="mt-6 space-y-4 text-[1.0625rem] leading-[1.8] text-abyss-800/85">
+            <Reveal delay={90} className="mt-6 space-y-4 text-[1.0625rem] leading-[1.8] text-white">
               <p>
                 Sea moss is a nutrient-dense red algae that grows wild on coastal rocks in clean,
                 moving ocean water. In Jamaica the common species is <em>Gracilaria</em> — the
@@ -107,7 +107,7 @@ export default function SeaMossPage() {
               </p>
               <p>
                 Unlike land plants, it has no true roots. It anchors to rock with a{" "}
-                <strong className="text-abyss-900">holdfast</strong>, used purely for grip. Every
+                <strong className="text-gold-200">holdfast</strong>, used purely for grip. Every
                 nutrient it carries is absorbed directly through its fronds from the seawater around
                 it.
               </p>
@@ -134,7 +134,7 @@ export default function SeaMossPage() {
                   miracle.
                 </p>
               </div>
-              <ul className="divide-y divide-sand-200">
+              <ul className="divide-y divide-flame-100">
                 {[
                   { label: "What it is", value: "Red algae (a sea vegetable)" },
                   { label: "Species we use", value: "Gracilaria, wildcrafted" },
@@ -156,7 +156,7 @@ export default function SeaMossPage() {
       </section>
 
       {/* ---------------- Minerals ---------------- */}
-      <section id="minerals" className="scroll-mt-24 bg-sand-100/70 py-20 sm:py-28">
+      <section id="minerals" className="surface-coral-alt scroll-mt-24 py-20 sm:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="Why it matters"
@@ -168,7 +168,7 @@ export default function SeaMossPage() {
             {deficiencySigns.map((sign) => (
               <span
                 key={sign}
-                className="inline-flex items-center gap-2 rounded-full border border-flame-500/30 bg-flame-100/60 px-4 py-2 text-sm text-abyss-900"
+                className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-flame-100 px-4 py-2 text-sm text-abyss-900"
               >
                 <span className="size-1.5 rounded-full bg-flame-500" />
                 {sign}
@@ -190,7 +190,7 @@ export default function SeaMossPage() {
             ))}
           </ul>
 
-          <Reveal delay={120} className="mt-10 rounded-xl border border-sand-300 bg-white p-7 sm:p-9">
+          <Reveal delay={120} className="mt-10 rounded-xl border border-white/70 bg-white p-7 text-abyss-900 shadow-[0_24px_50px_-24px_rgba(90,22,2,0.55)] sm:p-9">
             <div className="flex gap-4">
               <Shield className="mt-0.5 size-6 shrink-0 text-reef-600" />
               <div>
@@ -221,14 +221,14 @@ export default function SeaMossPage() {
           <Reveal delay={90} className="mt-10 overflow-x-auto">
             <table className="w-full min-w-[42rem] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-sand-300">
+                <tr className="border-b border-white/50">
                   <th className="py-4 pr-6 font-semibold">Signal</th>
-                  <th className="py-4 pr-6 font-semibold text-reef-600">
+                  <th className="py-4 pr-6 font-semibold text-gold-200">
                     <span className="inline-flex items-center gap-2">
                       <Check className="size-4" /> Wildcrafted
                     </span>
                   </th>
-                  <th className="py-4 font-semibold text-abyss-800/50">
+                  <th className="py-4 font-semibold text-white">
                     <span className="inline-flex items-center gap-2">
                       <Close className="size-4" /> Pool-grown
                     </span>
@@ -237,10 +237,10 @@ export default function SeaMossPage() {
               </thead>
               <tbody>
                 {sourcingComparison.map((row) => (
-                  <tr key={row.signal} className="border-b border-sand-200 align-top">
+                  <tr key={row.signal} className="border-b border-white/25 align-top">
                     <td className="py-5 pr-6 font-semibold">{row.signal}</td>
-                    <td className="py-5 pr-6 text-abyss-800/80">{row.wild}</td>
-                    <td className="py-5 text-abyss-800/55">{row.pool}</td>
+                    <td className="py-5 pr-6 text-white">{row.wild}</td>
+                    <td className="py-5 text-white">{row.pool}</td>
                   </tr>
                 ))}
               </tbody>
@@ -270,7 +270,7 @@ export default function SeaMossPage() {
       </section>
 
       {/* ---------------- Facts ---------------- */}
-      <section id="facts" className="scroll-mt-24 bg-sand-100/70 py-20 sm:py-28">
+      <section id="facts" className="surface-coral-alt scroll-mt-24 py-20 sm:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="Worth knowing"
@@ -313,14 +313,14 @@ export default function SeaMossPage() {
             title="How to actually take it"
             copy="It doesn't need to be a ritual to work. It needs to be consistent."
           >
-            <Link href="/products" className="btn btn-primary mt-8">
+            <Link href="/products" className="btn btn-light mt-8">
               Pick a jar to start with <ArrowRight className="size-4" />
             </Link>
           </SectionHeading>
 
-          <ol className="space-y-px overflow-hidden rounded-xl border border-sand-200 bg-sand-200">
+          <ol className="space-y-px overflow-hidden rounded-xl border border-white/70 bg-flame-100 shadow-[0_24px_50px_-24px_rgba(90,22,2,0.55)]">
             {howToUse.map((s, i) => (
-              <Reveal key={s.step} as="li" delay={i * 80} className="bg-white p-7">
+              <Reveal key={s.step} as="li" delay={i * 80} className="bg-white p-7 text-abyss-900">
                 <div className="flex gap-5">
                   <span className="font-display text-3xl text-flame-600/70">0{i + 1}</span>
                   <div>
@@ -335,18 +335,18 @@ export default function SeaMossPage() {
       </section>
 
       {/* ---------------- FAQ ---------------- */}
-      <section id="questions" className="scroll-mt-24 bg-sand-100/70 py-20 sm:py-28">
+      <section id="questions" className="surface-coral-alt scroll-mt-24 py-20 sm:py-28">
         <div className="container-page max-w-3xl">
           <SectionHeading eyebrow="Common questions" title="The rest of it" align="center" />
           <Reveal delay={80} className="mt-10">
             <FaqAccordion items={faqs.slice(0, 6)} defaultOpen={null} />
           </Reveal>
           <Reveal delay={120} className="mt-10 text-center">
-            <Link href="/faq" className="btn btn-ghost">
+            <Link href="/faq" className="btn btn-ghost-light">
               See every question <ArrowRight className="size-4" />
             </Link>
           </Reveal>
-          <p className="mx-auto mt-12 max-w-2xl text-center text-xs leading-relaxed text-abyss-800/50">
+          <p className="mx-auto mt-12 max-w-2xl text-center text-xs leading-relaxed text-white">
             These statements have not been evaluated by the Food and Drug Administration. This
             product is not intended to diagnose, treat, cure or prevent any disease. If you are
             pregnant, nursing or managing a medical condition, speak to your doctor first.

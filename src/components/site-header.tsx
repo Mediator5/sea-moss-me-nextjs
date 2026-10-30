@@ -79,21 +79,21 @@ export function SiteHeader() {
   return (
     <>
       <header
-        className={`sticky top-0 z-[60] bg-sand-50/90 backdrop-blur-xl transition-shadow duration-500 ${
+        className={`sticky top-0 z-[60] bg-abyss-950/90 backdrop-blur-xl transition-shadow duration-500 ${
           scrolled
-            ? "border-b border-sand-200 shadow-[0_10px_30px_-24px_rgba(3,51,58,0.6)]"
+            ? "border-b border-sand-50/10 shadow-[0_10px_30px_-20px_rgba(3,51,58,0.9)]"
             : "border-b border-transparent"
         }`}
       >
         <div className="container-page flex h-20 items-center justify-between gap-6">
           <Link href="/" aria-label={`${site.name} home`} className="shrink-0">
-            <Wordmark priority className="h-9 sm:h-11 lg:h-12" />
+            <Wordmark tone="light" priority className="h-9 sm:h-11 lg:h-12" />
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
             {nav.map((item) => {
               const active = isBranchActive(pathname, item);
-              const tone = active ? "text-flame-600" : "text-abyss-900/80 hover:text-abyss-900";
+              const tone = active ? "text-flame-400" : "text-sand-100/85 hover:text-sand-50";
 
               if (!item.children) {
                 return (
@@ -141,7 +141,7 @@ export function SiteHeader() {
                         : "invisible -translate-y-1 opacity-0"
                     }`}
                   >
-                    <ul className="min-w-56 rounded-xl border border-sand-200 bg-sand-50 p-2 shadow-lift">
+                    <ul className="min-w-56 rounded-xl border border-white/70 bg-white p-2 text-abyss-900 shadow-lift">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
@@ -149,8 +149,8 @@ export function SiteHeader() {
                             tabIndex={expanded ? undefined : -1}
                             className={`block rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors ${
                               isActive(pathname, child.href)
-                                ? "bg-sand-100 text-flame-600"
-                                : "text-abyss-900/80 hover:bg-sand-100 hover:text-abyss-900"
+                                ? "bg-flame-100 text-flame-700"
+                                : "text-abyss-900/80 hover:bg-flame-100 hover:text-abyss-900"
                             }`}
                           >
                             {child.label}
@@ -175,7 +175,7 @@ export function SiteHeader() {
             <button
               onClick={openCart}
               aria-label={`Open cart, ${totals.jars} items`}
-              className="relative grid size-11 place-items-center rounded-full border border-sand-300 text-abyss-900 transition hover:bg-sand-100"
+              className="relative grid size-11 place-items-center rounded-full border border-sand-50/25 text-sand-50 transition hover:bg-sand-50/10"
             >
               <Bag className="size-5" />
               {ready && totals.jars > 0 && (
@@ -188,7 +188,7 @@ export function SiteHeader() {
             <button
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
-              className="grid size-11 place-items-center rounded-full border border-sand-300 text-abyss-900 transition hover:bg-sand-100 lg:hidden"
+              className="grid size-11 place-items-center rounded-full border border-sand-50/25 text-sand-50 transition hover:bg-sand-50/10 lg:hidden"
             >
               <Menu className="size-5" />
             </button>

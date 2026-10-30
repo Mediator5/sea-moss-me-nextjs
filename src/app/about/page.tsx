@@ -84,7 +84,7 @@ export default function AboutPage() {
       <section className="py-20 sm:py-24">
         <div className="container-page grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeading eyebrow="Why we exist" title="Before laboratories, there was the earth" />
-          <Reveal delay={90} className="space-y-5 text-[1.0625rem] leading-[1.85] text-abyss-800/85">
+          <Reveal delay={90} className="space-y-5 text-[1.0625rem] leading-[1.85] text-white">
             {philosophy.paragraphs.map((p) => (
               <p key={p}>{p}</p>
             ))}
@@ -98,7 +98,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---------------- Values ---------------- */}
-      <section className="bg-sand-100/70 py-20 sm:py-24">
+      <section className="surface-coral-alt py-20 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="What we stand on"
@@ -177,7 +177,7 @@ export default function AboutPage() {
             ))}
           </ol>
           <Reveal className="mt-10 text-center">
-            <Link href="/blog/how-our-sea-moss-is-harvested" className="btn btn-ghost">
+            <Link href="/blog/how-our-sea-moss-is-harvested" className="btn btn-ghost-light">
               How it&apos;s harvested, in full <ArrowRight className="size-4" />
             </Link>
           </Reveal>
@@ -185,7 +185,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---------------- Read more ---------------- */}
-      <section className="bg-sand-100/70 py-20 sm:py-24">
+      <section className="surface-coral-alt py-20 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="Keep reading"
@@ -222,10 +222,10 @@ export default function AboutPage() {
               Try one jar. That&apos;s the whole pitch.
             </h2>
             <div className="mt-9 flex flex-wrap justify-center gap-4">
-              <Link href="/products" className="btn btn-primary">
+              <Link href="/products" className="btn btn-light">
                 Shop the flavours <ArrowRight className="size-4" />
               </Link>
-              <Link href="/contact" className="btn btn-ghost">
+              <Link href="/contact" className="btn btn-ghost-light">
                 Ask us a question
               </Link>
             </div>

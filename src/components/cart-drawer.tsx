@@ -28,13 +28,13 @@ export function CartDrawer() {
         role="dialog"
         aria-modal={isOpen}
         aria-label="Your cart"
-        className={`absolute top-0 right-0 flex h-full w-full max-w-md flex-col bg-sand-50 shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`absolute top-0 right-0 flex h-full w-full max-w-md flex-col bg-flame-100 text-abyss-900 shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <header className="flex items-center justify-between border-b border-sand-200 px-6 py-5">
+        <header className="flex items-center justify-between bg-flame-600 px-6 py-5 text-white">
           <div>
-            <p className="eyebrow text-flame-600">Your cart</p>
+            <p className="eyebrow text-white">Your cart</p>
             <p className="font-display text-xl">
               {totals.jars} {totals.jars === 1 ? "jar" : "jars"}
             </p>
@@ -42,7 +42,7 @@ export function CartDrawer() {
           <button
             onClick={closeCart}
             aria-label="Close cart"
-            className="grid size-10 place-items-center rounded-full border border-sand-200 bg-white transition hover:bg-sand-100"
+            className="grid size-10 place-items-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20"
           >
             <Close className="size-4" />
           </button>
@@ -87,11 +87,11 @@ export function CartDrawer() {
                           <p className="text-xs text-abyss-800/60">{line.sizeLabel}</p>
                         </div>
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-1 rounded-full border border-sand-200">
+                          <div className="flex items-center gap-1 rounded-full border border-flame-100">
                             <button
                               aria-label={`Decrease ${line.name}`}
                               onClick={() => setQty(line.sizeId, line.qty - 1)}
-                              className="grid size-7 place-items-center rounded-full transition hover:bg-sand-100"
+                              className="grid size-7 place-items-center rounded-full transition hover:bg-flame-100"
                             >
                               <Minus className="size-3" />
                             </button>
@@ -101,7 +101,7 @@ export function CartDrawer() {
                             <button
                               aria-label={`Increase ${line.name}`}
                               onClick={() => setQty(line.sizeId, line.qty + 1)}
-                              className="grid size-7 place-items-center rounded-full transition hover:bg-sand-100"
+                              className="grid size-7 place-items-center rounded-full transition hover:bg-flame-100"
                             >
                               <Plus className="size-3" />
                             </button>
@@ -124,7 +124,7 @@ export function CartDrawer() {
               </ul>
             </div>
 
-            <footer className="space-y-3 border-t border-sand-200 bg-white px-6 py-5">
+            <footer className="space-y-3 border-t border-flame-100 bg-white px-6 py-5">
               <Row label="Subtotal" value={formatPrice(totals.subtotal)} />
               {totals.discount > 0 && (
                 <Row
@@ -138,7 +138,7 @@ export function CartDrawer() {
                 value={totals.shipping === 0 ? "Free" : formatPrice(totals.shipping)}
                 accent={totals.shipping === 0}
               />
-              <div className="flex items-baseline justify-between border-t border-sand-200 pt-3">
+              <div className="flex items-baseline justify-between border-t border-flame-100 pt-3">
                 <span className="font-display text-lg">Total</span>
                 <span className="font-display text-2xl tabular-nums">
                   {formatPrice(totals.total)}

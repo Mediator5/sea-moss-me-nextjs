@@ -68,7 +68,7 @@ export function IngredientExplorer() {
       {/* ---------------- Controls ---------------- */}
       {/* Static on phones — a sticky bar this tall eats the whole viewport and
           leaves nothing to scroll. Sticky from md up, where it costs one row. */}
-      <div className="relative z-40 -mx-5 border-y border-sand-200 bg-sand-50/95 px-5 py-4 backdrop-blur-xl md:sticky md:top-20 md:-mx-8 md:px-8">
+      <div className="relative z-40 -mx-5 border-y border-white/20 bg-flame-600/95 px-5 py-4 backdrop-blur-xl md:sticky md:top-20 md:-mx-8 md:px-8">
         <div className="flex flex-col gap-3 md:gap-4">
           <div className="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
             {/* One swipeable row on phones, wrapping chips from md up */}
@@ -80,8 +80,8 @@ export function IngredientExplorer() {
                   aria-pressed={group === g.value}
                   className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition ${
                     group === g.value
-                      ? "bg-reef-600 text-sand-50"
-                      : "border border-sand-300 text-abyss-800/80 hover:border-abyss-900/40"
+                      ? "bg-abyss-800 text-sand-50"
+                      : "border border-white/50 text-white hover:border-white"
                   }`}
                 >
                   {g.label}
@@ -99,13 +99,13 @@ export function IngredientExplorer() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search — sleep, turmeric, digestion…"
-                className="w-full rounded-full border border-sand-300 bg-white px-4 py-2 text-sm outline-none transition focus:border-reef-500 md:w-64"
+                className="w-full rounded-full border border-white/70 bg-white px-4 py-2 text-sm text-abyss-900 outline-none transition placeholder:text-abyss-800/50 focus:border-abyss-800 md:w-64"
               />
             </div>
           </div>
 
           <div className="scroll-strip -mx-5 flex items-center gap-1.5 overflow-x-auto px-5 md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
-            <span className="mr-1 shrink-0 text-xs font-semibold tracking-[0.12em] text-abyss-800/45 uppercase">
+            <span className="mr-1 shrink-0 text-xs font-semibold tracking-[0.12em] text-white uppercase">
               What for
             </span>
             {benefitTags.map((t) => (
@@ -115,8 +115,8 @@ export function IngredientExplorer() {
                 aria-pressed={tag === t}
                 className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition ${
                   tag === t
-                    ? "bg-flame-600 text-sand-50"
-                    : "border border-sand-300 text-abyss-800/70 hover:border-flame-500/50 hover:text-abyss-900"
+                    ? "bg-abyss-800 text-sand-50"
+                    : "border border-white/50 text-white hover:border-white"
                 }`}
               >
                 {t}
@@ -129,7 +129,7 @@ export function IngredientExplorer() {
                   setTag(null);
                   setQuery("");
                 }}
-                className="ml-1 inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold text-flame-600 hover:underline"
+                className="ml-1 inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold text-white hover:underline"
               >
                 <Close className="size-3" /> Clear
               </button>
@@ -139,13 +139,13 @@ export function IngredientExplorer() {
       </div>
 
       {/* ---------------- Results ---------------- */}
-      <p className="mt-8 text-sm text-abyss-800/60" aria-live="polite">
+      <p className="mt-8 text-sm text-white" aria-live="polite">
         {results.length} {results.length === 1 ? "ingredient" : "ingredients"}
         {tag ? ` for ${tag.toLowerCase()}` : ""}
       </p>
 
       {results.length === 0 ? (
-        <div className="mt-8 rounded-xl border border-sand-200 bg-white p-12 text-center">
+        <div className="mt-8 rounded-xl border border-white/70 bg-white p-12 text-center text-abyss-900">
           <p className="font-display text-2xl">Nothing matches that yet</p>
           <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-abyss-800/65">
             Try a broader term, or clear the filters to see the whole library.
@@ -155,9 +155,9 @@ export function IngredientExplorer() {
         <div className="mt-6 space-y-14">
           {sections.map((section) => (
             <section key={section.group}>
-              <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-sand-300 pb-3">
+              <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-white/40 pb-3">
                 <h2 className="text-3xl leading-tight">{section.label}</h2>
-                <p className="text-xs tracking-[0.12em] text-abyss-800/50 uppercase">
+                <p className="text-xs tracking-[0.12em] text-white uppercase">
                   {section.items.length}{" "}
                   {section.items.length === 1 ? "ingredient" : "ingredients"}
                 </p>
@@ -201,7 +201,7 @@ export function IngredientExplorer() {
                         {ing.summary}
                       </p>
 
-                      <p className="mt-4 rounded-md bg-sand-100/80 px-4 py-3 text-xs leading-relaxed text-abyss-800/75">
+                      <p className="mt-4 rounded-md bg-flame-100/70 px-4 py-3 text-xs leading-relaxed text-abyss-800/75">
                         <span className="font-semibold text-abyss-900">
                           Best for:{" "}
                         </span>
@@ -239,7 +239,7 @@ export function IngredientExplorer() {
 
                       <div className="mt-auto pt-6">
                         {ing.inJars.length > 0 ? (
-                          <div className="flex flex-wrap items-center gap-2 border-t border-sand-200 pt-5 text-xs">
+                          <div className="flex flex-wrap items-center gap-2 border-t border-flame-100 pt-5 text-xs">
                             <span className="text-abyss-800/50">In:</span>
                             {ing.inJars.map((slug) => {
                               const product = getProduct(slug);
@@ -248,7 +248,7 @@ export function IngredientExplorer() {
                                 <Link
                                   key={slug}
                                   href={`/products/${slug}`}
-                                  className="rounded-full border px-2.5 py-1 font-medium transition hover:bg-sand-100"
+                                  className="rounded-full border px-2.5 py-1 font-medium transition hover:bg-flame-100"
                                   style={{
                                     borderColor: `${product.accent}55`,
                                     color: product.accent,
@@ -260,7 +260,7 @@ export function IngredientExplorer() {
                             })}
                           </div>
                         ) : (
-                          <p className="border-t border-sand-200 pt-5 text-xs text-abyss-800/50">
+                          <p className="border-t border-flame-100 pt-5 text-xs text-abyss-800/50">
                             {ing.pipeline
                               ? "In development — coming to a future blend."
                               : "Part of our wider formulation library, not currently in a jar."}

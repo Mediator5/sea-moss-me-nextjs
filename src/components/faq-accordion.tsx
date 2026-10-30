@@ -13,7 +13,7 @@ export function FaqAccordion({
   const [open, setOpen] = useState<number | null>(defaultOpen);
 
   return (
-    <div className="divide-y divide-sand-200 border-y border-sand-200">
+    <div className="divide-y divide-white/30 border-y border-white/30">
       {items.map((item, i) => {
         const isOpen = open === i;
         return (
@@ -29,8 +29,8 @@ export function FaqAccordion({
                 <span
                   className={`mt-1 grid size-8 shrink-0 place-items-center rounded-full border transition-all duration-500 ${
                     isOpen
-                      ? "rotate-45 border-flame-600 bg-flame-600 text-white"
-                      : "border-sand-300 text-abyss-800"
+                      ? "rotate-45 border-white bg-white text-flame-700"
+                      : "border-white/60 text-white"
                   }`}
                 >
                   <Plus className="size-4" />
@@ -43,7 +43,7 @@ export function FaqAccordion({
               }`}
             >
               <div className="overflow-hidden">
-                <p className="max-w-2xl pb-7 text-sm leading-relaxed text-abyss-800/75 sm:text-base">
+                <p className="max-w-2xl pb-7 text-sm leading-relaxed text-white sm:text-base">
                   {item.a}
                 </p>
               </div>

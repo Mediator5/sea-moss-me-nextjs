@@ -69,17 +69,17 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="border-b border-sand-200 bg-sand-100/50">
-        <nav aria-label="Breadcrumb" className="container-page py-4 text-xs text-abyss-800/60">
-          <Link href="/" className="hover:text-abyss-900">
+      <div className="border-b border-white/20 bg-flame-550">
+        <nav aria-label="Breadcrumb" className="container-page py-4 text-xs text-white">
+          <Link href="/" className="hover:underline">
             Home
           </Link>
           <span className="px-2">/</span>
-          <Link href="/products" className="hover:text-abyss-900">
+          <Link href="/products" className="hover:underline">
             Shop
           </Link>
           <span className="px-2">/</span>
-          <span className="text-abyss-900">{product.name}</span>
+          <span className="font-semibold text-white">{product.name}</span>
         </nav>
       </div>
 
@@ -103,11 +103,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
 
           <div>
-            <p className="eyebrow" style={{ color: product.accent }}>
+            <p className="eyebrow text-gold-200">
               {product.tagline}
             </p>
             <h1 className="mt-4 text-4xl leading-[1.06] sm:text-5xl">{product.name}</h1>
-            <p className="mt-5 text-lg leading-relaxed text-abyss-800/75">{product.blurb}</p>
+            <p className="mt-5 text-lg leading-relaxed text-white">{product.blurb}</p>
 
             <div className="mt-8">
               <ProductPurchasePanel product={product} />
@@ -115,8 +115,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
             <ul className="mt-8 space-y-3">
               {guarantees.map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-center gap-3 text-sm text-abyss-800/75">
-                  <Icon className="size-5 shrink-0 text-reef-600" />
+                <li key={text} className="flex items-center gap-3 text-sm text-white">
+                  <Icon className="size-5 shrink-0 text-gold-200" />
                   {text}
                 </li>
               ))}
@@ -125,18 +125,18 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      <section className="border-t border-sand-200 py-16 sm:py-20">
+      <section className="border-t border-white/20 py-16 sm:py-20">
         <div className="container-page grid gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <h2 className="text-3xl">About this jar</h2>
-            <div className="mt-5 space-y-4 text-base leading-relaxed text-abyss-800/80">
+            <div className="mt-5 space-y-4 text-base leading-relaxed text-white">
               {product.description.map((para) => (
                 <p key={para}>{para}</p>
               ))}
             </div>
 
             <h3 className="mt-12 text-2xl">How to take it</h3>
-            <ul className="mt-5 space-y-3 text-abyss-800/80">
+            <ul className="mt-5 space-y-3 text-white">
               {[
                 "1–2 tablespoons daily, straight off the spoon or blended in.",
                 "Stir into smoothies, tea, coffee, oatmeal or soup.",
@@ -144,7 +144,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 "Freezes well — portion into an ice cube tray for smoothies.",
               ].map((line) => (
                 <li key={line} className="flex gap-3 text-sm sm:text-base">
-                  <Check className="mt-0.5 size-5 shrink-0 text-reef-500" />
+                  <Check className="mt-0.5 size-5 shrink-0 text-gold-200" />
                   {line}
                 </li>
               ))}
@@ -196,7 +196,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* ---------------- What's in the jar, ingredient by ingredient ---------------- */}
-      <section className="border-t border-sand-200 bg-sand-100/70 py-20 sm:py-24">
+      <section className="surface-coral-alt py-20 sm:py-24">
         <div className="container-page">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
@@ -205,7 +205,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               copy="Every ingredient earns its place. Here is what each one brings, and who it suits."
             />
             <Reveal>
-              <Link href="/natures-wisdom" className="btn btn-ghost">
+              <Link href="/natures-wisdom" className="btn btn-ghost-light">
                 Nature&apos;s Wisdom <ArrowRight className="size-4" />
               </Link>
             </Reveal>
@@ -244,7 +244,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             ))}
           </ul>
 
-          <Reveal className="mt-10 rounded-xl border border-sand-300 bg-white p-7 text-sm leading-relaxed text-abyss-800/75 sm:p-8">
+          <Reveal className="mt-10 rounded-xl border border-white/70 bg-white p-7 text-sm leading-relaxed text-abyss-800/75 sm:p-8">
             <strong className="font-semibold text-abyss-900">Full ingredient list: </strong>
             {product.fullIngredients} Vegan, gluten-free, dairy-free, and free from added sugar,
             fillers and preservatives.
@@ -257,7 +257,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading eyebrow="Keep going" title="Pairs well with" />
             <Reveal>
-              <Link href="/products" className="btn btn-ghost">
+              <Link href="/products" className="btn btn-ghost-light">
                 All flavours <ArrowRight className="size-4" />
               </Link>
             </Reveal>

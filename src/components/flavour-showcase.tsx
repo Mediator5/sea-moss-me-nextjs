@@ -8,47 +8,48 @@ import { ProductShot } from "./product-shot";
 import { Reveal } from "./reveal";
 
 /**
- * The four flavours, straight under the homepage hero. Sits on deep teal that
- * flows down into the "By the numbers" panel below, with the same glass cards,
- * mono labels and coral accents. Each card glows in its own flavour colour.
+ * The four flavours, straight under the homepage hero. Orange ground with
+ * deep-teal cards — the same coral-and-teal pairing as "Our commitment" — and
+ * the mono labels of the "By the numbers" panel. Each card glows in its own
+ * flavour colour on hover.
  */
 export function FlavourShowcase() {
   return (
     <section
       aria-labelledby="flavours-title"
-      className="relative isolate overflow-hidden bg-[linear-gradient(180deg,var(--color-abyss-800)_0%,var(--color-abyss-950)_100%)] py-24 text-sand-50 sm:py-28"
+      className="surface-coral relative isolate overflow-hidden py-24 sm:py-28"
     >
-      {/* soft light on the water */}
+      {/* drifting light on the orange */}
       <div
         aria-hidden
-        className="animate-drift pointer-events-none absolute -top-48 left-1/2 -z-10 size-[44rem] -translate-x-1/2 rounded-full bg-reef-500/35 blur-3xl"
+        className="animate-drift pointer-events-none absolute -top-48 -right-40 -z-10 size-[36rem] rounded-full bg-flame-500/60 blur-3xl"
       />
       <div
         aria-hidden
-        className="animate-drift pointer-events-none absolute -right-48 bottom-0 -z-10 size-[30rem] rounded-full bg-flame-500/15 blur-3xl [animation-delay:-7s]"
+        className="animate-drift pointer-events-none absolute -bottom-56 -left-40 -z-10 size-[34rem] rounded-full bg-gold-500/30 blur-3xl [animation-delay:-9s]"
       />
 
       <div className="container-page">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[0.22em] text-flame-300 uppercase">
+            <p className="inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[0.22em] text-white uppercase">
               <span className="relative flex size-2">
-                <span className="absolute inline-flex size-full animate-ping rounded-full bg-flame-500 opacity-70" />
-                <span className="relative inline-flex size-2 rounded-full bg-flame-500" />
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-white opacity-70" />
+                <span className="relative inline-flex size-2 rounded-full bg-white" />
               </span>
               The flavours
             </p>
             <h2 id="flavours-title" className="mt-4 text-4xl leading-[1.08] sm:text-5xl">
-              Four flavours. <span className="text-flame-400">One wildcrafted base.</span>
+              Four flavours. <span className="text-gold-200">One wildcrafted base.</span>
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-sand-100/75 sm:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-white sm:text-lg">
               Every jar starts with the same hand-harvested Jamaican sea moss, blended with real
               superfoods. Pick the one that suits your day.
             </p>
           </div>
           <Link
             href="/products"
-            className="inline-flex shrink-0 items-center gap-2 font-semibold text-flame-300"
+            className="inline-flex shrink-0 items-center gap-2 font-semibold text-white"
           >
             <span className="link-underline">Compare all flavours</span>
             <ArrowRight className="size-4" />
@@ -61,7 +62,7 @@ export function FlavourShowcase() {
             return (
               <Reveal key={p.slug} as="li" delay={i * 90} className="h-full">
                 <article
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-sand-50/10 bg-sand-50/[0.04] backdrop-blur transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:border-[var(--glow)] hover:shadow-[0_30px_70px_-30px_var(--glow)]"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(160deg,var(--color-abyss-700)_0%,var(--color-abyss-800)_100%)] text-sand-50 shadow-[0_28px_60px_-24px_rgba(3,51,58,0.7)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:border-[var(--glow)] hover:shadow-[0_30px_70px_-30px_var(--glow)]"
                   style={{ "--glow": `${glow}aa` } as CSSProperties}
                 >
                   <div className="flex h-12 items-center justify-between px-5 font-mono text-[10px] tracking-[0.2em] text-sand-100/45 uppercase">

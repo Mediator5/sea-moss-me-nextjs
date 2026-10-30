@@ -57,15 +57,15 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
       <article className="py-14 sm:py-20">
         <div className="container-page max-w-3xl">
-          <nav aria-label="Breadcrumb" className="text-xs text-abyss-800/60">
-            <Link href="/blog" className="hover:text-abyss-900">
+          <nav aria-label="Breadcrumb" className="text-xs text-white">
+            <Link href="/blog" className="hover:underline">
               ← Back to the blog
             </Link>
           </nav>
 
-          <p className="eyebrow mt-8 text-flame-600">{post.category}</p>
+          <p className="eyebrow mt-8 text-gold-200">{post.category}</p>
           <h1 className="mt-4 text-4xl leading-[1.08] sm:text-5xl">{post.title}</h1>
-          <p className="mt-5 text-sm text-abyss-800/50">
+          <p className="mt-5 text-sm text-white">
             {new Date(post.date).toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
@@ -85,9 +85,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               }
               if (block.type === "ul") {
                 return (
-                  <ul key={i} className="space-y-3 border-l-2 border-reef-300 pl-6">
+                  <ul key={i} className="space-y-3 border-l-2 border-white/60 pl-6">
                     {block.items?.map((item) => (
-                      <li key={item} className="leading-relaxed text-abyss-800/80">
+                      <li key={item} className="leading-relaxed text-white">
                         {item}
                       </li>
                     ))}
@@ -95,7 +95,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 );
               }
               return (
-                <p key={i} className="text-[1.0625rem] leading-[1.8] text-abyss-800/85">
+                <p key={i} className="text-[1.0625rem] leading-[1.8] text-white">
                   {block.text}
                 </p>
               );
@@ -116,7 +116,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </div>
       </article>
 
-      <section className="border-t border-sand-200 bg-sand-100/60 py-16">
+      <section className="surface-coral-alt py-16">
         <div className="container-page">
           <h2 className="text-2xl">Keep reading</h2>
           <div className="mt-8 grid gap-7 md:grid-cols-2">

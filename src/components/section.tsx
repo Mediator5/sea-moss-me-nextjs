@@ -13,6 +13,7 @@ export function SectionHeading({
   title: ReactNode;
   copy?: ReactNode;
   align?: "left" | "center";
+  /** "dark" (default) = on the orange ground. "light" = on a teal or photo panel. */
   tone?: "dark" | "light";
   children?: ReactNode;
 }) {
@@ -24,13 +25,13 @@ export function SectionHeading({
       }`}
     >
       {eyebrow && (
-        <p className={`eyebrow ${light ? "text-gold-300" : "text-flame-600"}`}>{eyebrow}</p>
+        <p className={`eyebrow ${light ? "text-gold-300" : "text-white"}`}>{eyebrow}</p>
       )}
       <h2 className="mt-4 text-4xl leading-[1.08] sm:text-5xl">{title}</h2>
       {copy && (
         <p
           className={`mt-5 text-base leading-relaxed sm:text-lg ${
-            light ? "text-sand-100/85" : "text-abyss-800/70"
+            light ? "text-sand-100/85" : "text-white"
           }`}
         >
           {copy}
@@ -44,7 +45,7 @@ export function SectionHeading({
 export function WaveDivider({
   className = "",
   flip = false,
-  fill = "#fdfbf6",
+  fill = "#c73f0d",
 }: {
   className?: string;
   flip?: boolean;

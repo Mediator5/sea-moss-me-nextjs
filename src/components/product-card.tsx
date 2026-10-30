@@ -49,7 +49,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           {product.ingredients.map((ing) => (
             <span
               key={ing}
-              className="rounded-full border border-sand-200 bg-sand-100/70 px-2.5 py-1 text-[11px] font-medium text-abyss-800/75"
+              className="rounded-full border border-flame-100 bg-flame-100/60 px-2.5 py-1 text-[11px] font-medium text-abyss-800/75"
             >
               {ing}
             </span>

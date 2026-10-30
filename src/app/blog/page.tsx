@@ -20,13 +20,13 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="border-b border-sand-200 bg-sand-100/60 py-16 sm:py-20">
+      <section className="surface-coral-alt border-b border-white/20 py-16 sm:py-20">
         <div className="container-page">
-          <p className="eyebrow text-flame-600">The blog</p>
+          <p className="eyebrow text-white">The blog</p>
           <h1 className="mt-5 max-w-3xl text-5xl leading-[1.04] sm:text-6xl">
             Notes from the kitchen and the coast
           </h1>
-          <p className="mt-6 max-w-xl leading-relaxed text-abyss-800/70">
+          <p className="mt-6 max-w-xl leading-relaxed text-white">
             No miracle claims, no filler posts. Just what we&apos;ve learned making sea moss gel and
             what&apos;s worth knowing before you buy any.
           </p>

@@ -5,7 +5,7 @@ import { ArrowRight, Check } from "./icons";
 import { products } from "@/lib/products";
 
 const field =
-  "w-full rounded-sm border border-sand-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-reef-500";
+  "w-full rounded-sm border border-abyss-900/20 bg-white px-4 py-3 text-sm outline-none transition focus:border-reef-500";
 
 export function ContactForm() {
   const [state, setState] = useState<"idle" | "loading" | "done" | "error">("idle");

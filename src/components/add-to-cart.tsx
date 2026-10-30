@@ -43,7 +43,7 @@ export function ProductPurchasePanel({ product }: { product: Product }) {
   return (
     <div className="card p-6 sm:p-7">
       {product.sizes.length === 1 ? (
-        <div className="flex items-end justify-between gap-4 border-b border-sand-200 pb-5">
+        <div className="flex items-end justify-between gap-4 border-b border-flame-100 pb-5">
           <div>
             <p className="eyebrow text-abyss-800/60">One size, made fresh</p>
             <p className="mt-2 text-sm font-semibold">{size.label}</p>
@@ -66,7 +66,7 @@ export function ProductPurchasePanel({ product }: { product: Product }) {
                 className={`rounded-md border p-4 text-left transition ${
                   active
                     ? "border-reef-500 bg-reef-100/60 shadow-sm"
-                    : "border-sand-200 bg-white hover:border-sand-300"
+                    : "border-flame-100 bg-white hover:border-flame-400/50"
                 }`}
               >
                 <span className="block text-sm font-semibold">{s.label}</span>
@@ -87,12 +87,12 @@ export function ProductPurchasePanel({ product }: { product: Product }) {
       )}
 
       <div className="mt-6 flex items-center gap-4">
-        <div className="flex items-center gap-2 rounded-full border border-sand-200 bg-white px-2 py-1.5">
+        <div className="flex items-center gap-2 rounded-full border border-flame-100 bg-white px-2 py-1.5">
           <button
             type="button"
             aria-label="Decrease quantity"
             onClick={() => setQty((q) => Math.max(1, q - 1))}
-            className="grid size-8 place-items-center rounded-full transition hover:bg-sand-100"
+            className="grid size-8 place-items-center rounded-full transition hover:bg-flame-100"
           >
             <Minus className="size-4" />
           </button>
@@ -101,7 +101,7 @@ export function ProductPurchasePanel({ product }: { product: Product }) {
             type="button"
             aria-label="Increase quantity"
             onClick={() => setQty((q) => Math.min(20, q + 1))}
-            className="grid size-8 place-items-center rounded-full transition hover:bg-sand-100"
+            className="grid size-8 place-items-center rounded-full transition hover:bg-flame-100"
           >
             <Plus className="size-4" />
           </button>

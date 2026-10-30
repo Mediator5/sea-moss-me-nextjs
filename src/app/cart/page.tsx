@@ -17,7 +17,7 @@ export default function CartPage() {
         <h1 className="text-4xl sm:text-5xl">Your cart</h1>
 
         {ready && totals.jars === 0 ? (
-          <div className="mt-10 rounded-xl border border-sand-200 bg-white p-12 text-center">
+          <div className="mt-10 rounded-xl border border-white/70 bg-white p-12 text-center text-abyss-900">
             <p className="font-display text-2xl">Nothing in here yet</p>
             <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-abyss-800/65">
               Four small-batch flavours, all made from the same wildcrafted Jamaican moss.
@@ -30,7 +30,7 @@ export default function CartPage() {
           <div className="mt-10 grid gap-10 lg:grid-cols-[1.5fr_1fr]">
             <div>
               {!totals.freeShipping && totals.jars > 0 && (
-                <p className="mb-6 rounded-md border border-gold-400/40 bg-gold-200/40 px-5 py-4 text-sm">
+                <p className="mb-6 rounded-md border border-gold-400 bg-gold-200 px-5 py-4 text-sm text-abyss-900">
                   <Truck className="mr-2 inline size-4 -translate-y-px" />
                   Add <strong>{totals.jarsToBundle}</strong> more{" "}
                   {totals.jarsToBundle === 1 ? "jar" : "jars"} to unlock free delivery and{" "}
@@ -38,7 +38,7 @@ export default function CartPage() {
                 </p>
               )}
 
-              <ul className="divide-y divide-sand-200 border-y border-sand-200">
+              <ul className="card divide-y divide-flame-100 px-6">
                 {totals.lines.map((line) => {
                   const match = findSize(line.sizeId);
                   return (
@@ -70,11 +70,11 @@ export default function CartPage() {
                         </div>
 
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-1.5 rounded-full border border-sand-300 px-1.5 py-1">
+                          <div className="flex items-center gap-1.5 rounded-full border border-abyss-900/15 px-1.5 py-1">
                             <button
                               aria-label={`Decrease ${line.name}`}
                               onClick={() => setQty(line.sizeId, line.qty - 1)}
-                              className="grid size-8 place-items-center rounded-full transition hover:bg-sand-100"
+                              className="grid size-8 place-items-center rounded-full transition hover:bg-flame-100"
                             >
                               <Minus className="size-4" />
                             </button>
@@ -84,7 +84,7 @@ export default function CartPage() {
                             <button
                               aria-label={`Increase ${line.name}`}
                               onClick={() => setQty(line.sizeId, line.qty + 1)}
-                              className="grid size-8 place-items-center rounded-full transition hover:bg-sand-100"
+                              className="grid size-8 place-items-center rounded-full transition hover:bg-flame-100"
                             >
                               <Plus className="size-4" />
                             </button>
@@ -141,7 +141,7 @@ export default function CartPage() {
                     accent={totals.shipping === 0 && totals.jars > 0}
                   />
                 </dl>
-                <div className="mt-5 flex items-baseline justify-between border-t border-sand-200 pt-5">
+                <div className="mt-5 flex items-baseline justify-between border-t border-flame-100 pt-5">
                   <span className="font-display text-lg">Total</span>
                   <span className="font-display text-3xl tabular-nums">
                     {formatPrice(totals.total)}
@@ -155,7 +155,7 @@ export default function CartPage() {
                   <CheckoutButton />
                 </div>
 
-                <ul className="mt-6 space-y-2.5 border-t border-sand-200 pt-5 text-xs text-abyss-800/65">
+                <ul className="mt-6 space-y-2.5 border-t border-flame-100 pt-5 text-xs text-abyss-800/65">
                   <li className="flex items-center gap-2">
                     <Shield className="size-4 text-reef-600" /> Secure payment via Stripe
                   </li>
@@ -165,7 +165,7 @@ export default function CartPage() {
                 </ul>
               </div>
 
-              <p className="mt-5 text-center text-xs text-abyss-800/55">
+              <p className="mt-5 text-center text-xs text-white">
                 Prefer to order by email?{" "}
                 <Link href="/contact" className="link-underline font-semibold">
                   Send us a message

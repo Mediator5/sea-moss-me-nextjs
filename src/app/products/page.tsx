@@ -78,7 +78,7 @@ export default function ProductsPage() {
           <Reveal className="mt-10 overflow-x-auto">
             <table className="w-full min-w-[46rem] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-sand-300">
+                <tr className="border-b border-white/50">
                   <th className="py-4 pr-6 font-semibold">Flavour</th>
                   <th className="py-4 pr-6 font-semibold">Best for</th>
                   <th className="py-4 pr-6 font-semibold">Tastes like</th>
@@ -89,7 +89,7 @@ export default function ProductsPage() {
               </thead>
               <tbody>
                 {products.map((p) => (
-                  <tr key={p.slug} className="border-b border-sand-200 align-top">
+                  <tr key={p.slug} className="border-b border-white/25 align-top">
                     <td className="py-5 pr-6">
                       <span className="flex items-center gap-2.5 font-semibold">
                         <span
@@ -99,19 +99,19 @@ export default function ProductsPage() {
                         {p.name}
                       </span>
                     </td>
-                    <td className="py-5 pr-6 text-abyss-800/75">{p.bestFor}</td>
-                    <td className="py-5 pr-6 text-abyss-800/75">{p.taste}</td>
-                    <td className="py-5 pr-6 text-abyss-800/75">{p.ingredients.join(", ")}</td>
+                    <td className="py-5 pr-6 text-white">{p.bestFor}</td>
+                    <td className="py-5 pr-6 text-white">{p.taste}</td>
+                    <td className="py-5 pr-6 text-white">{p.ingredients.join(", ")}</td>
                     <td className="py-5 pr-6 font-display text-lg whitespace-nowrap">
                       {formatPrice(p.sizes[0].price)}
-                      <span className="ml-1 font-sans text-xs text-abyss-800/50">
+                      <span className="ml-1 font-sans text-xs text-white">
                         / {p.sizes[0].ounces} oz
                       </span>
                     </td>
                     <td className="py-5 whitespace-nowrap">
                       <Link
                         href={`/products/${p.slug}`}
-                        className="inline-flex items-center gap-1.5 font-semibold text-reef-600"
+                        className="inline-flex items-center gap-1.5 font-semibold text-white"
                       >
                         <span className="link-underline">View</span>
                         <ArrowRight className="size-3.5" />
@@ -125,7 +125,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="bg-sand-100/70 py-20 sm:py-24">
+      <section className="surface-coral-alt py-20 sm:py-24">
         <div className="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeading eyebrow="Before you order" title="Good things to know" />
           <Reveal delay={100}>

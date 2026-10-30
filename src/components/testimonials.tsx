@@ -15,7 +15,7 @@ export function Testimonials() {
           <blockquote className="mt-5 flex-1 text-[15px] leading-relaxed text-abyss-900/85">
             &ldquo;{t.quote}&rdquo;
           </blockquote>
-          <footer className="mt-6 border-t border-sand-200 pt-4">
+          <footer className="mt-6 border-t border-flame-100 pt-4">
             <p className="text-sm font-semibold">{t.name}</p>
             <p className="text-xs text-abyss-800/55">{t.detail}</p>
           </footer>

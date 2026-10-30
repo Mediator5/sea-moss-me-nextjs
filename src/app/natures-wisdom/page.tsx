@@ -69,22 +69,22 @@ export default function IngredientsPage() {
         </div>
       </section>
 
-      <section className="border-t border-sand-200 bg-sand-100/70 py-20">
+      <section className="surface-coral-alt py-20">
         <div className="container-page">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow text-flame-600">Start with the base</p>
+            <p className="eyebrow text-white">Start with the base</p>
             <h2 className="mt-4 text-4xl leading-tight">
               Every one of these is folded into wildcrafted sea moss
             </h2>
-            <p className="mt-5 leading-relaxed text-abyss-800/70">
+            <p className="mt-5 leading-relaxed text-white">
               The fruits and herbs are what make each jar distinct. The sea moss underneath them is
               what makes it work — and it deserves its own explanation.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-4">
-              <Link href="/sea-moss" className="btn btn-primary">
+              <Link href="/sea-moss" className="btn btn-light">
                 Read Sea Moss 101 <ArrowRight className="size-4" />
               </Link>
-              <Link href="/products" className="btn btn-ghost">
+              <Link href="/products" className="btn btn-ghost-light">
                 See the four jars
               </Link>
             </div>

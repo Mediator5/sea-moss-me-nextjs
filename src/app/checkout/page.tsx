@@ -11,7 +11,7 @@ import { BUNDLE, findSize } from "@/lib/products";
 import { site } from "@/lib/site";
 
 const field =
-  "w-full rounded-sm border border-sand-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-reef-500";
+  "w-full rounded-sm border border-abyss-900/20 bg-white px-4 py-3 text-sm outline-none transition focus:border-reef-500";
 
 const COUNTRIES = [
   "United States",
@@ -92,12 +92,12 @@ export default function CheckoutPage() {
     return (
       <section className="py-20 sm:py-28">
         <div className="container-page max-w-xl text-center">
-          <p className="eyebrow text-flame-600">Checkout</p>
+          <p className="eyebrow text-white">Checkout</p>
           <h1 className="mt-5 text-4xl leading-tight sm:text-5xl">Your cart is empty</h1>
-          <p className="mt-5 leading-relaxed text-abyss-800/70">
+          <p className="mt-5 leading-relaxed text-white">
             Pick a jar or two and we&apos;ll bring you straight back here.
           </p>
-          <Link href="/products" className="btn btn-primary mt-9">
+          <Link href="/products" className="btn btn-light mt-9">
             Browse the flavours <ArrowRight className="size-4" />
           </Link>
         </div>
@@ -108,24 +108,24 @@ export default function CheckoutPage() {
   return (
     <>
       {/* ---------------- Progress ---------------- */}
-      <div className="border-b border-sand-200 bg-sand-100/60">
+      <div className="border-b border-white/20 bg-flame-550">
         <div className="container-page flex items-center gap-3 py-4 text-xs sm:gap-5 sm:text-sm">
-          <Link href="/cart" className="flex items-center gap-2 text-abyss-800/55 hover:text-abyss-900">
+          <Link href="/cart" className="flex items-center gap-2 text-white hover:underline">
             <span className="grid size-6 place-items-center rounded-full bg-reef-500 text-[11px] font-bold text-sand-50">
               <Check className="size-3.5" />
             </span>
             Your cart
           </Link>
-          <span aria-hidden className="h-px flex-1 bg-sand-300" />
-          <span className="flex items-center gap-2 font-semibold text-abyss-900">
-            <span className="grid size-6 place-items-center rounded-full bg-flame-600 text-[11px] font-bold text-sand-50">
+          <span aria-hidden className="h-px flex-1 bg-white/40" />
+          <span className="flex items-center gap-2 font-semibold text-white">
+            <span className="grid size-6 place-items-center rounded-full bg-white text-[11px] font-bold text-flame-700">
               2
             </span>
             Your details
           </span>
-          <span aria-hidden className="h-px flex-1 bg-sand-300" />
-          <span className="flex items-center gap-2 text-abyss-800/45">
-            <span className="grid size-6 place-items-center rounded-full border border-sand-300 text-[11px] font-bold">
+          <span aria-hidden className="h-px flex-1 bg-white/40" />
+          <span className="flex items-center gap-2 text-white">
+            <span className="grid size-6 place-items-center rounded-full border border-white/60 text-[11px] font-bold">
               3
             </span>
             Confirmed
@@ -135,21 +135,21 @@ export default function CheckoutPage() {
 
       <section className="py-12 sm:py-16">
         <div className="container-page">
-          <p className="eyebrow text-flame-600">Final step</p>
+          <p className="eyebrow text-white">Final step</p>
           <h1 className="mt-4 max-w-2xl text-4xl leading-[1.06] sm:text-5xl">
             Where should we send it?
           </h1>
-          <p className="mt-5 max-w-xl leading-relaxed text-abyss-800/70">
+          <p className="mt-5 max-w-xl leading-relaxed text-white">
             Your jars are already listed below — you just need to tell us who you are and where
             you&apos;d like them. We&apos;ll reply within one business day to arrange your delivery and
-            payment. <strong className="text-abyss-900">Nothing is charged now.</strong>
+            payment. <strong className="text-gold-200">Nothing is charged now.</strong>
           </p>
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-14">
             {/* ---------------- The form ---------------- */}
             <form onSubmit={onSubmit} className="order-2 space-y-8 lg:order-1">
               <fieldset className="card p-7 sm:p-8">
-                <legend className="eyebrow px-2 text-reef-600">Contact details</legend>
+                <legend className="eyebrow rounded-full bg-white px-3.5 py-1.5 text-reef-600 shadow-[0_6px_16px_-8px_rgba(90,22,2,0.6)]">Contact details</legend>
 
                 <div className="mt-4 grid gap-5 sm:grid-cols-2">
                   <div className="sm:col-span-2">
@@ -216,7 +216,7 @@ export default function CheckoutPage() {
               </fieldset>
 
               <fieldset className="card p-7 sm:p-8">
-                <legend className="eyebrow px-2 text-reef-600">Delivery address</legend>
+                <legend className="eyebrow rounded-full bg-white px-3.5 py-1.5 text-reef-600 shadow-[0_6px_16px_-8px_rgba(90,22,2,0.6)]">Delivery address</legend>
 
                 <div className="mt-4 grid gap-5 sm:grid-cols-2">
                   <div className="sm:col-span-2">
@@ -309,7 +309,7 @@ export default function CheckoutPage() {
               </fieldset>
 
               <fieldset className="card p-7 sm:p-8">
-                <legend className="eyebrow px-2 text-reef-600">Anything we should know</legend>
+                <legend className="eyebrow rounded-full bg-white px-3.5 py-1.5 text-reef-600 shadow-[0_6px_16px_-8px_rgba(90,22,2,0.6)]">Anything we should know</legend>
                 <label htmlFor="notes" className="mt-4 mb-2 block text-sm font-medium">
                   Allergies, delivery instructions, a gift note
                 </label>
@@ -328,12 +328,12 @@ export default function CheckoutPage() {
                 <button
                   type="submit"
                   disabled={state === "sending"}
-                  className="btn btn-primary w-full py-5 text-base"
+                  className="btn btn-light w-full py-5 text-base"
                 >
                   {state === "sending" ? "Sending your request…" : "Send order request"}
                   {state !== "sending" && <ArrowRight className="size-4" />}
                 </button>
-                <p className="mt-3 text-center text-xs text-abyss-800/55">
+                <p className="mt-3 text-center text-xs text-white">
                   No payment is taken on this page. We&apos;ll confirm everything by email first.
                 </p>
                 {error && (
@@ -350,7 +350,7 @@ export default function CheckoutPage() {
             {/* ---------------- Pre-filled order ---------------- */}
             <aside className="order-1 h-fit lg:order-2 lg:sticky lg:top-28">
               <div className="card overflow-hidden">
-                <div className="flex items-center justify-between border-b border-sand-200 px-7 py-5">
+                <div className="flex items-center justify-between border-b border-flame-100 px-7 py-5">
                   <h2 className="text-xl">Your order</h2>
                   <Link
                     href="/cart"
@@ -360,7 +360,7 @@ export default function CheckoutPage() {
                   </Link>
                 </div>
 
-                <ul className="divide-y divide-sand-200 px-7">
+                <ul className="divide-y divide-flame-100 px-7">
                   {totals.lines.map((line) => {
                     const match = findSize(line.sizeId);
                     return (
@@ -380,7 +380,7 @@ export default function CheckoutPage() {
                   })}
                 </ul>
 
-                <dl className="space-y-3 border-t border-sand-200 px-7 py-5 text-sm">
+                <dl className="space-y-3 border-t border-flame-100 px-7 py-5 text-sm">
                   <Row label={`Subtotal (${totals.jars} jars)`} value={formatPrice(totals.subtotal)} />
                   {totals.discount > 0 && (
                     <Row
@@ -396,14 +396,14 @@ export default function CheckoutPage() {
                   />
                 </dl>
 
-                <div className="flex items-baseline justify-between border-t border-sand-200 px-7 py-5">
+                <div className="flex items-baseline justify-between border-t border-flame-100 px-7 py-5">
                   <span className="font-display text-lg">Estimated total</span>
                   <span className="font-display text-3xl tabular-nums">
                     {formatPrice(totals.total)}
                   </span>
                 </div>
 
-                <ul className="space-y-2.5 border-t border-sand-200 bg-sand-100/50 px-7 py-5 text-xs text-abyss-800/70">
+                <ul className="space-y-2.5 border-t border-flame-100 bg-flame-100/50 px-7 py-5 text-xs text-abyss-800/70">
                   <li className="flex items-center gap-2">
                     <Shield className="size-4 shrink-0 text-reef-600" /> Confirmed by a person before
                     we blend anything
@@ -417,7 +417,7 @@ export default function CheckoutPage() {
                 </ul>
               </div>
 
-              <p className="mt-5 text-center text-xs text-abyss-800/55">
+              <p className="mt-5 text-center text-xs text-white">
                 Prefer to talk it through?{" "}
                 <a href={`mailto:${site.email}`} className="link-underline font-semibold">
                   {site.email}
