@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section";
 import { FaqAccordion } from "@/components/faq-accordion";
+import { DeepBackdrop, LiveEyebrow } from "@/components/feature-page";
 import { ArrowRight, Check, Close, Leaf, Shield, Spark, Wave } from "@/components/icons";
 import {
   deficiencySigns,
@@ -23,7 +24,8 @@ export const metadata: Metadata = {
 };
 
 const contents = [
-  { href: "#what", label: "What it is" },
+  { href: "#overview", label: "What sea moss is" },
+  { href: "#what", label: "No roots at all" },
   { href: "#minerals", label: "Why minerals matter" },
   { href: "#sourcing", label: "Wildcrafted vs pool-grown" },
   { href: "#facts", label: "Six things worth knowing" },
@@ -88,6 +90,49 @@ export default function SeaMossPage() {
               </a>
             ))}
           </nav>
+        </div>
+      </section>
+
+      {/* ---------------- What sea moss is (was its own page, /what-is-sea-moss) ---------------- */}
+      <section
+        id="overview"
+        className="relative isolate scroll-mt-24 overflow-hidden bg-[linear-gradient(180deg,var(--color-abyss-800)_0%,var(--color-abyss-950)_100%)] py-20 text-sand-50 sm:py-28"
+      >
+        <DeepBackdrop />
+        <div className="container-page grid items-center gap-14 lg:grid-cols-2">
+          <Reveal>
+            <LiveEyebrow>What sea moss is</LiveEyebrow>
+            <h2 className="mt-5 text-4xl leading-[1.06] sm:text-5xl lg:text-6xl">
+              A whole food <span className="text-flame-400">from the sea</span>
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-sand-100/80">
+              Sea moss is a nutrient-dense sea vegetable that grows wild on coastal rocks in warm,
+              clear Caribbean water. With no roots, it draws its minerals directly from the ocean
+              around it.
+            </p>
+            <p className="mt-5 leading-[1.8] text-sand-100/75">
+              Ours is hand-cut from the rock, dried naturally in the sun, then soaked and blended
+              whole — so you get everything the sea put into it, with nothing stripped away.
+              It&apos;s a tradition Caribbean families have trusted for generations, and one people
+              have practised for thousands of years.
+            </p>
+            <a href="#what" className="btn btn-primary mt-8">
+              Keep reading <ArrowRight className="size-4 rotate-90" />
+            </a>
+          </Reveal>
+
+          <Reveal delay={110}>
+            <div className="overflow-hidden rounded-2xl border border-sand-50/10">
+              <Image
+                src="/images/ingredients.jpg"
+                alt="Dried sea moss with turmeric, ginger, moringa and berries on a warm surface"
+                width={1600}
+                height={1200}
+                sizes="(min-width: 1024px) 46vw, 92vw"
+                className="aspect-4/3 w-full object-cover"
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
 

@@ -164,111 +164,7 @@ export function IngredientExplorer() {
               </div>
               <ul className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                 {section.items.map((ing: Ingredient) => (
-                  <li
-                    key={ing.slug}
-                    id={ing.slug}
-                    className="card flex h-full scroll-mt-24 flex-col overflow-hidden md:scroll-mt-44"
-                  >
-                    <span
-                      aria-hidden
-                      className="h-1 w-full shrink-0"
-                      style={{ backgroundColor: ing.color }}
-                    />
-                    <div className="flex flex-1 flex-col p-6">
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <h3 className="text-2xl leading-tight">{ing.name}</h3>
-                          <p
-                            className="mt-1 text-[11px] font-semibold tracking-[0.12em] uppercase"
-                            style={{ color: ing.color }}
-                          >
-                            {groupLabels[ing.group]}
-                            {ing.pipeline && " · In development"}
-                          </p>
-                        </div>
-                        <span
-                          className="grid size-10 shrink-0 place-items-center rounded-full"
-                          style={{
-                            backgroundColor: `${ing.color}1a`,
-                            color: ing.color,
-                          }}
-                        >
-                          <Leaf className="size-5" />
-                        </span>
-                      </div>
-
-                      <p className="mt-4 text-sm leading-relaxed text-abyss-900/85">
-                        {ing.summary}
-                      </p>
-
-                      <p className="mt-4 rounded-md bg-flame-100/70 px-4 py-3 text-xs leading-relaxed text-abyss-800/75">
-                        <span className="font-semibold text-abyss-900">
-                          Best for:{" "}
-                        </span>
-                        {ing.bestFor}
-                      </p>
-
-                      <ul className="mt-5 space-y-3">
-                        {ing.benefits.map((b) => (
-                          <li
-                            key={b.term}
-                            className="flex gap-2.5 text-sm leading-relaxed"
-                          >
-                            <Check
-                              className="mt-0.5 size-4 shrink-0"
-                              style={{ color: ing.color }}
-                            />
-                            <span className="text-abyss-800/80">
-                              <strong className="font-semibold text-abyss-900">
-                                {b.term}
-                              </strong>{" "}
-                              — {b.copy}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      {ing.caution && (
-                        <p className="mt-5 rounded-md border border-gold-400/40 bg-gold-200/30 px-4 py-3 text-xs leading-relaxed text-abyss-900">
-                          <strong className="font-semibold">
-                            Good to know:{" "}
-                          </strong>
-                          {ing.caution}
-                        </p>
-                      )}
-
-                      <div className="mt-auto pt-6">
-                        {ing.inJars.length > 0 ? (
-                          <div className="flex flex-wrap items-center gap-2 border-t border-flame-100 pt-5 text-xs">
-                            <span className="text-abyss-800/50">In:</span>
-                            {ing.inJars.map((slug) => {
-                              const product = getProduct(slug);
-                              if (!product) return null;
-                              return (
-                                <Link
-                                  key={slug}
-                                  href={`/products/${slug}`}
-                                  className="rounded-full border px-2.5 py-1 font-medium transition hover:bg-flame-100"
-                                  style={{
-                                    borderColor: `${product.accent}55`,
-                                    color: product.accent,
-                                  }}
-                                >
-                                  {product.name}
-                                </Link>
-                              );
-                            })}
-                          </div>
-                        ) : (
-                          <p className="border-t border-flame-100 pt-5 text-xs text-abyss-800/50">
-                            {ing.pipeline
-                              ? "In development — coming to a future blend."
-                              : "Part of our wider formulation library, not currently in a jar."}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </li>
+                  <IngredientCard key={ing.slug} ing={ing} />
                 ))}
               </ul>
             </section>
@@ -276,5 +172,118 @@ export function IngredientExplorer() {
         </div>
       )}
     </div>
+  );
+}
+
+/**
+ * One ingredient, as shown in the Nature's Wisdom library. Exported so the shop
+ * page can show the same cards for whichever jar a shopper picks.
+ */
+export function IngredientCard({ ing, anchor = true }: { ing: Ingredient; anchor?: boolean }) {
+  return (
+    <li
+      id={anchor ? ing.slug : undefined}
+      className="card flex h-full scroll-mt-24 flex-col overflow-hidden md:scroll-mt-44"
+    >
+      <span
+        aria-hidden
+        className="h-1 w-full shrink-0"
+        style={{ backgroundColor: ing.color }}
+      />
+      <div className="flex flex-1 flex-col p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h3 className="text-2xl leading-tight">{ing.name}</h3>
+            <p
+              className="mt-1 text-[11px] font-semibold tracking-[0.12em] uppercase"
+              style={{ color: ing.color }}
+            >
+              {groupLabels[ing.group]}
+              {ing.pipeline && " · In development"}
+            </p>
+          </div>
+          <span
+            className="grid size-10 shrink-0 place-items-center rounded-full"
+            style={{
+              backgroundColor: `${ing.color}1a`,
+              color: ing.color,
+            }}
+          >
+            <Leaf className="size-5" />
+          </span>
+        </div>
+
+        <p className="mt-4 text-sm leading-relaxed text-abyss-900/85">
+          {ing.summary}
+        </p>
+
+        <p className="mt-4 rounded-md bg-flame-100/70 px-4 py-3 text-xs leading-relaxed text-abyss-800/75">
+          <span className="font-semibold text-abyss-900">
+            Best for:{" "}
+          </span>
+          {ing.bestFor}
+        </p>
+
+        <ul className="mt-5 space-y-3">
+          {ing.benefits.map((b) => (
+            <li
+              key={b.term}
+              className="flex gap-2.5 text-sm leading-relaxed"
+            >
+              <Check
+                className="mt-0.5 size-4 shrink-0"
+                style={{ color: ing.color }}
+              />
+              <span className="text-abyss-800/80">
+                <strong className="font-semibold text-abyss-900">
+                  {b.term}
+                </strong>{" "}
+                — {b.copy}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        {ing.caution && (
+          <p className="mt-5 rounded-md border border-gold-400/40 bg-gold-200/30 px-4 py-3 text-xs leading-relaxed text-abyss-900">
+            <strong className="font-semibold">
+              Good to know:{" "}
+            </strong>
+            {ing.caution}
+          </p>
+        )}
+
+        <div className="mt-auto pt-6">
+          {ing.inJars.length > 0 ? (
+            <div className="flex flex-wrap items-center gap-2 border-t border-flame-100 pt-5 text-xs">
+              <span className="text-abyss-800/50">In:</span>
+              {ing.inJars.map((slug) => {
+                const product = getProduct(slug);
+                if (!product) return null;
+                return (
+                  <Link
+                    key={slug}
+                    href={`/products/${slug}`}
+                    className="rounded-full border px-2.5 py-1 font-medium transition hover:bg-flame-100"
+                    style={{
+                      borderColor: `${product.accent}55`,
+                      color: product.accent,
+                    }}
+                  >
+                    {product.name}
+                  </Link>
+                );
+              })}
+            </div>
+          ) : (
+            <p className="border-t border-flame-100 pt-5 text-xs text-abyss-800/50">
+              {ing.pipeline
+                ? "In development — coming to a future blend."
+                : "Part of our wider formulation library, not currently in a jar."}
+            </p>
+          )}
+        </div>
+      </div>
+    </li>
   );
 }

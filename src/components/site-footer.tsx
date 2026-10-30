@@ -18,7 +18,6 @@ const columns = [
       { label: "Sea Moss 101", href: "/sea-moss" },
       { label: "Nature's Wisdom", href: "/natures-wisdom" },
       { label: "Our story", href: "/our-story" },
-      { label: "What sea moss is", href: "/what-is-sea-moss" },
       { label: "The Doctor Bird", href: "/doctor-bird" },
       { label: "About us", href: "/about" },
       { label: "How it's made", href: "/about#process" },

@@ -39,7 +39,6 @@ export const nav: readonly NavItem[] = [
     children: [
       { label: "Our Story", href: "/our-story" },
       { label: "Meet the Doctor Bird", href: "/doctor-bird" },
-      { label: "What Sea Moss Is", href: "/what-is-sea-moss" },
       { label: "About Us", href: "/about" },
       { label: "Sea Moss 101", href: "/sea-moss" },
       { label: "Nature's Wisdom", href: "/natures-wisdom" },

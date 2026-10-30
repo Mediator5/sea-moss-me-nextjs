@@ -14,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/our-story",
     "/doctor-bird",
-    "/what-is-sea-moss",
     "/blog",
     "/faq",
     "/contact",

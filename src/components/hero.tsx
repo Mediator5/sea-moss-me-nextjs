@@ -52,7 +52,7 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4">
-            <Link href="/what-is-sea-moss" className="btn btn-primary">
+            <Link href="/sea-moss" className="btn btn-primary">
               What sea moss is <ArrowRight className="size-4" />
             </Link>
             <Link href="/our-story" className="btn btn-ghost-light">

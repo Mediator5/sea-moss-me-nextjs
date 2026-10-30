@@ -97,10 +97,10 @@ const pages = [
     icon: Spark,
   },
   {
-    href: "/what-is-sea-moss",
-    eyebrow: "What sea moss is",
+    href: "/sea-moss",
+    eyebrow: "Sea Moss 101",
     title: "A whole food from the sea",
-    copy: "A quick, friendly introduction to the sea vegetable in every jar.",
+    copy: "What sea moss is, why its minerals matter, and how to take it.",
     icon: Wave,
   },
 ] as const;

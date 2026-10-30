@@ -4,11 +4,10 @@ import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section";
-import { FaqAccordion } from "@/components/faq-accordion";
+import { JarIngredients } from "@/components/jar-ingredients";
 import { ArrowRight, Check } from "@/components/icons";
 import { products } from "@/lib/products";
 import { formatPrice } from "@/lib/cart";
-import { faqs } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Shop sea moss gel",
@@ -66,8 +65,22 @@ export default function ProductsPage() {
         </div>
       </section>
 
+      {/* Nature's Wisdom, jar by jar */}
+      <section id="ingredients" className="surface-coral-alt scroll-mt-24 py-20 sm:py-24">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Nature's Wisdom"
+            title="What's inside each jar"
+            copy="Pick a flavour to see every fruit, herb and root in it — what each one is best for, and why it's there."
+          />
+          <div className="mt-10">
+            <JarIngredients />
+          </div>
+        </div>
+      </section>
+
       {/* Comparison */}
-      <section className="pb-20 sm:pb-24">
+      <section className="py-20 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="Side by side"
@@ -125,14 +138,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="surface-coral-alt py-20 sm:py-24">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-          <SectionHeading eyebrow="Before you order" title="Good things to know" />
-          <Reveal delay={100}>
-            <FaqAccordion items={faqs.slice(1, 6)} defaultOpen={null} />
-          </Reveal>
-        </div>
-      </section>
     </>
   );
 }

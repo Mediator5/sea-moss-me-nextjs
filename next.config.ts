@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
       { source: "/products/purple-power-bomb", destination: "/products/beets-and-berry-me", permanent: true },
       { source: "/products/golden-milk", destination: "/products/golden-me", permanent: true },
       { source: "/products/montego-tropical-fusion", destination: "/products/tropical-me", permanent: true },
+
+      // "What sea moss is" was folded into Sea Moss 101.
+      { source: "/what-is-sea-moss", destination: "/sea-moss", permanent: true },
     ];
   },
 };
